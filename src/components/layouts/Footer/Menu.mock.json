@@ -1,0 +1,297 @@
+[
+    {
+        "link": "/company",
+        "text": "Компания",
+        "column": 1,
+        "subMenu": [
+            {
+                "link": "/company",
+                "text": "О компании"
+            },
+            {
+                "link": "",
+                "text": "Отзывы"
+            },
+            {
+                "link": "/contacts",
+                "text": "Контакты"
+            },
+            {
+                "link": "/shop",
+                "text": "Наш магазин"
+            }
+        ]
+    },
+    {
+        "link": "/shop",
+        "text": "Интернет-магазин",
+        "subMenu": [
+            {
+                "link": "/shop/delivery",
+                "text": "Доставка и оплата"
+            },
+            {
+                "link": "/shop/return",
+                "text": "Возвраты и обмен"
+            },
+            {
+                "link": "/shop/price",
+                "text": "Прайс-лист"
+            }
+        ]
+    },
+    {
+        "link": "/catalog",
+        "text": "Товары",
+        "subMenu": [
+            {
+                "link": "/catalog/rubbers",
+                "text": "Накладки"
+            },
+            {
+                "link": "/catalog/blades",
+                "text": "Основания"
+            },
+            {
+                "link": "/catalog/myachi",
+                "text": "Мячи"
+            },
+            {
+                "link": "/catalog/rackets",
+                "text": "Ракетки готовые"
+            },
+            {
+                "link": "/catalog/podarochnye_sertifikaty",
+                "text": "Сертификаты"
+            }
+        ]
+    },
+    {
+        "link": "/catalog/accessories",
+        "text": "Аксессуары",
+        "subMenu": [
+            {
+                "link": "/catalog/kley",
+                "text": "Клей"
+            },
+            {
+                "link": "/catalog/lacquer",
+                "text": "Лак"
+            },
+            {
+                "link": "/catalog/boosters",
+                "text": "Бустер"
+            },
+            {
+                "link": "/catalog/tapes",
+                "text": "Торцевая лента"
+            },
+            {
+                "link": "/catalog/cleaners",
+                "text": "Очистители и губки"
+            },
+            {
+                "link": "/catalog/towels",
+                "text": "Полотенца"
+            },
+            {
+                "link": "/catalog/napulsniki_i_povyazkii",
+                "text": "Напульсники и повязка"
+            },
+            {
+                "link": "/catalog/umpire",
+                "text": "Для судей"
+            },
+            {
+                "link": "/catalog/other_accessories",
+                "text": "Прочие аксессуары"
+            }
+        ]
+    },
+    {
+        "link": "/catalog/clothing",
+        "text": "Одежда и обувь",
+        "subMenu": [
+            {
+                "link": "/catalog/rubashki_i_futbolkii",
+                "text": "Футболки и рубашки"
+            },
+            {
+                "link": "/catalog/shorty_i_yubkii",
+                "text": "Шорты и юбки"
+            },
+            {
+                "link": "/catalog/kostyumyy",
+                "text": "Костюмы"
+            },
+            {
+                "link": "/catalog/kurtkii",
+                "text": "Куртки"
+            },
+            {
+                "link": "/catalog/noskii",
+                "text": "Носки"
+            },
+            {
+                "link": "/catalog/shoes",
+                "text": "Обувь"
+            }
+        ]
+    },
+    {
+        "link": "/catalog/equipment",
+        "text": "Столы и оборудование",
+        "subMenu": [
+            {
+                "link": "/catalog/tennis-tables",
+                "text": "Столы"
+            },
+            {
+                "link": "/catalog/nets",
+                "text": "Сетки"
+            },
+            {
+                "link": "/catalog/barrier",
+                "text": "Бортики"
+            },
+            {
+                "link": "/catalog/robots",
+                "text": "Тренажеры"
+            },
+            {
+                "link": "/catalog/umpire_inv",
+                "text": "Судейское оборудование"
+            },
+            {
+                "link": "/catalog/cover_table",
+                "text": "Чехлы для столов"
+            },
+            {
+                "link": "/catalog/other_inv",
+                "text": "Прочее оборудование"
+            },
+            {
+                "link": "/catalog/bannery_dlya_zalov",
+                "text": "Баннеры для залов"
+            },
+            {
+                "link": "/catalog/napolnye_pokrytiya",
+                "text": "Напольные покрытия"
+            }
+        ]
+    },
+    {
+        "link": "/catalog/sport_i_otdykh",
+        "text": "Спорт и отдых",
+        "subMenu": [
+            {
+                "link": "/catalog/fitnes",
+                "text": "Фитнес"
+            },
+            {
+                "link": "/catalog/samokaty",
+                "text": "Самокаты"
+            },
+            {
+                "link": "/catalog/skeytbordy",
+                "text": "Скейтборды"
+            },
+            {
+                "link": "/catalog/badminton",
+                "text": "Бадминтон"
+            },
+            {
+                "link": "/catalog/myachi_dlya_basketbola",
+                "text": "Мячи для баскетбола"
+            },
+            {
+                "link": "/catalog/myachi_dlya_futbola",
+                "text": "Мячи для футбола"
+            }
+        ]
+    },
+    {
+        "link": "/catalog/other",
+        "text": "Прочие товары",
+        "subMenu": [
+            {
+                "link": "/catalog/nagradnaya_simvolikaa",
+                "text": "Наградная символика"
+            },
+            {
+                "link": "/catalog/suveniryy",
+                "text": "Сувениры"
+            },
+            {
+                "link": "/catalog/sportivnaya_meditsinaa",
+                "text": "Спортивная медицина"
+            },
+            {
+                "link": "/catalog/ukrasheniyaa",
+                "text": "Украшения"
+            },
+            {
+                "link": "/catalog/knigi_i_video",
+                "text": "Книги и видео"
+            }
+        ]
+    },
+    {
+        "link": "/catalog/bags",
+        "text": "Сумки и чехлы",
+        "subMenu": [
+            {
+                "link": "/catalog/sumkii",
+                "text": "Сумки"
+            },
+            {
+                "link": "/catalog/chekhlyy",
+                "text": "Чехлы"
+            }
+        ]
+    },
+    {
+        "link": "/services",
+        "text": "Услуги",
+        "subMenu": [
+            {
+                "link": "/shop/delivery",
+                "text": "Доставка"
+            },
+            {
+                "link": "/services/sborka_raketki",
+                "text": "Сборка ракетки"
+            },
+            {
+                "link": "/services/podarochnyy_sertifikat",
+                "text": "Подарочный сертификат"
+            },
+            {
+                "link": "/services/nanesenie_na_formu",
+                "text": "Нанесение на форму"
+            },
+            {
+                "link": "/services/prokat_stolov_dlya_sorevnovaniy",
+                "text": "Прокат столов для соревнований"
+            }
+        ]
+    },
+    {
+        "link": "/info",
+        "text": "Информация",
+        "subMenu": [
+            {
+                "link": "/info/blog",
+                "text": "Наш блог"
+            },
+            {
+                "link": "/info/play",
+                "text": "Где поиграть"
+            },
+            {
+                "link": "/info/policy",
+                "text": "Политика"
+            }
+        ]
+    }
+]

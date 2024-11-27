@@ -1,0 +1,96 @@
+[
+    {
+        "title": "Рюкзак DONIC Nova",
+        "image": {},
+        "href": "https://www.vistasport.ru/catalog/myachi/myachi_dlya_nastolnogo_tennisa_dhs_3_d40_dual_bel_10_sht.html",
+        "price": 4625,
+        "oldPrice": 5800,
+        "liked": false,
+        "label": {
+            "color": "blue",
+            "text": "Новинка"
+        },
+        "discount": 20,
+        "button": {
+            "text": "Купить сегодня",
+            "link": ""
+        },
+        "rating": {
+            "stars": 4.8,
+            "count": 34009,
+            "link": ""
+        }
+    },
+    {
+        "title": "Юбка Joola Mara",
+        "image": {},
+        "href": "https://www.vistasport.ru/catalog/myachi/myachi_dlya_nastolnogo_tennisa_dhs_3_d40_dual_bel_10_sht.html",
+        "price": 3000,
+        "liked": false,
+        "button": {
+            "text": "Купить сегодня",
+            "link": ""
+        },
+        "rating": {
+            "stars": 5,
+            "count": 120009,
+            "link": ""
+        }
+    },
+    {
+        "title": "Основание TIBHAR SK HYBRID ZC",
+        "image": {},
+        "href": "https://www.vistasport.ru/catalog/myachi/myachi_dlya_nastolnogo_tennisa_dhs_3_d40_dual_bel_10_sht.html",
+        "price": 16000,
+        "oldPrice": 20000,
+        "liked": false,
+        "label": {
+            "color": "black",
+            "text": "Премиум"
+        },
+        "discount": 10,
+        "button": {
+            "text": "Купить сегодня",
+            "link": ""
+        },
+        "rating": {
+            "stars": 4.3,
+            "count": 12009,
+            "link": ""
+        }
+    },
+    {
+        "title": "Футболка Joola Torrent",
+        "image": {},
+        "href": "https://www.vistasport.ru/catalog/myachi/myachi_dlya_nastolnogo_tennisa_dhs_3_d40_dual_bel_10_sht.html",
+        "price": 2750,
+        "oldPrice": 3800,
+        "liked": false,
+        "button": {
+            "text": "Купить сегодня",
+            "link": ""
+        },
+        "rating": {
+            "stars": 3.8,
+            "count": 3214,
+            "link": ""
+        }
+    },
+    {
+        "title": "Накладка YASAKA Rakza XX",
+        "image": {},
+        "href": "https://www.vistasport.ru/catalog/myachi/myachi_dlya_nastolnogo_tennisa_dhs_3_d40_dual_bel_10_sht.html",
+        "price": 6930,
+        "oldPrice": 8000,
+        "liked": false,
+        "button": {
+            "text": "Купить сегодня",
+            "link": ""
+        },
+        "rating": {
+            "stars": 3.8,
+            "count": 3214,
+            "link": ""
+        }
+    }
+]
