@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class='footer-container' :key="count">
+    <div class='footer-container container' :key="count">
       <InputFormFooter class="input-form-footer" />
       <ContactsFooter class="contacts-footer" />
       <MenuFooter class="menu-footer" />

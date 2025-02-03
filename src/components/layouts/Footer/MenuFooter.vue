@@ -152,7 +152,7 @@ const isColumnMenuVisible = computed(() => {
   padding: 14px;
   text-decoration: none;
   color: var(--gray-600-color);
-  transition: background-color 0.3 ease;
+  transition: background-color 0.3s ease;
   background-color: var(--white-color);
 }
 .sub-menu-item:hover {

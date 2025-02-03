@@ -1,7 +1,46 @@
 <template>
-  <div></div>
+  <div class="services">
+    <ServicesCarousel class="services-carousel" />
+    <ServicesList class="services-list" />
+  </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import ServicesList from "@/components/servicesList/ServicesList.vue";
+import ServicesCarousel from "@/components/serviceCarousel/ServicesCarousel.vue";
+</script>
 
-<style></style>
+<style>
+.services-carousel {
+  margin-bottom: 40px;
+
+  @media (min-width: 321px) {
+    margin-bottom: 95px;
+  }
+
+  @media (min-width: 769px) {
+    margin-bottom: 115px;
+  }
+
+  @media (min-width: 1025px) {
+    margin-bottom: 135px;
+  }
+}
+
+.services-list {
+  margin-bottom: 40px;
+
+  @media (min-width: 321px) {
+    margin-bottom: 60px;
+  }
+
+  @media (min-width: 769px) {
+    margin-bottom: 80px;
+  }
+
+  @media (min-width: 1025px) {
+    margin-bottom: 100px;
+  }
+}
+
+</style>

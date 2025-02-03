@@ -1,12 +1,20 @@
 <template>
-  <div>
-    <button class="btn custom-btn" :style="{ height: height }">
+    <component
+        :to="to"
+        :is="to ? RouterLink : 'button'"
+        :class="[
+          'btn custom-btn',
+          { 'custom-btn--border': isBorder }
+        ]"
+        :style="{ height: height }"
+    >
       <span>{{ text }}</span>
-    </button>
-  </div>
+    </component>
 </template>
 
 <script setup lang="ts">
+import {RouterLink} from "vue-router";
+
 defineProps({
   text: {
     type: String,
@@ -16,16 +24,26 @@ defineProps({
     type: String,
     default: '34px',
   },
+  isBorder: {
+    type: Boolean,
+    default: false,
+  },
+  to: {
+    type: [String, Object],
+    default: null,
+  }
 });
 </script>
 
 <style scoped>
 .custom-btn {
+  width: min-content;
   box-sizing: border-box;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  white-space: nowrap;
   padding: 14px;
   gap: 10px;
   min-width: 58px;
@@ -39,7 +57,6 @@ defineProps({
   color: var(--white-color);
   outline: none;
   transition: background-color 0.3s ease, color 0.3s ease;
-  width: inherit;
 }
 
 .custom-btn:hover {
@@ -49,5 +66,9 @@ defineProps({
 .custom-btn:focus {
   outline: none;
   box-shadow: none;
+}
+
+.custom-btn--border {
+  border: 1px solid var(--white-color);
 }
 </style>

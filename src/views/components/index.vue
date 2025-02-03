@@ -7,6 +7,7 @@
     <XSBlueButton text="Текст" />
     <BlackArrowButton text="Текст" />
     <GreyButton text="Текст" />
+    <WhiteButton text="Текст" />
     <HomeButton text="Текст" />
     <LeftArrowButton />
     <RightArrowButton />
@@ -52,6 +53,18 @@
         </template>
       </ReklamaItem>
     </ReklamaContainer>
+    <GradientBanner
+        title="Title text"
+        subtitle="Subtitle text"
+    />
+    <TitleWithButton title="Title text" button-text="Button text" :on-button-click=onTitleButtonClick />
+    <List
+        title="List title:"
+        :list=mockList
+    />
+    <GrayInfoBlock title="Block title" subtitle="Block subtitle">
+      <p>Slot text</p>
+    </GrayInfoBlock>
   </div>
 </template>
 
@@ -62,6 +75,7 @@ import SquareButton from '~/components/common/buttons/SquareButton.vue';
 import XSBlueButton from '~/components/common/buttons/XSBlueButton.vue';
 import BlackArrowButton from '~/components/common/buttons/BlackArrowButton.vue';
 import GreyButton from '~/components/common/buttons/GreyButton.vue';
+import WhiteButton from '~/components/common/buttons/WhiteButton.vue';
 import HomeButton from '~/components/common/buttons/HomeButton.vue';
 import LeftArrowButton from '~/components/common/buttons/LeftArrowButton.vue';
 import RightArrowButton from '~/components/common/buttons/RightArrowButton.vue';
@@ -78,6 +92,10 @@ import Delivery from '~/components/common/Delivery.vue';
 // import ContactsFooter from '~/components/layouts/Footer/ContactsFooter.vue';
 import ReklamaContainer from '~/components/layouts/Reklama/ReklamaContainer.vue';
 import ReklamaItem from '~/components/layouts/Reklama/ReklamaItem.vue';
+import GradientBanner from "@/components/common/GradientBanner.vue";
+import TitleWithButton from "@/components/common/TitleWithButton.vue";
+import List from "@/components/common/List.vue";
+import GrayInfoBlock from "@/components/common/GrayInfoBlock.vue";
 
 const buttonTexts = [
   'Andro',
@@ -109,6 +127,11 @@ const radioOptions = [
   'Скидки',
   'Высокий рейтинг'
 ];
+
+const onTitleButtonClick = () => console.log('TitleWithButton click')
+
+const mockList = ['item1', 'item2', 'item3']
+
 </script>
 
 <style scoped>

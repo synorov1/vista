@@ -21,29 +21,39 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, toRef } from 'vue';
+import { ref, computed, toRef, watch } from 'vue';
 import type { PropType } from 'vue';
 
-  const props = defineProps({
-    options: {
-      type: Array as PropType<string[]>,
-      required: true
-    }
-  })
-  const options = toRef(props, 'options');
-  const selectedOption = ref(options.value[0]);
-  const isDropdownOpen = ref(false);
-
-  const isMobile = computed(() => {
-    return window.innerWidth <= 768;
-  })
-  const toggleDropdown = () => {
-    isDropdownOpen.value = !isDropdownOpen.value;
-  };
-  const selectOption = (option: string) => {
-    selectedOption.value = option;
-    isDropdownOpen.value = false;
+const props = defineProps({
+  options: {
+    type: Array as PropType<string[]>,
+    required: true
   }
+});
+
+const options = toRef(props, 'options');
+const selectedOption = ref('');
+const isDropdownOpen = ref(false);
+
+// Инициализация selectedOption после того, как options будет заполнен
+watch(options, (newOptions) => {
+  if (newOptions && newOptions.length > 0) {
+    selectedOption.value = newOptions[0];
+  }
+}, { immediate: true });
+
+const isMobile = computed(() => {
+  return window.innerWidth <= 768;
+});
+
+const toggleDropdown = () => {
+  isDropdownOpen.value = !isDropdownOpen.value;
+};
+
+const selectOption = (option: string) => {
+  selectedOption.value = option;
+  isDropdownOpen.value = false;
+};
 </script>
 
 <style scoped>
@@ -155,7 +165,7 @@ import type { PropType } from 'vue';
 
 @media (min-width: 768px) {
   .dropdown-radio-group {
-    width: auto;
+    width: 100%;
   }
 }
 </style>

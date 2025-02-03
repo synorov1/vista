@@ -1,10 +1,9 @@
 <template>
-    <button
-      class="btn gray-btn"
-      :style="{ height: height }"
-    >
+  <div>
+    <button class="btn white-btn">
       <span>{{ text }}</span>
     </button>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -13,15 +12,11 @@ defineProps({
     type: String,
     default: 'Button',
   },
-  height: {
-    type: String,
-    default: '34px',
-  },
 });
 </script>
 
 <style scoped>
-.gray-btn {
+.white-btn {
   box-sizing: border-box;
   display: flex;
   flex-direction: row;
@@ -31,24 +26,25 @@ defineProps({
   gap: 10px;
   min-width: 58px;
   height: 34px;
-  border: 1px solid var(--gray-600-color);
   border-radius: 6px;
   font-family: 'Inter', sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 14px;
   line-height: 17px;
-  color: var(--gray-600-color);
+  color: var(--black-color);
+  background-color: var(--white-color);
   outline: none;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
 }
 
-.gray-btn:hover {
+.white-btn:hover {
+  border: 1px solid var(--gray-600-color);
   background-color: var(--gray-100-color);
   color: var(--gray-600-color);
 }
 
-.gray-btn:focus {
+.white-btn:focus {
   outline: none;
   box-shadow: none;
 }

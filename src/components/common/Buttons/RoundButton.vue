@@ -1,9 +1,7 @@
 <template>
-  <div>
     <button class="btn round-btn">
       <span>{{ text }}</span>
     </button>
-  </div>
 </template>
 
 <script setup lang="ts">
@@ -17,6 +15,7 @@ defineProps({
 
 <style scoped>
 .round-btn {
+  white-space: nowrap;
   box-sizing: border-box;
   display: flex;
   flex-direction: row;
