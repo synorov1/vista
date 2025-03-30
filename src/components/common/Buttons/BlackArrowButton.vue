@@ -2,7 +2,7 @@
   <div>
     <button class="btn custom-btn">
       <span>{{ text }}</span>
-      <span class="icon"></span>
+      <span class="icon" />
     </button>
   </div>
 </template>
@@ -37,6 +37,7 @@ defineProps({
   color: var(--black-color);
   outline: none;
   transition: background-color 0.3s ease, color 0.3s ease;
+  width: inherit;
 }
 
 .custom-btn:hover {

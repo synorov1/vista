@@ -1,34 +1,46 @@
 <template>
   <div class="categories">
-    <div class="category-cards" ref="categoryCards">
+    <div ref="categoryCards" class="category-cards">
       <CategoryCard
         v-for="(category, index) in categories"
+        v-show="showCards || index < visibleCardsCount"
         :key="index"
-        :imageSrc="category.imageSrc"
+        :image-src="category.imageSrc"
         :title="category.title"
         :count="category.count"
         :description="category.description"
-        v-show="showCards || index < visibleCardsCount"
       />
     </div>
-    <SquareButton v-if="showButton" class="filter-btn" :text="buttonText" @click="toggleCards" />
+    <SquareButton
+      v-if="showButton"
+      class="filter-btn"
+      :text="buttonText"
+      @click="toggleCards"
+    />
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onMounted, onUnmounted } from 'vue';
+import { ref, computed, onMounted, onUnmounted, type PropType } from 'vue';
 import SquareButton from '~/components/common/buttons/SquareButton.vue';
 import CategoryCard from './CategoryCard.vue';
 
+interface Category {
+  imageSrc: string
+  title: string
+  count: number
+  description: string
+}
+
 const props = defineProps({
   categories: {
-    type: Array,
+    type: Array as PropType<Category[]>,
     required: true
   }
 });
 
 const showCards = ref(false);
-const categoryCards = ref(null);
+const categoryCards = ref<HTMLElement | null>(null);
 const showButton = ref(true);
 
 const visibleCardsCount = ref(1); // Инициализируем с одной карточкой

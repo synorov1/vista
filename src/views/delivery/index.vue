@@ -1,22 +1,22 @@
 <template>
   <div class="page-container">
     <GradientBanner
-        :title=data.bannerTitle
-        :subtitle=data.bannerSubtitle
+      :title="data.bannerTitle"
+      :subtitle="data.bannerSubtitle"
     />
     <div class="discount-block">
       <TitleWithButton
-          :title=data.discountTitle
-          :button-text=data.discountButtonText
-          :on-button-click=onButtonClick
+        :title="data.discountTitle"
+        :button-text="data.discountButtonText"
+        :on-button-click="onButtonClick"
       />
-      <p>{{data.paragraph_1}}</p>
+      <p>{{ data.paragraph_1 }}</p>
       <div class="discount-info-blocks">
         <GrayInfoBlock
-            v-for="(item, index) in data.infoBlocks"
-            :key="index"
-            :title=item.title
-            :subtitle="item.subtitle"
+          v-for="(item, index) in data.infoBlocks"
+          :key="index"
+          :title="item.title"
+          :subtitle="item.subtitle"
         >
           <div v-html="item.slot" />
         </GrayInfoBlock>
@@ -24,50 +24,65 @@
     </div>
     <div class="delivery-block">
       <TitleWithButton
-          :title=data.deliveryTitle
-          :button-text=data.deliveryButtonText
-          :on-button-click=onButtonClick
+        :title="data.deliveryTitle"
+        :button-text="data.deliveryButtonText"
+        :on-button-click="onButtonClick"
       />
-      <p>{{data.paragraph_2}}</p>
-      <MoreBlock :initial-count="6" :increment-count="3" :cards="data.deliveryCards" />
+      <p>{{ data.paragraph_2 }}</p>
+      <MoreBlock
+        :initial-count="6"
+        :increment-count="3"
+        :cards="data.deliveryCards"
+      />
     </div>
     <div class="adv-block">
       <ReklamaItem
-          :title=data.advItem.title_1
-          :image-src=data.advItem.image_1
-          :description=data.advItem.descr_1
+        :title="data.advItem.title_1"
+        :image-src="data.advItem.image_1"
+        :description="data.advItem.descr_1"
       />
       <ReklamaItem
-          :title=data.advItem.title_2
-          :image-src=data.advItem.image_2
-          :description=data.advItem.descr_2
-          backgroundColor="var(--blue-400-color)"
-          textColor="white"
+        :title="data.advItem.title_2"
+        :image-src="data.advItem.image_2"
+        :description="data.advItem.descr_2"
+        background-color="var(--blue-400-color)"
+        text-color="white"
       >
-        <p class="reklama-promo">{{data.advItem.promo_2}}</p>
+        <p class="reklama-promo">
+          {{ data.advItem.promo_2 }}
+        </p>
       </ReklamaItem>
     </div>
     <div class="payment-block">
       <TitleWithButton
-          :title=data.paymentTitle
-          :button-text=data.paymentButtonText
-          :on-button-click=onButtonClick
+        :title="data.paymentTitle"
+        :button-text="data.paymentButtonText"
+        :on-button-click="onButtonClick"
       />
-      <p>{{data.paragraph_3}}</p>
-      <MoreBlock :initial-count="3" :increment-count="3" :cards="data.paymentCards" />
+      <p>{{ data.paragraph_3 }}</p>
+      <MoreBlock
+        :initial-count="3"
+        :increment-count="3"
+        :cards="data.paymentCards"
+      />
     </div>
     <div class="safety-block">
       <TitleWithButton
-        :title=data.safetyTitle
-        :button-text=data.safetyButtonText
-        :on-button-click=onButtonClick
+        :title="data.safetyTitle"
+        :button-text="data.safetyButtonText"
+        :on-button-click="onButtonClick"
       />
-      <p v-for="(paragraph, index) in data.safetyContent" :key=index>{{paragraph}}</p>
+      <p v-for="(paragraph, index) in data.safetyContent" :key="index">
+        {{ paragraph }}
+      </p>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
+import { usePageTitle } from '@/composables/usePageTitle';
+
+usePageTitle('Доставка');
 
 import GradientBanner from "@/components/common/GradientBanner.vue";
 import TitleWithButton from "@/components/common/TitleWithButton.vue";

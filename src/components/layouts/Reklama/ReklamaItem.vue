@@ -1,12 +1,24 @@
 <template>
-  <div class="reklama-item" :style="reklamaStyle" :class="{ reverse: reverse, 'text-white': textColor === 'white' }">
+  <div
+    class="reklama-item"
+    :style="reklamaStyle"
+    :class="{ reverse: reverse, 'text-white': textColor === 'white' }"
+  >
     <div class="text">
-      <h1 class="title">{{ title }}</h1>
-      <p class="description">{{ description }}</p>
-      <slot name="label"></slot>
+      <h1 class="title">
+        {{ title }}
+      </h1>
+      <p class="description">
+        {{ description }}
+      </p>
+      <slot name="label" />
     </div>
     <div class="image-container">
-      <img :src="imageSrc" alt="Product Image" class="image" />
+      <img
+        :src="imageSrc"
+        alt="Product Image"
+        class="image"
+      >
     </div>
   </div>
 </template>

@@ -15,7 +15,8 @@ defineProps({
     default: 'Войти',
   },
   color: {
-    type: String as PropType<'blue' | 'black' | 'red'>
+    type: String as PropType<'blue' | 'black' | 'red'>,
+    default: 'blue'
   }
 });
 </script>
@@ -45,7 +46,7 @@ defineProps({
   background-color: var(--black-color);
 }
 .red {
-  background-color: var(--red-color);
+  background-color: var(--red-100-color);
 }
 
 .label-wrapper:hover {

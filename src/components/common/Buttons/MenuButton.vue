@@ -1,7 +1,7 @@
 <template>
   <div>
     <button class="btn custom-btn">
-      <span class="icon"></span>
+      <span class="icon" />
       <span>{{ text }}</span>
     </button>
   </div>

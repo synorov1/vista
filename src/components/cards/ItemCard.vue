@@ -2,24 +2,44 @@
   <a class="card" :href="product.href">
     <div class="card-image">
       <div class="top-buttons-wrapper">
-        <Label v-if="product.label" :color="product.label.color" :text="product.label.text" />
+        <Label
+          v-if="product.label"
+          :color="product.label.color"
+          :text="product.label.text"
+        />
         <Like class="like" :liked="product.like" />
       </div>
-      <img src="@/assets/images/backpack.png" alt="backpack" class="img-fluid">
-      <RedLabel v-if="product.discount" class="sale-badge" :discount="`-${product.discount}%`"/>
+      <img
+        src="@/assets/images/backpack.png"
+        alt="backpack"
+        class="img-fluid"
+      >
+      <RedLabel
+        v-if="product.discount"
+        class="sale-badge"
+        :discount="`-${product.discount}%`"
+      />
     </div>
     <div class="card-info">
       <div class="card-price">
         <span class="current-price">{{ prices.main }} ₽</span>
-        <span class="old-price" v-if="prices.old">{{ prices.old }} ₽</span>
+        <span v-if="prices.old" class="old-price">{{ prices.old }} ₽</span>
       </div>
       <div class="card-title">{{ product.title }}</div>
       <div class="card-rating">
-        <img src="/src/assets/icons/star.svg" alt="Rating Star" class="rating-img" />
+        <img
+          src="/src/assets/icons/star.svg"
+          alt="Rating Star"
+          class="rating-img"
+        >
         <div class="rating-text">{{ product.rating.stars }} <span class="rating-quantity">- {{ prices.rating }} оценки</span></div>
       </div>
       <div class="card-availability">
-        <YesNoButton :isAvailable="available" availableText="В наличии" unavailableText="Нет в наличии" />
+        <YesNoButton
+          :is-available="available"
+          available-text="В наличии"
+          unavailable-text="Нет в наличии"
+        />
       </div>
     </div>
     <XSBlueButton class="card-btn" :text="product.button.text" />

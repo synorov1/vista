@@ -1,6 +1,10 @@
 <template>
   <button class="arrow-btn right-arrow">
-    <img src="/src/assets/icons/arrow-right.svg" alt="Right Arrow" class="arrow-icon" />
+    <img
+      src="/src/assets/icons/arrow-right.svg"
+      alt="Right Arrow"
+      class="arrow-icon"
+    >
   </button>
 </template>
 

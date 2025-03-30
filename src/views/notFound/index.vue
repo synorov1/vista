@@ -1,19 +1,32 @@
 <template>
   <div class="page-container">
     <div class="title">
-      <img src="@/assets/images/404.png" alt="404-img" class="title-img">
+      <img
+        src="@/assets/images/404.png"
+        alt="404-img"
+        class="title-img"
+      >
     </div>
-    <p class="error-text">К сожалению, произошла ошибка. Пожалуйста, попробуйте ещё раз или воспользуйтесь поиском.</p>
+    <p class="error-text">
+      К сожалению, произошла ошибка. Пожалуйста, попробуйте ещё раз или воспользуйтесь поиском.
+    </p>
     <div class="button-container">
-      <XSBlueButton text="На главную" class="button" @click="goHome" />
+      <XSBlueButton
+        text="На главную"
+        class="button"
+        @click="goHome"
+      />
     </div>
   </div>
 </template>
 <script setup lang="ts">
 import XSBlueButton from '@/components/common/Buttons/XSBlueButton.vue';
 import { useRouter } from 'vue-router';
+import { usePageTitle } from '@/composables/usePageTitle';
 
 const router = useRouter();
+
+usePageTitle('Страница не найдена');
 
 const goHome = () => {
   router.push('/');

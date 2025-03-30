@@ -1,5 +1,7 @@
 <template>
-  <button class="button-component">{{ text }}</button>
+  <button class="button-component">
+    {{ text }}
+  </button>
 </template>
 
 <script setup lang="ts">

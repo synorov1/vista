@@ -1,6 +1,10 @@
 <template>
   <div class="time-container">
-    <img src="/src/assets/icons/clock.svg" alt="Clock Icon" class="clock-icon" />
+    <img
+      src="/src/assets/icons/clock.svg"
+      alt="Clock Icon"
+      class="clock-icon"
+    >
     <span class="time-text">{{ time }}</span>
   </div>
 </template>

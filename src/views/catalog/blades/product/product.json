@@ -1,0 +1,273 @@
+{
+  "info": {
+    "text": "Neottec X5 S – современная японская высокотехнологичная накладка нового поколения, вместе с накладкой Neottec X5 M представляющая новую серию «X5». Накладка предназначена для динамичной и вариативной атакующей игры, в первую очередь основанной на разнообразных топ-спинах. По сравнению с Neottec X5 M накладка обладает несколько более мягкой губкой, что увеличивает контроль и немного снижает скорость мяча. Как верхний слой, так и губка накладки Neottec X5 S специально разработаны для создания максимального тензорного эффекта, что позволяет придавать мячу дополнительное ускорение. Технология FCH, примененная при производстве накладки, добавляет особенное чувство мяча при ударах и специфический звук, ценящийся многими игроками в настольный теннис.<br /Накладка Neottec X5 S производится в Японии, что дополнительно говорит о ее высочайшем качестве.Neottec - динамично развивающаяся компания по производству оборудования и инвентаря для настольного тенниса. Несмотря на свое японское происхождение, основной офис Компании находится в Швеции. Neottec производит весь ассортимент инвентаря и оборудования для настольного тенниса, успешно сочетая высокое качество продукции с демократичной ценовой политикой.",
+    "items": [
+      {
+        "title": "Бренд",
+        "text": "Neottec"
+      },
+      {
+        "title": "Тип накладки",
+        "text": "Гладкая"
+      }
+    ]
+  },
+  "viewed": [
+      {
+          "title": "Рюкзак DONIC Nova",
+          "image": {},
+          "href": "https://www.vistasport.ru/catalog/myachi/myachi_dlya_nastolnogo_tennisa_dhs_3_d40_dual_bel_10_sht.html",
+          "price": 4625,
+          "oldPrice": 5800,
+          "liked": false,
+          "label": {
+              "color": "blue",
+              "text": "Новинка"
+          },
+          "discount": 20,
+          "button": {
+              "text": "Купить сегодня",
+              "link": ""
+          },
+          "rating": {
+              "stars": 4.8,
+              "count": 34009,
+              "link": ""
+          }
+      },
+      {
+          "title": "Юбка Joola Mara",
+          "image": {},
+          "href": "https://www.vistasport.ru/catalog/myachi/myachi_dlya_nastolnogo_tennisa_dhs_3_d40_dual_bel_10_sht.html",
+          "price": 3000,
+          "liked": false,
+          "button": {
+              "text": "Купить сегодня",
+              "link": ""
+          },
+          "rating": {
+              "stars": 5,
+              "count": 120009,
+              "link": ""
+          }
+      },
+      {
+          "title": "Основание TIBHAR SK HYBRID ZC",
+          "image": {},
+          "href": "https://www.vistasport.ru/catalog/myachi/myachi_dlya_nastolnogo_tennisa_dhs_3_d40_dual_bel_10_sht.html",
+          "price": 16000,
+          "oldPrice": 20000,
+          "liked": false,
+          "label": {
+              "color": "black",
+              "text": "Премиум"
+          },
+          "discount": 10,
+          "button": {
+              "text": "Купить сегодня",
+              "link": ""
+          },
+          "rating": {
+              "stars": 4.3,
+              "count": 12009,
+              "link": ""
+          }
+      },
+      {
+          "title": "Футболка Joola Torrent",
+          "image": {},
+          "href": "https://www.vistasport.ru/catalog/myachi/myachi_dlya_nastolnogo_tennisa_dhs_3_d40_dual_bel_10_sht.html",
+          "price": 2750,
+          "oldPrice": 3800,
+          "liked": false,
+          "button": {
+              "text": "Купить сегодня",
+              "link": ""
+          },
+          "rating": {
+              "stars": 3.8,
+              "count": 3214,
+              "link": ""
+          }
+      },
+      {
+          "title": "Накладка YASAKA Rakza XX",
+          "image": {},
+          "href": "https://www.vistasport.ru/catalog/myachi/myachi_dlya_nastolnogo_tennisa_dhs_3_d40_dual_bel_10_sht.html",
+          "price": 6930,
+          "oldPrice": 8000,
+          "liked": false,
+          "button": {
+              "text": "Купить сегодня",
+              "link": ""
+          },
+          "rating": {
+              "stars": 3.8,
+              "count": 3214,
+              "link": ""
+          }
+      }
+  ],
+  "reviews": [
+    {
+      "image": "",
+      "name": "Александр Е.",
+      "date": "16 марта 2024",
+      "rating": "4.8",
+      "text": "Без преувеличения лучший магазин в России. Огромный ассортимент в наличии! И пусть санкции отдохнут. Без преувеличения лучший магазин в России. Огромный ассортимент в наличии! И пусть санкции отдохнут"
+    },
+    {
+      "image": "",
+      "name": "Ивано А.",
+      "date": "16 марта 2024",
+      "rating": "5",
+      "text": "Без преувеличения лучший магазин в России. Огромный ассортимент в наличии! И пусть санкции отдохнут. Без преувеличения лучший магазин в России. Огромный ассортимент в наличии! И пусть санкции отдохнут"
+    },
+    {
+      "image": "",
+      "name": "Petrov M.",
+      "date": "16 марта 2024",
+      "rating": "1",
+      "text": "Без преувеличения лучший магазин в России. Огромный ассортимент в наличии! И пусть санкции отдохнут. Без преувеличения лучший магазин в России. Огромный ассортимент в наличии! И пусть санкции отдохнут"
+    }
+  ],
+  "ratings": {
+    "productRating": {
+      "title": "Рейтинг товара",
+      "rating": "4.3",
+      "total": 135412,
+      "ratings": [
+        {
+          "name": "5",
+          "count": 75896
+        },
+        {
+          "name": "4",
+          "count": 20145
+        },
+        {
+          "name": "3",
+          "count": 11230
+        },
+        {
+          "name": "2",
+          "count": 22478
+        },
+        {
+          "name": "1",
+          "count": 5663
+        }
+      ]
+    },
+    "customerEvaluation": {
+      "title": "Оценка клиентов",
+      "total": 10,
+      "ratings": [
+        {
+          "name": "Скорость",
+          "count": 8.2
+        },
+        {
+          "name": "Вращение",
+          "count": 4.2
+        },
+        {
+          "name": "Контроль",
+          "count": 4
+        }
+      ]
+    }
+  },
+  "card": {
+    "images": [
+      "https://sun9-29.userapi.com/impg/UJYWh7AExDF_b08FwMiXXVGwTpMtHcJPrf2DJQ/PgcqhepmF4k.jpg?size=1200x813&quality=95&sign=d4a538858c65e9cb74f99a1cffc5721a&type=album",
+      "https://avatars.mds.yandex.net/i?id=47fafd19e36c26a2c94ca75eaa0341f5df8732d0-9042377-images-thumbs&n=13",
+      "https://avatars.mds.yandex.net/i?id=a0dc7721925da544acbcc48b14be5581_l-5221549-images-thumbs&n=13",
+      "https://sun9-29.userapi.com/impg/UJYWh7AExDF_b08FwMiXXVGwTpMtHcJPrf2DJQ/PgcqhepmF4k.jpg?size=1200x813&quality=95&sign=d4a538858c65e9cb74f99a1cffc5721a&type=album",
+      "https://avatars.mds.yandex.net/i?id=47fafd19e36c26a2c94ca75eaa0341f5df8732d0-9042377-images-thumbs&n=13"
+    ],
+    "chips": [
+      {
+        "text": "Все накладки"
+      },
+      {
+        "text": "Все накладки бренда Donic"
+      },
+      {
+        "text": "Все накладки"
+      },
+      {
+        "text": "Все накладки бренда Donic"
+      }
+    ],
+    "info": {
+      "title": "Накладка DONIC BlueStar A1",
+      "rating": "3.8",
+      "ratings": 3214,
+      "available": true,
+      "text": "Donic BlueStar A1 – новинка от Donic, дающая начало новой линейке накладок «BlueStar», благодаря своим уникальным характеристикам имеющая все шансы с ближайшее время стать бестселлером.....",
+      "params": [
+        {
+          "title": "Цвет",
+          "list": [
+            {
+              "text": "Черный",
+              "id": 0
+            },
+            {
+              "text": "Синий",
+              "id": 1
+            }
+          ]
+        },
+        {
+          "title": "Толщина",
+          "list": [
+            {
+              "text": "Max",
+              "id": 2
+            },
+            {
+              "text": "0.2mm",
+              "id": 3
+            }
+          ]
+        }
+      ]
+    },
+    "payment": {
+      "price": "6 750 ₽",
+      "oldPrice": "20 000 ₽",
+      "specifications": [
+        {
+          "title": "Цвет",
+          "text": "Черный"
+        },
+        {
+          "title": "Размер",
+          "text": "Max"
+        }
+      ],
+      "liked": false
+    },
+    "instalment": {
+      "price": "6 750 ₽",
+      "oldPrice": "20 000 ₽",
+      "label": "1 687 ₽ х 4 платежа",
+      "text": "Оплатите первый платеж сейчас, другие потом - без переплат",
+      "logo": "https://sun9-29.userapi.com/impg/UJYWh7AExDF_b08FwMiXXVGwTpMtHcJPrf2DJQ/PgcqhepmF4k.jpg?size=1200x813&quality=95&sign=d4a538858c65e9cb74f99a1cffc5721a&type=album"
+    },
+    "advantages": [
+      {
+          "title": "Безопасная оплата",
+          "text": "Онлайн или при получении",
+          "icon": "/src/assets/icons/shield-check.svg"
+      },
+      {
+          "title": "100% Гарантия",
+          "text": "На все товары",
+          "icon": "/src/assets/icons/document-medicine.svg"
+      }
+    ]
+  }
+}

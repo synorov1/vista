@@ -2,15 +2,28 @@
   <div class="wrap">
     <div class="title-container">
       <button
-          class="inline-button"
-          type="button"
-          @click="onButtonClick"
+        class="inline-button"
+        type="button"
+        @click="onButtonClick"
       >
-        {{buttonText}}
+        {{ buttonText }}
       </button>
-      <p class="title">{{title}}</p>
+      <p class="title">
+        {{ title }}
+      </p>
     </div>
-    <RoundButton class="button" :text='buttonText' @click="onButtonClick"/>
+
+    <slot />
+
+    <div class="title-buttons">
+      <slot v-if="slots.additionally" name="additionally" />
+
+      <RoundButton
+        class="button"
+        :text="buttonText"
+        @click="onButtonClick"
+      />
+    </div>
   </div>
 </template>
 
@@ -24,8 +37,9 @@ interface Props {
 defineProps<Props>()
 
 import RoundButton from "@/components/common/Buttons/RoundButton.vue";
+import { useSlots } from 'vue';
 
-
+const slots = useSlots();
 </script>
 
 <style scoped>
@@ -33,6 +47,7 @@ import RoundButton from "@/components/common/Buttons/RoundButton.vue";
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  gap: 0 15px;
   padding: 0;
 }
 .title-container {
@@ -44,7 +59,13 @@ import RoundButton from "@/components/common/Buttons/RoundButton.vue";
   font-size: 34px;
   font-weight: 800;
   line-height: 41px;
+  white-space: nowrap;
   margin: 0;
+}
+
+.title-buttons {
+  display: flex;
+  align-items: center;
 }
 
 .inline-button {
@@ -59,6 +80,10 @@ import RoundButton from "@/components/common/Buttons/RoundButton.vue";
   background-color: transparent;
   cursor: pointer;
   display: none;
+}
+
+.button {
+  width: 132px;
 }
 
 @media (max-width: 768px) {

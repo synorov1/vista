@@ -5,9 +5,27 @@ import serviceCarouselItems from "./serviceCarouselItems.json"
 </script>
 
 <template>
-  <Carousel :gap="30" :transition="600" :autoplay="2000"  class="services-carousel"  :mouseDrag="false" :touchDrag="false" wrapAround :items-to-scroll="1" :items-to-show="1">
-    <Slide class="services-carousel__slide" v-for="(item, index) in serviceCarouselItems" :key="index">
-      <GradientBanner :title="item.title" :image-src="item.image" :subtitle="item.text" />
+  <Carousel
+    :gap="30"
+    :transition="600"
+    :autoplay="2000"
+    class="services-carousel"
+    :mouse-drag="false"
+    :touch-drag="false"
+    wrap-around
+    :items-to-scroll="1"
+    :items-to-show="1"
+  >
+    <Slide
+      v-for="(item, index) in serviceCarouselItems"
+      :key="index"
+      class="services-carousel__slide"
+    >
+      <GradientBanner
+        :title="item.title"
+        :image-src="item.image"
+        :subtitle="item.text"
+      />
     </Slide>
 
     <template #addons>

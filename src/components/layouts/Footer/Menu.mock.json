@@ -9,7 +9,7 @@
                 "text": "О компании"
             },
             {
-                "link": "",
+                "link": "/otzivy",
                 "text": "Отзывы"
             },
             {
@@ -27,15 +27,15 @@
         "text": "Интернет-магазин",
         "subMenu": [
             {
-                "link": "/shop/delivery",
+                "link": "/delivery",
                 "text": "Доставка и оплата"
             },
             {
-                "link": "/shop/return",
+                "link": "/return",
                 "text": "Возвраты и обмен"
             },
             {
-                "link": "/shop/price",
+                "link": "/price",
                 "text": "Прайс-лист"
             }
         ]
@@ -255,7 +255,7 @@
         "text": "Услуги",
         "subMenu": [
             {
-                "link": "/shop/delivery",
+                "link": "/delivery",
                 "text": "Доставка"
             },
             {
@@ -281,7 +281,7 @@
         "text": "Информация",
         "subMenu": [
             {
-                "link": "/info/blog",
+                "link": "/blog",
                 "text": "Наш блог"
             },
             {

@@ -1,18 +1,23 @@
-  <template>
-    <div class="moreBlock-container">
-      <div class="cards-container">
-        <GrayInfoBlock v-for="(card, index) in visibleCards" :title="card.title" :subtitle="card.subtitle && card.subtitle" :key="index" >
-          <div class="slot" v-html="card.slot" />
-        </GrayInfoBlock>
-      </div>
-      <RoundButton
-          v-if="hasMoreCards"
-          @click="loadMore"
-          text="Показать еще"
-          class="button"
-      />
+<template>
+  <div class="moreBlock-container">
+    <div class="cards-container">
+      <GrayInfoBlock
+        v-for="(card, index) in visibleCards"
+        :key="index"
+        :title="card.title"
+        :subtitle="card.subtitle && card.subtitle"
+      >
+        <div class="slot" v-html="card.slot" />
+      </GrayInfoBlock>
     </div>
-  </template>
+    <RoundButton
+      v-if="hasMoreCards"
+      text="Показать еще"
+      class="button"
+      @click="loadMore"
+    />
+  </div>
+</template>
 
   <script setup lang="ts">
   import { ref, computed } from "vue";

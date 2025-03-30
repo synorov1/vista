@@ -1,25 +1,29 @@
 <template>
-    <div class="section">
-        <div class="header">
-            <div class="title">Популярные товары</div>
-            <div class="navigation">
-                <LeftArrowButton @click="prev" />
-                <RightArrowButton @click="next" />
-            </div>
-        </div>
-        <div class="carousel slide">
-
-            <Carousel class="cards carousel-inner" ref="carouselRef" v-bind="config">
-                <Slide v-for="(product, index) in showedProducts" :key="index">
-                    <ItemCard :content="product" />
-                    <template #addons>
-                        <Navigation />
-                </template>
-                </Slide>
-                
-            </Carousel>
-        </div>
+  <div class="section">
+    <div class="header">
+      <div class="title">
+        Популярные товары
+      </div>
+      <div class="navigation">
+        <LeftArrowButton @click="prev" />
+        <RightArrowButton @click="next" />
+      </div>
     </div>
+    <div class="carousel slide">
+      <Carousel
+        ref="carouselRef"
+        class="cards carousel-inner"
+        v-bind="config"
+      >
+        <Slide v-for="(product, index) in showedProducts" :key="index">
+          <ItemCard :content="product" />
+          <template #addons>
+            <Navigation />
+          </template>
+        </Slide>
+      </Carousel>
+    </div>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -28,13 +32,13 @@ import ItemCard from '~/components/cards/ItemCard.vue';
 import { Carousel, Slide, Navigation } from 'vue3-carousel';
 import LeftArrowButton from '../common/Buttons/LeftArrowButton.vue';
 import RightArrowButton from '../common/Buttons/RightArrowButton.vue';
-import type { CarouselConfig, CarouselExposed } from 'vue3-carousel';
+import type { CarouselConfig } from 'vue3-carousel';
 import { ref, computed, onMounted, onUnmounted } from 'vue';
 
 const products = data;
 const isShowMore = ref(false);
 const windowWidth = ref(0);
-const carouselRef = ref<CarouselExposed | null>();
+const carouselRef = ref<any>(null);
 
 const showedProducts = computed(() => {
     if (windowWidth.value < 1024 && !isShowMore.value) {
@@ -69,6 +73,9 @@ const config: CarouselConfig = {
   height: '',
   i18n: {},
   enabled: true,
+  ignoreAnimations: false,
+  preventExcessiveDragging: false,
+  slideEffect: 'slide',
 };
 
 onMounted(() => {

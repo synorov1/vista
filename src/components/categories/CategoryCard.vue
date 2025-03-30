@@ -1,12 +1,22 @@
 <template>
   <div class="category-card">
     <div class="image-container">
-      <img :src="imageSrc" alt="Category Image" class="category-image" />
+      <img
+        :src="imageSrc"
+        alt="Category Image"
+        class="category-image"
+      >
     </div>
     <div class="text-container">
-      <h5 class="title">{{ title }}</h5>
-      <p class="count">{{ count }} товаров</p>
-      <p class="description">{{ description }}</p>
+      <h5 class="title">
+        {{ title }}
+      </h5>
+      <p class="count">
+        {{ count }} товаров
+      </p>
+      <p class="description">
+        {{ description }}
+      </p>
       <XSBlueButton text="Перейти к товарам" height="45px" />
     </div>
   </div>

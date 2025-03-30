@@ -1,6 +1,10 @@
 <template>
   <div>
-    <button class="btn white-btn">
+    <button
+      class="btn white-btn"
+      :style="{ height: height }"
+      type="button"
+    >
       <span>{{ text }}</span>
     </button>
   </div>
@@ -11,6 +15,10 @@ defineProps({
   text: {
     type: String,
     default: 'Button',
+  },
+  height: {
+    type: String,
+    default: '34px',
   },
 });
 </script>
@@ -25,17 +33,17 @@ defineProps({
   padding: 14px;
   gap: 10px;
   min-width: 58px;
-  height: 34px;
   border-radius: 6px;
   font-family: 'Inter', sans-serif;
   font-style: normal;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 14px;
   line-height: 17px;
   color: var(--black-color);
   background-color: var(--white-color);
   outline: none;
   transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
+  width: inherit;
 }
 
 .white-btn:hover {

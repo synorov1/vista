@@ -1,6 +1,6 @@
 <template>
   <div class="yes-no-container">
-    <div class="ellipse" :style="{ background: isAvailable ? '#8CFF63' : '#FF6363' }"></div>
+    <div class="ellipse" :style="{ background: isAvailable ? '#8CFF63' : '#FF6363' }" />
     <span class="text">{{ isAvailable ? availableText : unavailableText }}</span>
   </div>
 </template>

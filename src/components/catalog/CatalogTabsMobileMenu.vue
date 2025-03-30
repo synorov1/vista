@@ -4,37 +4,44 @@ import catalogItems from "./catalogItems.json";
 
 <template>
   <div class="catalog-tabs-mobile-menu">
-    <div class="menu-title">Каталог</div>
-    <div class="accordion" id="accordionMenu">
+    <div class="menu-title">
+      Каталог
+    </div>
+    <div id="accordionMenu" class="accordion">
       <div
-          v-for="(item, index) in catalogItems"
-          :key="index"
-          :class="[
+        v-for="(item, index) in catalogItems"
+        :key="index"
+        :class="[
           'accordion-item',
           {'is-not-expand': !item.childItems.length}
-      ]">
-        <h2 class="accordion-header" :id="'heading' + index">
+        ]"
+      >
+        <h2 :id="'heading' + index" class="accordion-header">
           <a
             :href="item.link"
             class="accordion-button"
             type="button"
             :data-bs-toggle="!!item.childItems.length && 'collapse'"
             :data-bs-target="!!item.childItems.length && '#collapse' + index"
-            aria-expanded="false" :aria-controls="'collapse' + index"
+            aria-expanded="false"
+            :aria-controls="'collapse' + index"
           >
             {{ item.title }}
           </a>
         </h2>
-        <div :id="'collapse' + index"
-             class="accordion-collapse collapse"
-             :aria-labelledby="'heading' + index"
-             data-bs-parent="#accordionMenu">
+        <div
+          :id="'collapse' + index"
+          class="accordion-collapse collapse"
+          :aria-labelledby="'heading' + index"
+          data-bs-parent="#accordionMenu"
+        >
           <div class="accordion-body">
             <a
-                v-for="(subItem, subIndex) in item.childItems"
-                :key="subIndex"
-                class="sub-menu-item"
-                :href="subItem.link">
+              v-for="(subItem, subIndex) in item.childItems"
+              :key="subIndex"
+              class="sub-menu-item"
+              :href="subItem.link"
+            >
               {{ subItem.title }}
             </a>
           </div>

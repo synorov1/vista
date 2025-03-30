@@ -8,6 +8,9 @@
 <script setup lang="ts">
 import ServicesList from "@/components/servicesList/ServicesList.vue";
 import ServicesCarousel from "@/components/serviceCarousel/ServicesCarousel.vue";
+import { usePageTitle } from '@/composables/usePageTitle';
+
+usePageTitle('Услуги');
 </script>
 
 <style>

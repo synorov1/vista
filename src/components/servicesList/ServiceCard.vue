@@ -2,28 +2,34 @@
 import XSBlueButton from "@/components/common/Buttons/XSBlueButton.vue";
 
 defineProps({
-  title: {type: String},
-  text: {type: String},
-  imageFirst: {type: String},
-  imageSecond: {type: String},
-  html: {type: String},
-  bannerImage: {type: String},
-  price: {type: String},
+  title: { type: String, default: '' },
+  text: { type: String, default: '' },
+  imageFirst: { type: String, default: '' },
+  imageSecond: { type: String, default: '' },
+  html: { type: String, default: '' },
+  bannerImage: { type: String, default: '' },
+  price: { type: String, default: '' },
 });
 </script>
 
 <template>
   <div class="service-card">
-    <h3 class="service-card__title">{{ title }}</h3>
+    <h3 class="service-card__title">
+      {{ title }}
+    </h3>
 
-    <p class="service-card__text">{{ text }}</p>
+    <p class="service-card__text">
+      {{ text }}
+    </p>
 
-    <p class="service-card__price">От {{ price }} ₽</p>
+    <p class="service-card__price">
+      От {{ price }} ₽
+    </p>
 
     <XSBlueButton
-        to="/service"
-        text="Подробнее"
-        class="service-card__btn"
+      to="/service"
+      text="Подробнее"
+      class="service-card__btn"
     />
   </div>
 </template>

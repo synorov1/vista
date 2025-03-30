@@ -15,28 +15,31 @@ function goToHome() {
 
 <template>
   <div class="services-list">
-    <TitleWithButton title="Услуги" button-text="На главную" :on-button-click="goToHome" class="services-list__header" />
+    <TitleWithButton
+      title="Услуги"
+      button-text="На главную"
+      :on-button-click="goToHome"
+      class="services-list__header"
+    />
     <div class="services-list__content">
       <div class="services-list__cards">
-
-        <ServiceCard class="services-list__card"
-            v-for="(service, index) in services"
-            :key="index"
-            :title="service.title"
-           :text="service.text"
-           :imageFirst="service['image-first']"
-           :imageSecond="service['image-second']"
-           :html="service.html"
-           :bannerImage="service['banner-image']"
-           :price="service.price"
+        <ServiceCard
+          v-for="(service, index) in services"
+          :key="index"
+          class="services-list__card"
+          :title="service.title"
+          :text="service.text"
+          :image-first="service['image-first']"
+          :image-second="service['image-second']"
+          :html="service.html"
+          :banner-image="service['banner-image']"
+          :price="service.price"
         />
       </div>
 
-      <ServiceFeedbackCard class="services-list__feedback"/>
+      <ServiceFeedbackCard class="services-list__feedback" />
     </div>
   </div>
-
-
 </template>
 
 <style scoped>

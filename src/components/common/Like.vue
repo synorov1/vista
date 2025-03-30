@@ -1,6 +1,15 @@
 <template>
-  <div class="like-container" @click="toggleLike" @mouseover="hoverLike" @mouseleave="leaveLike">
-    <img :src="heartSrc" alt="Heart Icon" class="heart" />
+  <div
+    class="like-container"
+    @click="toggleLike"
+    @mouseover="hoverLike"
+    @mouseleave="leaveLike"
+  >
+    <img
+      :src="heartSrc"
+      alt="Heart Icon"
+      class="heart"
+    >
   </div>
 </template>
 

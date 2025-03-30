@@ -1,0 +1,146 @@
+{
+  "reviews": [
+    {
+      "card": {
+        "id": "123123",
+        "link": "#",
+        "image": "https://avatars.mds.yandex.net/i?id=872cac56431682bb67072fe074acab87_l-5876563-images-thumbs&n=13",
+        "name": "Накладка DONIC BlueStar A1 1231",
+        "price": "6 750 ₽",
+        "oldPrice": "20 000 ₽"
+      },
+      "image": "",
+      "name": "Александр Е.",
+      "date": "16 марта 2024",
+      "rating": "4.8",
+      "text": "Без преувеличения лучший магазин в России. Огромный ассортимент в наличии! И пусть санкции отдохнут. Без преувеличения лучший магазин в России. Огромный ассортимент в наличии! И пусть санкции отдохнут"
+    },
+    {
+      "card": {
+        "id": "321",
+        "link": "#",
+        "image": "https://avatars.mds.yandex.net/i?id=872cac56431682bb67072fe074acab87_l-5876563-images-thumbs&n=13",
+        "name": "Накладка DONIC BlueStar A1",
+        "price": "6 750 ₽"
+      },
+      "image": "",
+      "name": "Ивано А.",
+      "date": "16 марта 2024",
+      "rating": "5",
+      "text": "Без преувеличения лучший магазин в России. Огромный ассортимент в наличии! И пусть санкции отдохнут. Без преувеличения лучший магазин в России. Огромный ассортимент в наличии! И пусть санкции отдохнут"
+    },
+    {
+      "card": {
+        "id": "321",
+        "link": "#",
+        "image": "https://avatars.mds.yandex.net/i?id=872cac56431682bb67072fe074acab87_l-5876563-images-thumbs&n=13",
+        "name": "Накладка DONIC BlueStar A1",
+        "price": "6 750 ₽",
+        "oldPrice": "20 000 ₽"
+      },
+      "image": "",
+      "name": "Petrov M.",
+      "date": "16 марта 2024",
+      "rating": "1",
+      "text": "Без преувеличения лучший магазин в России. Огромный ассортимент в наличии! И пусть санкции отдохнут. Без преувеличения лучший магазин в России. Огромный ассортимент в наличии! И пусть санкции отдохнут"
+    }
+  ],
+  "products": [
+    {
+      "title": "Рюкзак DONIC Nova",
+      "image": {},
+      "href": "https://www.vistasport.ru/catalog/myachi/myachi_dlya_nastolnogo_tennisa_dhs_3_d40_dual_bel_10_sht.html",
+      "price": 4625,
+      "oldPrice": 5800,
+      "liked": false,
+      "label": {
+          "color": "blue",
+          "text": "Уже у вас"
+      },
+      "delivery": {
+        "status": "Получен",
+        "date": "19.02.2024"
+      }
+    },
+    {
+      "title": "Рюкзак DONIC Nova",
+      "image": {},
+      "href": "https://www.vistasport.ru/catalog/myachi/myachi_dlya_nastolnogo_tennisa_dhs_3_d40_dual_bel_10_sht.html",
+      "price": 4625,
+      "oldPrice": 5800,
+      "liked": false,
+      "label": {
+          "color": "blue",
+          "text": "Уже у вас"
+      },
+      "delivery": {
+        "status": "Доставлено",
+        "date": "10.03.2024"
+      }
+    },
+    {
+      "title": "Рюкзак DONIC Nova",
+      "image": {},
+      "href": "https://www.vistasport.ru/catalog/myachi/myachi_dlya_nastolnogo_tennisa_dhs_3_d40_dual_bel_10_sht.html",
+      "price": 4625,
+      "oldPrice": 5800,
+      "liked": false,
+      "label": {
+          "color": "blue",
+          "text": "Уже у вас"
+      },
+      "delivery": {
+        "status": "Доставлено",
+        "date": "10.03.2024"
+      }
+    },
+    {
+      "title": "Рюкзак DONIC Nova",
+      "image": {},
+      "href": "https://www.vistasport.ru/catalog/myachi/myachi_dlya_nastolnogo_tennisa_dhs_3_d40_dual_bel_10_sht.html",
+      "price": 4625,
+      "oldPrice": 5800,
+      "liked": false,
+      "label": {
+          "color": "blue",
+          "text": "Уже у вас"
+      },
+      "delivery": {
+        "status": "Доставлено",
+        "date": "10.03.2024"
+      }
+    },
+    {
+      "title": "Рюкзак DONIC Nova",
+      "image": {},
+      "href": "https://www.vistasport.ru/catalog/myachi/myachi_dlya_nastolnogo_tennisa_dhs_3_d40_dual_bel_10_sht.html",
+      "price": 4625,
+      "oldPrice": 5800,
+      "liked": false,
+      "label": {
+          "color": "blue",
+          "text": "Уже у вас"
+      },
+      "delivery": {
+        "status": "Доставлено",
+        "date": "10.03.2024"
+      }
+    },
+    {
+      "title": "Рюкзак DONIC Nova",
+      "image": {},
+      "href": "https://www.vistasport.ru/catalog/myachi/myachi_dlya_nastolnogo_tennisa_dhs_3_d40_dual_bel_10_sht.html",
+      "price": 4625,
+      "oldPrice": 5800,
+      "liked": false,
+      "label": {
+          "color": "blue",
+          "text": "Уже у вас"
+      },
+      "delivery": {
+        "status": "Доставлено",
+        "date": "10.03.2024"
+      }
+    }
+  ]
+}

@@ -1,17 +1,36 @@
 <template>
-    <div class="section">
-        <div class="header">
-            <div class="title">Популярные категории</div>
-            <RoundButton class="button" text="Задать вопрос" @click="openQA" />
-            <Link class="link" text="Задать вопрос" @click="openQA" />
-        </div>
-        <div class="cards">
-            <MainCard v-for="(category, index) in showedCategory" :key="index" :content="category" />
-            <StubCard v-if="showStubCard" />
-        </div>
-
-        <SquareButton class="show-more-button" v-if="windowWidth < 1024 && !isShowMore" @click="showMore" text="Показать ещё категории" />
+  <div class="section">
+    <div class="header">
+      <div class="title">
+        Популярные категории
+      </div>
+      <RoundButton
+        class="button"
+        text="Задать вопрос"
+        @click="handleClick"
+      />
+      <Link
+        class="link"
+        text="Задать вопрос"
+        @click="handleClick"
+      />
     </div>
+    <div class="cards">
+      <MainCard
+        v-for="(category, index) in showedCategory"
+        :key="index"
+        :content="category"
+      />
+      <StubCard v-if="showStubCard" />
+    </div>
+
+    <SquareButton
+      v-if="windowWidth < 1024 && !isShowMore"
+      class="show-more-button"
+      text="Показать ещё категории"
+      @click="showMore"
+    />
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -22,11 +41,12 @@ import StubCard from '@/components/cards/StubCard.vue';
 import RoundButton from '@/components/common/Buttons/RoundButton.vue';
 import SquareButton from '@/components/common/Buttons/SquareButton.vue';
 import { ref, computed, onMounted, onUnmounted } from 'vue';
-
+import { useQuestionModal } from '@/composables/useModal';
 
 const categories = data;
 const isShowMore = ref(false);
 const windowWidth = ref(0);
+const { openQuestionModal } = useQuestionModal();
 
 const showedCategory = computed(() => {
     if (windowWidth.value < 1024 && !isShowMore.value) {
@@ -63,12 +83,12 @@ onUnmounted(() => {
     window.removeEventListener('resize', handleResize);
 })
 
-const openQA = () => {
-    console.log('open ask question')
-}
-
 const handleResize = () => {
     windowWidth.value = window.innerWidth;
+}
+
+const handleClick = () => {
+  openQuestionModal()
 }
 </script>
 

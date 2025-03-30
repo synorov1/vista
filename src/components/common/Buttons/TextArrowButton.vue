@@ -2,7 +2,7 @@
   <div>
     <button class="btn custom-btn">
       <span class="text">{{ text }}</span>
-      <span class="icon"></span>
+      <span class="icon" />
     </button>
   </div>
 </template>

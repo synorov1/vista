@@ -1,6 +1,6 @@
 <template>
   <a :href="link" class="text-icon-container">
-    <div class="icon"></div>
+    <div class="icon" />
     <span class="text">{{ text }}</span>
   </a>
 </template>

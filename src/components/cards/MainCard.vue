@@ -1,17 +1,19 @@
 <template>
-    <a class="main-card" :href="content.href">
-        <div class="image">
-            <img :src="`/images${content.image.src}`" :srcset="`/images${content.image.src2} 2x`" :alt="content.title">
-        </div>
-        <div class="header">
-            <div class="title">{{ content.title }}</div>
-            <div class="count">{{ content.count }} товара</div>
-        </div>
-        <div class="description" v-html="content.desc"></div>
-        <div class="button">
-
-        </div>
-    </a>
+  <a class="main-card" :href="content.href">
+    <div class="image">
+      <img
+        :src="`/images${content.image.src}`"
+        :srcset="`/images${content.image.src2} 2x`"
+        :alt="content.title"
+      >
+    </div>
+    <div class="header">
+      <div class="title">{{ content.title }}</div>
+      <div class="count">{{ content.count }} товара</div>
+    </div>
+    <div class="description" v-html="content.desc" />
+    <div class="button" />
+  </a>
 </template>
 
 <script setup lang="ts">

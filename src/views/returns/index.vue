@@ -1,27 +1,36 @@
 <template>
   <div class="page-container">
     <GradientBanner
-        :title=data.bannerTitle
-        :subtitle=data.bannerSubtitle
+      :title="data.bannerTitle"
+      :subtitle="data.bannerSubtitle"
     />
     <TitleWithButton
-        :title=data.title
-        :button-text=data.buttonText
-        :on-button-click=onTitleButtonClick
+      :title="data.title"
+      :button-text="data.buttonText"
+      :on-button-click="onTitleButtonClick"
     />
-    <p class="text">{{data.paragraph_1}}</p>
+    <p class="text">
+      {{ data.paragraph_1 }}
+    </p>
     <List
-        :title=data.listTitle
-        :list=data.listItems
+      :title="data.listTitle"
+      :list="data.listItems"
     />
     <div class="blocks-container">
-      <GrayInfoBlock v-for="(item, index) in data.infoBlocks" :key="index" :title=item.title :subtitle="item.subtitle">
+      <GrayInfoBlock
+        v-for="(item, index) in data.infoBlocks"
+        :key="index"
+        :title="item.title"
+        :subtitle="item.subtitle"
+      >
         <template v-for="(slot, slotIndex) in item.slots" :key="slotIndex">
           <p class="block-text" v-html="slot" />
         </template>
       </GrayInfoBlock>
     </div>
-    <p class="text">{{data.paragraph_2}}</p>
+    <p class="text">
+      {{ data.paragraph_2 }}
+    </p>
   </div>
 </template>
 
@@ -31,8 +40,16 @@ import TitleWithButton from "@/components/common/TitleWithButton.vue";
 import List from "@/components/common/List.vue";
 import GrayInfoBlock from "@/components/common/GrayInfoBlock.vue";
 import data from './returns.json';
+import { usePageTitle } from '@/composables/usePageTitle';
 
-const onTitleButtonClick = () => console.log('Задать вопрос: click');
+usePageTitle('Возврат товара');
+import { useQuestionModal } from '@/composables/useModal'
+
+const { openQuestionModal } = useQuestionModal()
+
+const onTitleButtonClick = () => {
+  openQuestionModal()
+}
 
 </script>
 

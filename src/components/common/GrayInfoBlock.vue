@@ -1,8 +1,12 @@
 <template>
   <div class="block-container">
-    <p class="title">{{title}}</p>
-    <p class="subtitle" v-if="subtitle">{{subtitle}}</p>
-    <slot class="slot"></slot>
+    <p class="title">
+      {{ title }}
+    </p>
+    <p v-if="subtitle" class="subtitle">
+      {{ subtitle }}
+    </p>
+    <slot class="slot" />
   </div>
 </template>
 
@@ -15,6 +19,7 @@ defineProps({
   },
   subtitle: {
     type: String,
+    default: '',
   },
 });
 

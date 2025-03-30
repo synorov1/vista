@@ -1,9 +1,13 @@
 <template>
-    <div class="main-card">
-        <div class="title">Не нашли нужную категорию?</div>
-        <div class="description">Если вы не нашли нужную категорию, не беспокойтесь! Просто оставьте свои контактные данные, и мы свяжемся с вами в ближайшее время.</div>
-        <SquareButton text="Оставить заявку менеджеру" class="button" />
+  <div class="main-card">
+    <div class="title">
+      Не нашли нужную категорию?
     </div>
+    <div class="description">
+      Если вы не нашли нужную категорию, не беспокойтесь! Просто оставьте свои контактные данные, и мы свяжемся с вами в ближайшее время.
+    </div>
+    <SquareButton text="Оставить заявку менеджеру" class="button" />
+  </div>
 </template>
 
 <script setup lang="ts">

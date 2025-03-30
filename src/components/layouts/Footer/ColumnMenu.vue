@@ -1,9 +1,21 @@
 <template>
   <div class="menu-column row">
-    <div v-for="(column, cIndex) in preparedMenu" :key="cIndex" class="col">
-      <div class="menu-item" v-for="(category, index) in column" :key="index">
-        <a class="menu-item-header" :href="category.link">{{category.text}}</a>
-        <div v-for="(subItem, subIndex) in category.subMenu" :key="subIndex" class="menu-item-sub">
+    <div
+      v-for="(column, cIndex) in preparedMenu"
+      :key="cIndex"
+      class="col"
+    >
+      <div
+        v-for="(category, index) in column"
+        :key="index"
+        class="menu-item"
+      >
+        <a class="menu-item-header" :href="category.link">{{ category.text }}</a>
+        <div
+          v-for="(subItem, subIndex) in category.subMenu"
+          :key="subIndex"
+          class="menu-item-sub"
+        >
           <a :href="subItem.link">{{ subItem.text }}</a>
         </div>
       </div>

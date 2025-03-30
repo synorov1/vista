@@ -1,7 +1,6 @@
 <script setup lang="ts">
 
 import SquareButton from "@/components/common/Buttons/SquareButton.vue";
-import RoundButton from "@/components/common/Buttons/RoundButton.vue";
 import TitleWithButton from "@/components/common/TitleWithButton.vue";
 
 defineProps({
@@ -16,7 +15,12 @@ defineProps({
 
 <template>
   <div class="service-info">
-    <TitleWithButton :title="title" button-text="На главную" :on-button-click="() => console.log('На главную')" class="service-info__header" />
+    <TitleWithButton
+      :title="title"
+      button-text="На главную"
+      :on-button-click="() => console.log('На главную')"
+      class="service-info__header"
+    />
 
     <p class="service-info__text">
       {{ text }}
@@ -28,7 +32,7 @@ defineProps({
     </div>
     <SquareButton text="Добавить в корзину" class="service-info__button" />
 
-    <div v-html="description" class="service-info__description"></div>
+    <div class="service-info__description" v-html="description" />
   </div>
 </template>
 

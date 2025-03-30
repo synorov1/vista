@@ -1,28 +1,129 @@
+<script setup lang='ts'>
+import MainBanner from '@/components/home/MainBanner.vue';
+import PopularCategories from '@/components/home/PopularCategories.vue';
+import HotDeals from '@/components/home/HotDeals.vue';
+import ReklamaBanner from '@/components/home/ReklamaBanner.vue';
+import PromoSection from '@/components/home/PromoSection.vue';
+import BestOffers from '@/components/home/BestOffers.vue';
+import BrandList from '@/components/home/BrandList.vue';
+import ArticlesSection from '@/components/home/ArticlesSection.vue';
+import { usePageTitle } from '@/composables/usePageTitle';
+
+import data from '@/views/index.json';
+
+usePageTitle('Главная');
+
+const routes = [
+  { path: '/catalog', label: '/catalog' },
+  { path: '/catalog/blades', label: '/catalog/blades' },
+  { path: '/catalog/blades/product', label: '/catalog/blades/product' },
+  { path: '/catalog/blades/product/reviews', label: '/catalog/blades/product/reviews' },
+  { path: '/components', label: '/components' },
+  { path: '/404', label: '/404' },
+  { path: '/returns', label: '/returns' },
+  { path: '/delivery', label: '/delivery' },
+  { path: '/services', label: '/services' },
+  { path: '/reviews', label: '/reviews' },
+  { path: '/service', label: '/service' },
+  { path: '/blog', label: '/blog' },
+  { path: '/post', label: '/post' },
+  { path: '/games', label: '/games' },
+  { path: '/shop', label: '/shop' },
+  { path: '/about', label: '/about' },
+  { path: '/contacts', label: '/contacts' },
+  { path: '/profile', label: '/profile' },
+  { path: '/profile/favorite', label: '/profile/favorite' },
+  { path: '/profile/orders', label: '/profile/orders' },
+  { path: '/profile/reviews', label: '/profile/reviews' },
+  { path: '/profile/history', label: '/profile/history' }
+];
+</script>
+
 <template>
-  <div class="section">
-    <router-link class="link" to="/catalog">/catalog</router-link>
-    <router-link class="link" to="/components">/components</router-link>
-    <router-link class="link" to="/404">/404</router-link>
-    <router-link class="link" to="/returns">/returns</router-link>
-    <router-link class="link" to="/delivery">/delivery</router-link>
-    <router-link class="link" to="/services">/services</router-link>
-    <router-link class="link" to="/service">/service</router-link>
+  <MainBanner :data="data.mainBanner" />
+
+  <!--  Популярные категории-->
+  <PopularCategories :data="data.popularCategories" />
+
+  <!--  Горячие скидки-->
+  <HotDeals />
+
+  <ReklamaBanner :data="data.reklamaTop" />
+
+  <PromoSection />
+
+  <!--  Выгодные предложения-->
+  <BestOffers :data="data.bestOffers" />
+
+  <ReklamaBanner :data="data.reklamaBottom" />
+
+  <!--  Бренды  в продаже-->
+  <BrandList :data="data.brandList" />
+
+  <!--  Полезные статьи-->
+  <ArticlesSection :data="data.articlesSection" />
+
+  <div class="routes-container">
+    <router-link 
+      v-for="route in routes" 
+      :key="route.path"
+      class="link" 
+      :to="route.path"
+    >
+      {{ route.label }}
+    </router-link>
   </div>
 </template>
 
-<script setup lang="ts">
-</script>
+<style>
+@layer home {
+  .container {
+    display: block;
+
+    @media (min-width: 1024px) {
+      --bs-gutter-x: 0;
+
+      max-width: 964px;
+    }
+    @media (min-width: 1440px) {
+      max-width: 1200px;
+    }
+  }
+}
+</style>
 
 <style scoped>
-.section {
-  margin-bottom: 100px;
-  display: flex;
-  flex-direction: column;
-}
-.link {
-  font-size: 30px;
-  font-weight: 500;
-  margin-bottom: 10px;
+.routes-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+  margin-top: 60px;
+  margin-bottom: 60px;
 }
 
+.link {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--blue-400-color);
+  text-decoration: none;
+  padding: 8px;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.link:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+@media (min-width: 768px) {
+  .routes-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .routes-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
 </style>

@@ -1,23 +1,50 @@
 <template>
   <div class="menu-footer">
-    <div class="menu-title">Меню</div>
-    <div v-if="!isColumnMenuVisible" class="accordion" id="accordionMenu">
-      <div v-for="(item, index) in menuData" :key="index" class="accordion-item">
-        <h2 class="accordion-header" :id="'heading' + index">
-          <button class="accordion-button" type="button" data-bs-toggle="collapse" :data-bs-target="'#collapse' + index" aria-expanded="false" :aria-controls="'collapse' + index">
-            <a :href="item.link">{{ item.text }}</a>
+    <div class="menu-title">
+      Меню
+    </div>
+    <div
+      v-if="!isColumnMenuVisible"
+      id="accordionMenu"
+      class="accordion"
+    >
+      <div
+        v-for="(item, index) in menuData"
+        :key="index"
+        class="accordion-item"
+      >
+        <h2 :id="'heading' + index" class="accordion-header">
+          <button
+            class="accordion-button"
+            type="button"
+            data-bs-toggle="collapse"
+            :data-bs-target="'#collapse' + index"
+            aria-expanded="false"
+            :aria-controls="'collapse' + index"
+          >
+            <router-link :to="item.link">{{ item.text }}</router-link>
           </button>
         </h2>
-        <div :id="'collapse' + index" class="accordion-collapse collapse" :aria-labelledby="'heading' + index" data-bs-parent="#accordionMenu">
+        <div
+          :id="'collapse' + index"
+          class="accordion-collapse collapse"
+          :aria-labelledby="'heading' + index"
+          data-bs-parent="#accordionMenu"
+        >
           <div class="accordion-body">
-            <a v-for="(subItem, subIndex) in item.subMenu" :key="subIndex" class="sub-menu-item" :href="subItem.link">
+            <router-link
+              v-for="(subItem, subIndex) in item.subMenu"
+              :key="subIndex"
+              class="sub-menu-item"
+              :to="subItem.link"
+            >
               {{ subItem.text }}
-            </a>
+            </router-link>
           </div>
         </div>
       </div>
     </div>
-    <ColumnMenu v-if="isColumnMenuVisible" :menuData="menuData" />
+    <ColumnMenu v-if="isColumnMenuVisible" :menu-data="menuData" />
     <div class="copyright">
       © 2024 При полной или частичной перепечатке материалов ссылка на сайт <a class="copyright-link" href="Vistasport.ru">Vistasport.ru</a> обязательна
     </div>
@@ -31,6 +58,7 @@
 import ColumnMenu from './ColumnMenu.vue';
 import { computed } from 'vue';
 import data from './Menu.mock.json';
+
 export interface SubMenuItem {
     link: string;
     text: string;

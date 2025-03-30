@@ -1,19 +1,32 @@
 <template>
   <div class="filter-component">
-    <SquareButton class="filter-btn" text="Текст" @click="openModal" />
+    <SquareButton
+      class="filter-btn"
+      text="Текст"
+      @click="openModal"
+    />
     <div class="filters">
       <div class="filter-section">
         <h5>Цена</h5>
         <div class="price-search">
-          <RangeSlider :min="0" :max="10000" v-model:minValue="filters.price.min" v-model:maxValue="filters.price.max" />
+          <RangeSlider
+            :model-value="[filters.price.min, filters.price.max]"
+            :min="50"
+            :max="1000000"
+            @update:model-value="handlePriceUpdate"
+          />
         </div>
       </div>
       <div class="filter-section">
         <h5>Бренд</h5>
         <div class="brand-filter">
-          <div class="indent" v-for="brand in filters.brands" :key="brand.name">
+          <div
+            v-for="brand in filters.brands"
+            :key="brand.name"
+            class="indent"
+          >
             <label class="checkbox-label">
-              <input type="checkbox" class="checkbox-input" />
+              <input type="checkbox" class="checkbox-input">
               <span class="brand">{{ brand.name }} ({{ brand.count }})</span>
             </label>
           </div>
@@ -22,37 +35,67 @@
       <div class="filter-section">
         <h5>Тип накладки</h5>
         <div class="type-filter">
-          <div class="indent" v-for="type in filters.types" :key="type.name">
+          <div
+            v-for="type in filters.types"
+            :key="type.name"
+            class="indent"
+          >
             <label class="checkbox-label">
-              <input type="checkbox" class="checkbox-input" />
+              <input type="checkbox" class="checkbox-input">
               <span class="type">{{ type.name }} ({{ type.count }})</span>
             </label>
           </div>
         </div>
       </div>
-      <XSBlueButton class="filter-btnSearch" text="Купить" height="45px" />
+      <XSBlueButton
+        class="filter-btnSearch"
+        text="Купить"
+        height="45px"
+      />
     </div>
 
     <!-- Модальное окно -->
-    <div class="modal fade" id="filterModal" tabindex="-1" aria-labelledby="filterModalLabel" aria-hidden="true">
+    <div
+      id="filterModal"
+      class="modal fade"
+      tabindex="-1"
+      aria-labelledby="filterModalLabel"
+      aria-hidden="true"
+    >
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="filterModalLabel">Цена</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <h5 id="filterModalLabel" class="modal-title">
+              Цена
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            />
           </div>
           <div class="modal-body">
             <div class="filter-section">
               <div class="price-search">
-                <RangeSlider :min="0" :max="10000" v-model:minValue="filters.price.min" v-model:maxValue="filters.price.max" />
+                <RangeSlider
+                  :model-value="[filters.price.min, filters.price.max]"
+                  :min="50"
+                  :max="1000000"
+                  @update:model-value="handlePriceUpdate"
+                />
               </div>
             </div>
             <div class="filter-section">
               <h5>Бренд</h5>
               <div class="brand-filter">
-                <div class="indent" v-for="brand in filters.brands" :key="brand.name">
+                <div
+                  v-for="brand in filters.brands"
+                  :key="brand.name"
+                  class="indent"
+                >
                   <label class="checkbox-label">
-                    <input type="checkbox" class="checkbox-input" />
+                    <input type="checkbox" class="checkbox-input">
                     <span class="brand">{{ brand.name }} ({{ brand.count }})</span>
                   </label>
                 </div>
@@ -61,9 +104,13 @@
             <div class="filter-section">
               <h5>Тип накладки</h5>
               <div class="type-filter">
-                <div class="indent" v-for="type in filters.types" :key="type.name">
+                <div
+                  v-for="type in filters.types"
+                  :key="type.name"
+                  class="indent"
+                >
                   <label class="checkbox-label">
-                    <input type="checkbox" class="checkbox-input" />
+                    <input type="checkbox" class="checkbox-input">
                     <span class="type">{{ type.name }} ({{ type.count }})</span>
                   </label>
                 </div>
@@ -71,7 +118,11 @@
             </div>
           </div>
           <div class="modal-footer">
-            <XSBlueButton class="filter-btnSearch" text="Купить" height="45px" />
+            <XSBlueButton
+              class="filter-btnSearch"
+              text="Купить"
+              height="45px"
+            />
           </div>
         </div>
       </div>
@@ -84,7 +135,6 @@ import { ref, watch } from 'vue';
 import SquareButton from '~/components/common/buttons/SquareButton.vue';
 import XSBlueButton from '~/components/common/buttons/XSBlueButton.vue';
 import RangeSlider from '~/components/filter/RangeSlider.vue';
-import { Modal } from 'bootstrap';
 
 const filters = ref({
   price: {
@@ -109,6 +159,11 @@ const filters = ref({
   ]
 });
 
+const handlePriceUpdate = ([min, max]: [number, number]) => {
+  filters.value.price.min = min;
+  filters.value.price.max = max;
+};
+
 watch(() => filters.value.price.min, (newVal) => {
   if (newVal > filters.value.price.max) {
     filters.value.price.max = newVal;
@@ -124,8 +179,7 @@ watch(() => filters.value.price.max, (newVal) => {
 const openModal = () => {
   const modalElement = document.getElementById('filterModal');
   if (modalElement) {
-    const modal = new Modal(modalElement);
-    modal.show();
+    // show modal
   }
 };
 </script>

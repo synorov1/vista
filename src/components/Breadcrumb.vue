@@ -17,8 +17,10 @@ defineProps({
 
 <template>
   <router-link :to="'/' + path" class="breadcrumb">
-    <div  :class="['breadcrumb__text', {'breadcrumb__text--disabled': disabled}]">{{ text }}</div>
-    <img :src="disabled ? '/src/assets/icons/gray-arrow-right.svg' : '/src/assets/icons/arrow.svg'" :class="['breadcrumb__arrow', {'breadcrumb__arrow--disabled': disabled}]" />
+    <div :class="['breadcrumb__text', {'breadcrumb__text--disabled': disabled}]">
+      {{ text }}
+    </div>
+    <img :src="disabled ? '/src/assets/icons/gray-arrow-right.svg' : '/src/assets/icons/arrow.svg'" :class="['breadcrumb__arrow', {'breadcrumb__arrow--disabled': disabled}]">
   </router-link>
 </template>
 

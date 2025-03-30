@@ -1,6 +1,6 @@
 <template>
   <div class="icon-container">
-    <div class="icon"></div>
+    <div class="icon" />
     <span class="text">{{ text }}</span>
   </div>
 </template>

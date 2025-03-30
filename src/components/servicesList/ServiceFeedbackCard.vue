@@ -6,9 +6,18 @@ import XSBlueButton from "@/components/common/Buttons/XSBlueButton.vue";
 <template>
   <div class="service-feedback-card">
     <div class="service-feedback-card__info">
-      <div class="service-feedback-card__title">Не нашли услугу?</div>
-      <div class="service-feedback-card__text">Попробуйте найти услугу по нашему поиску или оставьте ваш номер телефона нашим менеджерам, мы вам поможем!</div>
-      <XSBlueButton class="service-feedback-card__btn" is-border height="45px" text="Оставить заявку менеджеру" />
+      <div class="service-feedback-card__title">
+        Не нашли услугу?
+      </div>
+      <div class="service-feedback-card__text">
+        Попробуйте найти услугу по нашему поиску или оставьте ваш номер телефона нашим менеджерам, мы вам поможем!
+      </div>
+      <XSBlueButton
+        class="service-feedback-card__btn"
+        is-border
+        height="45px"
+        text="Оставить заявку менеджеру"
+      />
     </div>
   </div>
 </template>

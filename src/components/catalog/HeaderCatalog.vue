@@ -1,29 +1,3 @@
-<script setup lang="ts">
-import CatalogTabsMenu from "@/components/catalog/CatalogTabsMenu.vue";
-import RecommendationBanner from "@/components/common/RecommendationBanner.vue";
-import GreyButton from "@/components/common/Buttons/GreyButton.vue";
-import CatalogTabsMobileMenu from "@/components/catalog/CatalogTabsMobileMenu.vue";
-import {onMounted, onUnmounted, ref} from "vue";
-
-const isMobileScreen = ref(false);
-
-const checkScreenSize = () => {
-  isMobileScreen.value = window.innerWidth < 768;
-
-  console.log(isMobileScreen.value);
-}
-
-onMounted(() => {
-  window.addEventListener("resize", checkScreenSize);
-  checkScreenSize();
-})
-
-onUnmounted(() => {
-  window.removeEventListener("resize", checkScreenSize);
-})
-
-</script>
-
 <template>
   <div class="header-catalog-wrap">
     <div class="header-catalog">
@@ -34,25 +8,59 @@ onUnmounted(() => {
 
         <div class="header-catalog-banner-box">
           <RecommendationBanner
-              class="header-catalog-banner"
-              title="Рекомендуем вам"
-              product-image="/src/assets/images/t-shirt.png"
-              price="1250"
-              subtitle="Последний шанс купить"
+            class="header-catalog-banner"
+            title="Рекомендуем вам"
+            product-image="/src/assets/images/t-shirt.png"
+            price="1250"
+            subtitle="Последний шанс купить"
           />
 
-
           <GreyButton
-              class="header-catalog-btn"
-              text="Задать вопрос"
-              height="45px"
+            class="header-catalog-btn"
+            text="Задать вопрос"
+            height="45px"
+            @click="handleClick"
           />
         </div>
       </div>
-
     </div>
   </div>
 </template>
+
+<script setup lang="ts">
+import { onMounted, onUnmounted, ref, defineAsyncComponent } from "vue"
+import { useQuestionModal } from '@/composables/useModal'
+
+const CatalogTabsMenu = defineAsyncComponent(() => import("@/components/catalog/CatalogTabsMenu.vue"))
+const RecommendationBanner = defineAsyncComponent(() => import("@/components/common/RecommendationBanner.vue"))
+const GreyButton = defineAsyncComponent(() => import("@/components/common/Buttons/GreyButton.vue"))
+const CatalogTabsMobileMenu = defineAsyncComponent(() => import("@/components/catalog/CatalogTabsMobileMenu.vue"))
+
+defineOptions({
+  name: 'HeaderCatalog'
+})
+
+const { openQuestionModal } = useQuestionModal()
+
+const isMobileScreen = ref(false)
+
+const checkScreenSize = () => {
+  isMobileScreen.value = window.innerWidth < 768
+}
+
+const handleClick = () => {
+  openQuestionModal()
+}
+
+onMounted(() => {
+  window.addEventListener("resize", checkScreenSize)
+  checkScreenSize()
+})
+
+onUnmounted(() => {
+  window.removeEventListener("resize", checkScreenSize)
+})
+</script>
 
 <style scoped>
 .header-catalog-wrap {
@@ -68,7 +76,6 @@ onUnmounted(() => {
   background: rgb(255, 255, 255);
   max-height: calc(100vh - 145px);
   overflow: auto;
-
 
   @media (min-width: 321px) {
     padding: 30px 0;
@@ -107,5 +114,4 @@ onUnmounted(() => {
     margin-top: 40px;
   }
 }
-
 </style>

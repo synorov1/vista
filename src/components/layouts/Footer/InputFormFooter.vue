@@ -1,16 +1,24 @@
 <template>
   <div class="reklama-container col-12 col-md-6 col-lg-6 col-xl-6 mx-auto">
     <div class="reklama">
-      <div class="reklama-text">Нет времени искать</div>
+      <div class="reklama-text">
+        Нет времени искать
+      </div>
       <div class="reklama-description">
         Оставьте ваш номер телефона, наш специалист свяжется с вами в течение 15 минут и поможет с выбором
       </div>
-      <div class="phone-number">Номер телефона</div>
-      <div class="btn-reklama">
-        <div class="btn-reklama-text">+7</div>
+      <div class="phone-number">
+        Номер телефона
       </div>
-      <div class="btn">
-        <div class="btn-text">Оставить заявку</div>
+      <div class="btn-reklama">
+        <div class="btn-reklama-text">
+          +7
+        </div>
+      </div>
+      <div class="btn" @click="openSubscribeModal">
+        <div class="btn-text">
+          Оставить заявку
+        </div>
       </div>
       <div class="reklama-policy">
         Оставляя ваши данные, вы соглашаетесь с политикой конфиденциальности ИП Макарова Елена Валерьевна
@@ -20,6 +28,9 @@
 </template>
 
 <script setup lang="ts">
+import { useSubscribeModal } from '@/composables/useModal'
+
+const { openSubscribeModal } = useSubscribeModal()
 </script>
 
 <style scoped>

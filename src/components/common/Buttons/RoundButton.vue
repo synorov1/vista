@@ -1,7 +1,7 @@
 <template>
-    <button class="btn round-btn">
-      <span>{{ text }}</span>
-    </button>
+  <button class="btn round-btn">
+    <span>{{ text }}</span>
+  </button>
 </template>
 
 <script setup lang="ts">
@@ -23,7 +23,6 @@ defineProps({
   align-items: center;
   padding: 14px;
   gap: 10px;
-  min-width: 58px;
   height: 45px;
   left: 164px;
   border: 1px solid var(--blue-400-color);
@@ -49,6 +48,7 @@ defineProps({
 }
 
 @media (max-width: 600px) {
+  /* Почему это в кнопке? */
   .round-btn {
     width: 58px;
     height: 34px;

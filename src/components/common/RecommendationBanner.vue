@@ -27,13 +27,17 @@ defineProps({
 <template>
   <div class="recommendation-banner">
     <div class="recommendation-banner-title-block">
-      <h3 class="recommendation-banner-title">{{ title }}</h3>
-      <h2 class="recommendation-banner-subtitle">{{ subtitle }}</h2>
+      <h3 class="recommendation-banner-title">
+        {{ title }}
+      </h3>
+      <h2 class="recommendation-banner-subtitle">
+        {{ subtitle }}
+      </h2> 
 
       <XSBlueButton
-          :text="`Купить за ${price} ₽`"
-          height="45px"
-          class="recommendation-banner-buy-btn-horizontal"
+        :text="`Купить за ${price} ₽`"
+        height="45px"
+        class="recommendation-banner-buy-btn-horizontal"
       />
     </div>
     
@@ -48,15 +52,15 @@ defineProps({
 
     <div class="recommendation-banner-btn-box">
       <XSBlueButton
-          :text="`Купить за ${price} ₽`"
-          height="45px"
-          class="recommendation-banner-buy-btn"
+        :text="`Купить за ${price} ₽`"
+        height="45px"
+        class="recommendation-banner-buy-btn"
       />
     </div>
 
     <BlackArrowButton
-        text="Все"
-        class="recommendation-banner-image-arrow-btn"
+      text="Все"
+      class="recommendation-banner-image-arrow-btn"
     />
   </div>
 </template>

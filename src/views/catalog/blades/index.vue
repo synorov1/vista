@@ -10,7 +10,11 @@
       <FilterComponent />
     </template>
     <template #cards>
-      <ItemCard v-for="product in products" :key="product.href" :content="product" />
+      <ItemCard
+        v-for="product in products"
+        :key="product.href"
+        :content="product"
+      />
     </template>
   </CardContainer>
 </template>
@@ -19,11 +23,18 @@
 import { ref, onMounted } from 'vue';
 import CardContainer from '@/components/layouts/CardContainer.vue';
 import ItemCard from '@/components/cards/ItemCard.vue';
-import ButtonGroup from '@/components/common/buttons/ButtonGroup.vue';
+import ButtonGroup from '@/components/common/Buttons/ButtonGroup.vue';
 import FilterComponent from '@/components/filter/FilterComponent.vue';
 import DropdownRadioGroup from '@/components/DropdownRadioGroup.vue';
 
-const products = ref([]);
+interface Product {
+  href: string
+  title: string
+  price: number
+  img: string
+}
+
+const products = ref<Product[]>([]);
 
 const buttonTexts = [
   'Andro',

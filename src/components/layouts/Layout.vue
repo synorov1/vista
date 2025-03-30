@@ -1,21 +1,22 @@
 <template>
-    <div class="layout">
-      <Header></Header>
-      <div class="container">
-        <Breadcrumbs />
-        <slot></slot>
-      </div>
-      <Footer></Footer>
+  <div class="layout">
+    <Header />
+    <div class="container">
+      <Breadcrumbs />
+      <slot />
     </div>
-  </template>
+    <Footer />
+  </div>
+</template>
   
-  <script setup lang="ts"> 
-  import Header from '~/components/layouts/Header/index.vue';
-  import Footer from '~/components/layouts/Footer.vue';
-  import Breadcrumbs from "@/components/Breadcrumbs.vue";
-  </script>
-  
-  <style>
+<script setup lang="ts"> 
+import Header from '~/components/layouts/Header/index.vue';
+import Footer from '~/components/layouts/Footer.vue';
+import Breadcrumbs from "@/components/Breadcrumbs.vue";
+</script>
+
+<style>
+@layer layout {
   .container {
     gap: 10px;
     display: flex;
@@ -25,5 +26,6 @@
         max-width: 1224px; /* Устанавливаем максимальную ширину */
     }
   }
-  </style>
+}
+</style>
   

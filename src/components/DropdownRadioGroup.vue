@@ -1,20 +1,38 @@
 <template>
   <div class="dropdown-radio-group">
-    <div class="dropdown" v-if="isMobile">
-      <button class="btn btn-secondary dropdown-toggle" type="button" @click="toggleDropdown">
+    <div v-if="isMobile" class="dropdown">
+      <button
+        class="btn btn-secondary dropdown-toggle"
+        type="button"
+        @click="toggleDropdown"
+      >
         {{ selectedOption }}
       </button>
-      <ul class="dropdown-menu" v-if="isDropdownOpen">
-        <li v-for="(option, index) in options" :key="index" @click="selectOption(option)">
+      <ul v-if="isDropdownOpen" class="dropdown-menu">
+        <li
+          v-for="(option, index) in options"
+          :key="index"
+          @click="selectOption(option)"
+        >
           {{ option }}
         </li>
       </ul>
     </div>
-    <div class="radio-group" v-else>
-      <label v-for="(option, index) in options" :key="index" class="radio-label" :class="{ active: option === selectedOption }">
-        <input type="radio" name="options" :value="option" v-model="selectedOption" />
+    <div v-else class="radio-group">
+      <label
+        v-for="(option, index) in options"
+        :key="index"
+        class="radio-label"
+        :class="{ active: option === selectedOption }"
+      >
+        <input
+          v-model="selectedOption"
+          type="radio"
+          name="options"
+          :value="option"
+        >
         <span>{{ option }}</span>
-        <div v-if="index < options.length - 1" class="separator"></div>
+        <div v-if="index < options.length - 1" class="separator" />
       </label>
     </div>
   </div>

@@ -1,17 +1,29 @@
 <template>
   <div class="banner-container">
     <div class="text">
-      <p class="title">{{title}}</p>
-      <p class="subtitle">{{subtitle}}</p>
-      <p class="price" v-if="price">От {{price}} ₽</p>
+      <p class="title">
+        {{ title }}
+      </p>
+      <p class="subtitle">
+        {{ subtitle }}
+      </p>
+      <p v-if="price" class="price">
+        От {{ price }} ₽
+      </p>
     </div>
     <div class="image-wrap">
-      <img :src="imageSrc" alt="Banner Image" class="image" />
+      <img
+        :src="imageSrc"
+        alt="Banner Image"
+        class="image"
+      >
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
+import { useSlots } from 'vue';
+
 defineProps({
   title: {
     type: String,
@@ -19,7 +31,7 @@ defineProps({
   },
   subtitle: {
     type: String,
-    required: true,
+    default: '',
   },
   price: {
     type: String,
@@ -28,9 +40,10 @@ defineProps({
   imageSrc: {
     type: String,
     default: '/src/assets/icons/image-default.svg',
-    required: true,
   },
 });
+
+useSlots();
 </script>
 
 <style scoped>

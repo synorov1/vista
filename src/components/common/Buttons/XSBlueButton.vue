@@ -1,15 +1,15 @@
 <template>
-    <component
-        :to="to"
-        :is="to ? RouterLink : 'button'"
-        :class="[
-          'btn custom-btn',
-          { 'custom-btn--border': isBorder }
-        ]"
-        :style="{ height: height }"
-    >
-      <span>{{ text }}</span>
-    </component>
+  <component
+    :is="to ? RouterLink : 'button'"
+    :to="to"
+    :class="[
+      'btn custom-btn',
+      { 'custom-btn--border': isBorder }
+    ]"
+    :style="{ height: height }"
+  >
+    <span>{{ text }}</span>
+  </component>
 </template>
 
 <script setup lang="ts">

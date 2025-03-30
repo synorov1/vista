@@ -1,135 +1,177 @@
 <template>
   <div class="header">
     <div class="top-banner">
-      <p>Успейте купить набор для настольного тенниса Joola <span>со скидкой 20%</span> до 18 мая</p>
+      <p>Успейте купить набор для настольного тенниса Joola <span @click="openDiscountInfoModal">со скидкой 20%</span> до 18 мая</p>
       <img src="/src/assets/icons/arrow.svg" alt="">
     </div>
     <div class="container">
-    <div class="mid">
-      <img
-        src="/src/assets/images/main-logo.webp"
-        srcset="/src/assets/images/main-logo@2x.webp 2x"
-        alt="vistasport"
-      />
-      <div class="logo"></div>
-      <button @click="showCatalog" class="ctl-btn header__catalog-btn">
-        <img src="/src/assets/icons/icon-catalog.svg" alt="">
-        <span>Каталог</span>
-      </button>
-      <div class="search">
-        <input type="text" placeholder="Поиск по каталогу">
-      </div>
-      <a class="contact">
-        <div class="top">8 (800) 234-24-20</div>
-        <div class="bott">Бесплатно по России</div>
-      </a>
-      <div class="actions">
-        <a href="" v-for="(one) in Actions" :key="one.icon">
-            <div>
-              <img :src="one.icon" />
-              <p>{{ one.text }}</p>
-            </div>
+      <div class="mid">
+        <router-link to="/">
+          <img
+            src="/src/assets/images/main-logo.webp"
+            srcset="/src/assets/images/main-logo@2x.webp 2x"
+            alt="vistasport"
+          >
+        </router-link>
+        <div class="logo" />
+        <button class="ctl-btn header__catalog-btn" @click="showCatalog">
+          <img src="/src/assets/icons/icon-catalog.svg" alt="">
+          <span>Каталог</span>
+        </button>
+        <div class="search">
+          <input type="text" placeholder="Поиск по каталогу">
+        </div>
+        <a class="contact">
+          <div class="top">8 (800) 234-24-20</div>
+          <div class="bott">Бесплатно по России</div>
         </a>
-      </div>
+        <div class="actions">
+          <a
+            v-for="action in actions"
+            :key="action.icon"
+            href=""
+            @click.prevent="action.onClick ? action.onClick() : null"
+          >
+            <div>
+              <img :src="action.icon">
+              <p>{{ action.text }}</p>
+            </div>
+          </a>
+        </div>
 
-      <BurgerMenu class="header__menu" @click="showCatalog" v-model="isShowCatalog"/>
-    </div>
+        <BurgerMenu
+          v-model="isShowCatalog"
+          class="header__menu"
+          @click="showCatalog"
+        />
+      </div>
       <div class="search search-mobile">
         <input type="text" placeholder="Поиск по каталогу">
       </div>
-    <div class="bot">
-      <div class="scroll-content">
-      <div class="delivery">
-        <img src="/src/assets/icons/icon-map-point.svg">
-        <span>Доставка по РФ</span>
-      </div>
-      <div class="categories">
-          <router-link
-            v-for="(item) in Categories"
-            :key="item.link"
-            :to="item.link"
+      <div class="bot">
+        <div class="scroll-content">
+          <a
+            target="_blank"
+            href="https://yandex.com/maps/-/CDekEQZ8"
+            class="delivery"
           >
-            {{ item.text }}
-          </router-link>
-      </div>
-      <div class="info">
-        <a href="/">Где поиграть</a>
-        <a href="/">Оплата долями</a>
-      </div>
+            <img src="/src/assets/icons/icon-map-point.svg">
+            <span>Доставка по РФ</span>
+          </a>
+          <div class="categories">
+            <router-link
+              v-for="category in categories" 
+              :key="category.link"
+              :to="category.link"
+            >
+              {{ category.text }}
+            </router-link>
+          </div>
+          <div class="info">
+            <a href="/">Где поиграть</a>
+            <a href="/">Оплата долями</a>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-    <HeaderCatalog :class="[
+    <HeaderCatalog
+      :class="[
         'header-catalog-menu',
         {'is-open': isShowCatalog},
-    ]" />
+      ]"
+    />
+    <AuthModals
+      v-model:is-open="isAuthModalOpen"
+    />
+    <RecoveryModals
+      v-model:is-open="isRecoveryModalOpen"
+    />
   </div>
 </template>
 
 <script setup lang="ts">
-import BurgerMenu from "@/components/BurgerMenu.vue";
-import HeaderCatalog from "@/components/catalog/HeaderCatalog.vue";
-import {ref} from "vue";
-import {useScrollLock} from "@vueuse/core";
+import { ref, computed } from 'vue'
+import { useScrollLock } from '@vueuse/core'
+import BurgerMenu from '@/components/BurgerMenu.vue'
+import HeaderCatalog from '@/components/catalog/HeaderCatalog.vue'
+import AuthModals from '@/components/common/Modal/auth/AuthModals.vue'
+import RecoveryModals from '@/components/common/Modal/recovery/RecoveryModals.vue'
+import { useDiscountInfoModal } from '@/composables/useModal'
 
 const isScrollLock = useScrollLock(document.body)
 
+const isShowCatalog = ref(false)
+const isAuthModalOpen = ref(false)
+const isRecoveryModalOpen = ref(false)
 
-const isShowCatalog = ref(false);
+const { openDiscountInfoModal } = useDiscountInfoModal()
 
 const showCatalog = () => {
   isShowCatalog.value = !isShowCatalog.value
   isScrollLock.value = isShowCatalog.value
 }
 
-const Actions = [
+const handleAuthSuccess = (value: string) => {
+  // TODO: Добавить обработку успешной авторизации
+  console.log('Успешная авторизация', value)
+}
+
+const handleRecoverySuccess = (value: string) => {
+  // TODO: Добавить обработку успешной смены пароля
+  console.log('Пароль успешно изменен', value)
+}
+
+const actions = computed(() => [
   {
-    icon: "/src/assets/icons/icon-home.svg",
-    href: "/",
-    text: "Войти"
+    icon: '/src/assets/icons/icon-home.svg',
+    href: '/',
+    text: 'Войти',
+    onClick: () => isAuthModalOpen.value = true
   },
   {
-    icon: "/src/assets/icons/icon-heart.svg",
-    href: "/",
-    text: "Заказы"
+    icon: '/src/assets/icons/icon-heart.svg',
+    href: '/',
+    text: 'Забыли пароль?',
+    onClick: () => isRecoveryModalOpen.value = true
   },
   {
-    icon: "/src/assets/icons/icon-people.svg",
-    href: "/",
-    text: "Избранное"
+    icon: '/src/assets/icons/icon-people.svg',
+    href: '/',
+    text: 'Избранное'
   },
   {
-    icon: "/src/assets/icons/icon-cart.svg",
-    href: "/",
-    text: "Корзина"
+    icon: '/src/assets/icons/icon-cart.svg',
+    href: '/',
+    text: 'Корзина'
   }
-]
-const Categories = [
+])
+
+const categories = [
   {
-    link: "/",
-    text: "Бренды",
+    link: '/brands',
+    text: 'Бренды',
   },
   {
-    link: "/services",
-    text: "Услуги",
+    link: '/services',
+    text: 'Услуги',
   },
   {
-    link: "/",
-    text: "Доставка и оплата",
+    link: '/delivery',
+    text: 'Доставка и оплата',
   },
   {
-    link: "/",
-    text: "Наш блог",
+    link: '/blog',
+    text: 'Наш блог',
   },
   {
-    link: "/",
-    text: "Контакты",
+    link: '/contacts',
+    text: 'Контакты',
   },
   {
-    link: "/",
-    text: "Магазин",
+    link: '/shop',
+    text: 'Магазин',
   },
-];
+] as const
 </script>
 
 <style scoped>
@@ -143,6 +185,7 @@ const Categories = [
 }
 
 .header-catalog-menu {
+  display: none;
   position: absolute;
   width: 100%;
   left: 0;
@@ -163,6 +206,7 @@ const Categories = [
 
 
 .header-catalog-menu.is-open {
+  display: block;
   opacity: 1;
   transition: all 0.3s ease;
 }
@@ -182,7 +226,8 @@ const Categories = [
   }
 
   span {
-    color: var(--blue-400-color);
+    color: var(--red-color);
+    cursor: pointer;
   }
 
   @media (min-width: 550px) {

@@ -1,6 +1,10 @@
 <template>
   <div class="button-group">
-    <ButtonComponent v-for="(button, index) in buttons" :key="index" :text="button" />
+    <ButtonComponent
+      v-for="(button, index) in buttons"
+      :key="index"
+      :text="button"
+    />
   </div>
 </template>
 

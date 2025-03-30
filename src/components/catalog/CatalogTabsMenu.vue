@@ -14,28 +14,30 @@ const activeTab: Ref<CatalogItem | null> = ref(null);
 <template>
   <div class="catalog-tabs-menu">
     <div class="catalog-tabs-menu-main-panel">
-    <h3 class="catalog-tabs-menu-title">Каталог</h3>
+      <h3 class="catalog-tabs-menu-title">
+        Каталог
+      </h3>
 
-    <div class="catalog-tabs-menu-list">
-      <a
-        :href="item.link || '#'"
-        @click="setActiveTab(item)"
-        v-for="(item, index) in catalogItems"
-        :key="index"
-        :class="[
+      <div class="catalog-tabs-menu-list">
+        <a
+          v-for="(item, index) in catalogItems"
+          :key="index"
+          :href="item.link || '#'"
+          :class="[
             'catalog-tabs-menu-list-item',
             {'active': activeTab?.key === item.key},
             {'no-arrow': !item.childItems.length},
-        ]"
-      >
-        <p>{{ item.title }}</p>
+          ]"
+          @click="setActiveTab(item)"
+        > 
+          <p>{{ item.title }}</p>
 
-      </a>
-    </div>
+        </a>
+      </div>
     </div>
 
     <CatalogTabsPanel :active-tab="activeTab" />
-</div>
+  </div>
 </template>
 
 <style scoped>

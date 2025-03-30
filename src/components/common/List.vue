@@ -1,8 +1,14 @@
 <template>
   <div class="list-container">
-    <p class="title">{{title}}</p>
+    <p class="title">
+      {{ title }}
+    </p>
     <ul class="list">
-      <li v-for="(item, index) in list" :key="index" class="item">
+      <li
+        v-for="(item, index) in list"
+        :key="index"
+        class="item"
+      >
         <div class="item-dot" />
         {{ item }}
       </li>
@@ -14,7 +20,7 @@
 defineProps({
   title: {
     type: String,
-    required: true,
+    default: '',
   },
   list: {
     type: Array,

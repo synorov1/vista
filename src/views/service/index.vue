@@ -3,28 +3,31 @@
 import ServiceInfo from "@/components/servicesList/ServiceInfo.vue";
 import GradientBanner from "@/components/common/GradientBanner.vue";
 import currentService from './currentService.json';
+import { usePageTitle } from '@/composables/usePageTitle';
+
+usePageTitle('Сервис');
 </script>
 
 <template>
-<div class="service">
-  <GradientBanner
+  <div class="service">
+    <GradientBanner
       :title="currentService.title"
       :image-src="currentService.bannerImage"
       :subtitle="currentService.text"
       :price="currentService.price"
       class="currentService-banner"
-  />
+    />
 
-  <ServiceInfo
+    <ServiceInfo
       :title="currentService.title"
       :text="currentService.text"
       :price="currentService.price"
-      :bannerImage="currentService.bannerImage"
-      :imageFirst="currentService.imageFirst"
-      :imageSecond="currentService.imageSecond"
+      :banner-image="currentService.bannerImage"
+      :image-first="currentService.imageFirst"
+      :image-second="currentService.imageSecond"
       :description="currentService.description"
-  />
-</div>
+    />
+  </div>
 </template>
 
 <style scoped>

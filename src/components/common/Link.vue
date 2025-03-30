@@ -1,6 +1,16 @@
 <template>
-    <a v-if="href" href="href" :class="['link', color]">{{ text }}</a>
-    <button v-else :class="['button', color]" @click="$emit('click')">{{ text }}</button>
+  <a
+    v-if="href"
+    href="href"
+    :class="['link', color]"
+  >{{ text }}</a>
+  <button
+    v-else
+    :class="['button', color]"
+    @click="$emit('click')"
+  >
+    {{ text }}
+  </button>
 </template>
 
 <script setup lang="ts">

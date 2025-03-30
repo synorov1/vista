@@ -13,16 +13,20 @@ import type {PropType} from "vue";
 <template>
   <div class="catalog-tabs-menu-sub-panel">
     <div class="catalog-tabs-menu-sub-panel-title-box">
-      <h3 class="catalog-tabs-menu-sub-panel-title"> {{ activeTab?.title }} </h3>
-      <p class="catalog-tabs-menu-sub-panel-text" v-if="activeTab?.value"> {{ activeTab?.value }} </p>
+      <h3 class="catalog-tabs-menu-sub-panel-title">
+        {{ activeTab?.title }}
+      </h3>
+      <p v-if="activeTab?.value" class="catalog-tabs-menu-sub-panel-text">
+        {{ activeTab?.value }}
+      </p>
     </div>
 
     <div class="catalog-tabs-menu-sub-list">
       <a
-          :href="item.link"
-          v-for="(item, index) in activeTab?.childItems"
-          :key="index"
-          class="catalog-tabs-menu-sub-list-item"
+        v-for="(item, index) in activeTab?.childItems"
+        :key="index"
+        :href="item.link"
+        class="catalog-tabs-menu-sub-list-item"
       >
         <p>{{ item.title }}</p>
       </a>

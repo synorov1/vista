@@ -1,21 +1,21 @@
 <template>
   <div class="card-container">
     <div class="buttons">
-      <slot name="buttons"></slot>
+      <slot name="buttons" />
     </div>
     <div class="filters-and-cards">
       <div class="filters">
         <div class="radio-buttons-mobile">
-          <slot name="radio-buttons"></slot>
+          <slot name="radio-buttons" />
         </div>
-        <slot name="filters"></slot>
+        <slot name="filters" />
       </div>
       <div class="radio-buttons-and-cards">
         <div class="radio-buttons-desktop">
-          <slot name="radio-buttons"></slot>
+          <slot name="radio-buttons" />
         </div>
         <div class="card-grid">
-          <slot name="cards"></slot>
+          <slot name="cards" />
         </div>
       </div>
     </div>
