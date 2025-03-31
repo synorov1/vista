@@ -4,6 +4,7 @@
 
 * {
   font-family: 'Inter', sans-serif;
+  letter-spacing: -0.02em;
 }
 
 a {
@@ -26,6 +27,14 @@ a {
   flex-direction: column;
 }
 
+.flex-row {
+  flex-direction: row;
+}
+
 .h-full {
   height: 100%;
+}
+
+.justify-center {
+  justify-content: center;
 }

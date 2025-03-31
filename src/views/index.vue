@@ -46,7 +46,7 @@ const routes = [
   <PopularCategories :data="data.popularCategories" />
 
   <!--  Горячие скидки-->
-  <HotDeals />
+  <HotDeals :data="data.hotDeals" />
 
   <ReklamaBanner :data="data.reklamaTop" />
 
@@ -64,10 +64,10 @@ const routes = [
   <ArticlesSection :data="data.articlesSection" />
 
   <div class="routes-container">
-    <router-link 
-      v-for="route in routes" 
+    <router-link
+      v-for="route in routes"
       :key="route.path"
-      class="link" 
+      class="link"
       :to="route.path"
     >
       {{ route.label }}

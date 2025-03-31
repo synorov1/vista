@@ -34,11 +34,9 @@ defineProps({
   gap: 10px;
   min-width: 58px;
   border-radius: 6px;
-  font-family: 'Inter', sans-serif;
-  font-style: normal;
   font-weight: 700;
   font-size: 14px;
-  line-height: 17px;
+  line-height: 1.4;
   color: var(--white-color);
   background-color: var(--black-color);
   outline: none;

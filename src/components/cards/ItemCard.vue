@@ -17,7 +17,7 @@
       <RedLabel
         v-if="product.discount"
         class="sale-badge"
-        :discount="`-${product.discount}%`"
+        :discount="product.discount"
       />
     </div>
     <div class="card-info">
@@ -26,14 +26,9 @@
         <span v-if="prices.old" class="old-price">{{ prices.old }} ₽</span>
       </div>
       <div class="card-title">{{ product.title }}</div>
-      <div class="card-rating">
-        <img
-          src="/src/assets/icons/star.svg"
-          alt="Rating Star"
-          class="rating-img"
-        >
-        <div class="rating-text">{{ product.rating.stars }} <span class="rating-quantity">- {{ prices.rating }} оценки</span></div>
-      </div>
+      <Rating :stars="product.rating.stars">
+        <span class="rating-quantity">- {{ product.rating.count }} оценки</span>
+      </Rating>
       <div class="card-availability">
         <YesNoButton
           :is-available="available"
@@ -52,6 +47,7 @@ import RedLabel from '~/components/common/RedLabel.vue';
 import Like from '~/components/common/Like.vue';
 import YesNoButton from '~/components/common/buttons/YesNoButton.vue';
 import XSBlueButton from '~/components/common/buttons/XSBlueButton.vue';
+import Rating from '~/components/common/Rating.vue';
 import { computed, toRef } from 'vue';
 
 const props = defineProps({
@@ -129,14 +125,6 @@ const prices = computed(() => {
   position: absolute;
   bottom: 16px;
   left: 16px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 4px 6px;
-  gap: 10px;
-  width: 42px;
-  height: 23px;
   margin-top: auto;
 }
 
@@ -165,20 +153,15 @@ const prices = computed(() => {
 }
 
 .current-price {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 800;
   font-size: 16px;
+  font-weight: 800;
   line-height: 19px;
-  letter-spacing: -0.02em;
   color: var(--blue-400-color);
 }
 
 .old-price {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 600;
   font-size: 12px;
+  font-weight: 600;
   line-height: 15px;
   text-decoration-line: line-through;
   color: var(--gray-600-color);
@@ -187,40 +170,11 @@ const prices = computed(() => {
 .card-title {
   width: 100%;
   height: 15px;
-  font-family: 'Inter';
-  font-style: normal;
   font-weight: 700;
   font-size: 12px;
   line-height: 15px;
   text-align: left;
   color: var(--black-color);
-}
-
-.card-rating {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding: 0px;
-  gap: 4px;
-}
-
-.rating-img {
-  width: 14px;
-  height: 14px;
-}
-
-.rating-text {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 12px;
-  line-height: 15px;
-  color: var(--black-color);
-}
-
-.rating-quantity {
-  font-weight: 400;
-  color: var(--gray-600-color);
 }
 
 .card-availability {
@@ -238,8 +192,6 @@ const prices = computed(() => {
 .btn-text {
   width: 51px;
   height: 17px;
-  font-family: 'Inter';
-  font-style: normal;
   font-weight: 700;
   font-size: 14px;
   line-height: 17px;
@@ -267,16 +219,12 @@ const prices = computed(() => {
     min-height: 34px;
   }
 
-  .rating-text {
-    font-size: 16px;
-    line-height: 17px;
-  }
-
   .current-price {
     font-size: 18px;
     line-height: 21px;
   }
 }
+
 @media (min-width: 768px) {
   .card {
     min-width: 206px;

@@ -115,7 +115,7 @@ onUnmounted(() => {
     <SquareButton
       v-if="hasMoreProducts"
       text="Показать ещё товары"
-      :class="$style.moreButton"
+      class="flex justify-center"
       @click="handleShowMore"
     />
   </div>
@@ -156,9 +156,5 @@ onUnmounted(() => {
   @media (min-width: 1440px) {
     grid-template-columns: repeat(5, 1fr);
   }
-}
-
-.moreButton {
-  width: 100%;
 }
 </style>

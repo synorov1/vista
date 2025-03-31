@@ -55,12 +55,9 @@ defineProps({
 }
 
 .text {
-  font-family: 'Inter', sans-serif;
-  font-style: normal;
   font-weight: 500;
   font-size: 12px;
   line-height: 15px;
-  letter-spacing: -0.02em;
   color: var(--white-color);
   flex: none;
   order: 0;

@@ -100,7 +100,109 @@
       }
     ]
   },
-  "hotDeals": {},
+  "hotDeals": {
+    "title": "Горячие скидки",
+    "subtitle": "Рекомендуем вам",
+    "heading": "Последний шанс купить",
+    "timer": {
+      "text": "Осталось 2ч:12:11 минут"
+    },
+    "button": {
+      "text": "Все",
+      "to": "#"
+    },
+    "items": [
+      {
+        "id": 1,
+        "title": "Товар 1",
+        "image": "src/assets/images/backpack.png",
+        "price": 1250,
+        "oldPrice": 3100,
+        "rating": 3.2,
+        "liked": false
+      },
+      {
+        "id": 2,
+        "title": "Товар 2",
+        "image": "src/assets/images/backpack.png",
+        "price": 550,
+        "oldPrice": 2000,
+        "rating": 3.2,
+        "liked": false
+      },
+      {
+        "id": 3,
+        "title": "Товар 3",
+        "image": "src/assets/images/backpack.png",
+        "price": 5450,
+        "oldPrice": 2000,
+        "rating": 5,
+        "liked": false
+      }
+    ],
+    "items2": [
+      [
+        {
+          "id": 1,
+          "title": "Товар 1",
+          "image": "src/assets/images/backpack.png",
+          "price": 1250,
+          "oldPrice": 3100,
+          "rating": 3.2,
+          "liked": false
+        },
+        {
+          "id": 3,
+          "title": "Товар 3",
+          "image": "src/assets/images/backpack.png",
+          "price": 5450,
+          "oldPrice": 2000,
+          "rating": 5,
+          "liked": false
+        }
+      ],
+      [
+        {
+          "id": 2,
+          "title": "Товар 2",
+          "image": "src/assets/images/backpack.png",
+          "price": 550,
+          "oldPrice": 2000,
+          "rating": 3.2,
+          "liked": false
+        },
+        {
+          "id": 3,
+          "title": "Товар 3",
+          "image": "src/assets/images/backpack.png",
+          "price": 5450,
+          "oldPrice": 2000,
+          "rating": 5,
+          "liked": false
+        }
+      ],
+      [
+        {
+          "id": 2,
+          "title": "Товар 2",
+          "image": "src/assets/images/backpack.png",
+          "price": 550,
+          "oldPrice": 2000,
+          "rating": 3.2,
+          "liked": false
+        },
+        {
+          "id": 3,
+          "title": "Товар 3",
+          "image": "src/assets/images/backpack.png",
+          "price": 5450,
+          "oldPrice": 2000,
+          "rating": 5,
+          "liked": false
+        }
+      ]
+    ]
+  },
   "reklamaTop": [
     {
       "id": 1,
