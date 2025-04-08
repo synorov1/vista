@@ -3,11 +3,11 @@
     <div class="discount-info-modal">
       <div class="discount-info-modal__banner">
         <span class="discount-info-modal__percent">5%</span>
-        <p class="discount-info-modal__banner-text">
-          Накопительная скидка, за приобретение товаров в нашем магазине
-        </p>
         <p class="discount-info-modal__banner-amount">
           ~ 10 242 ₽ за 2024
+        </p>
+        <p class="discount-info-modal__banner-text">
+          Накопительная скидка, за приобретение товаров в нашем магазине
         </p>
       </div>
 
@@ -61,14 +61,16 @@ const modelValue = computed({
   align-items: center;
   gap: 30px;
   width: 100%;
-  padding: 30px;
 }
-
+:deep(.modal__content) {
+  max-width: 530px;
+}
 .discount-info-modal__banner {
   position: relative;
   width: 100%;
-  padding: 30px;
-  background: linear-gradient(45deg, #0084FF, #B1A9F6);
+  height: 200px;
+  padding: 8px 20px 20px 20px;
+  background: linear-gradient(109.07deg, #0084FF 5.77%, #B1A9F6 98.72%);
   border-radius: 14px;
   color: var(--white-color);
 }
@@ -77,8 +79,8 @@ const modelValue = computed({
   display: block;
   font-weight: 800;
   font-size: 60px;
-  line-height: 73px;
-  letter-spacing: -0.02em;
+  line-height: 100%;
+  letter-spacing: -2%;
 }
 
 .discount-info-modal__banner-text {
@@ -86,12 +88,16 @@ const modelValue = computed({
   font-size: 14px;
   line-height: 20px;
   margin: 0;
+  letter-spacing: 0;
+  margin-top: 19px;
+  max-width: 260px;
 }
 
 .discount-info-modal__banner-amount {
   font-weight: 400;
   font-size: 14px;
   line-height: 20px;
+  letter-spacing: 0;
   margin: 0;
 }
 
@@ -106,8 +112,8 @@ const modelValue = computed({
 .discount-info-modal__title {
   font-weight: 700;
   font-size: 40px;
-  line-height: 48px;
-  letter-spacing: -0.02em;
+  line-height: 100%;
+  letter-spacing: -2%;
   text-align: center;
   color: var(--black-color);
   margin: 0;
@@ -117,25 +123,25 @@ const modelValue = computed({
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
-  color: var(--gray-800-color);
+  color: #4D4D4D;
   margin: 0;
 }
 
 .discount-info-modal__button {
   width: 100%;
-  height: 45px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--blue-color);
-  border: none;
+  padding: 0 16px;
+  background: #0084FF;
   border-radius: 6px;
+  border: none;
+  font-family: 'Inter', sans-serif;
   font-weight: 700;
   font-size: 14px;
-  line-height: 17px;
-  color: var(--white-color);
+  line-height: 100%;
+  color: #FFFFFF;
   cursor: pointer;
-  transition: opacity 0.2s;
+  transition: background-color 0.2s;
+  height: 45px;
+  position: relative;
 }
 
 .discount-info-modal__button:hover {

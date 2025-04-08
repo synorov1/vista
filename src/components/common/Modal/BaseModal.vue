@@ -13,16 +13,17 @@
           class="modal__close" 
           @click="closeModal"
         >
-          <svg 
-            width="24" 
-            height="24" 
-            viewBox="0 0 24 24" 
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
             fill="none"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            <path 
-              d="M18 6L6 18M6 6L18 18" 
-              stroke="currentColor" 
-              stroke-width="2" 
+            <path
+              d="M22 2.00008L2.00008 22M2 2L22 22"
+              stroke="white"
+              stroke-width="3"
               stroke-linecap="round"
             />
           </svg>
@@ -78,14 +79,14 @@ const closeModal = () => {
   display: flex;
   flex-direction: column;
   gap: 30px;
-  max-width: 400px;
+  max-width: 450px;
   width: 100%;
 }
 
 .modal__close {
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: -39px;
+  right: -36px;
   width: 24px;
   height: 24px;
   padding: 0;

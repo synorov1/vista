@@ -1,7 +1,8 @@
 <template>
-  <div class="order-summary">
+  <div class="order-summary" :class="{ 'hide-order': props.currentStep !== 0 }">
     <div class="summary-section">
-      <h3>Ваш заказ:</h3>
+      <h3 v-if="props.currentStep === 0">Ваш заказ:</h3>
+      <h3 v-else>Итого:</h3>
       <div class="summary-row">
         <span>1 товар, 1 шт.</span>
         <span>6 750 ₽</span>
@@ -12,33 +13,7 @@
       </div>
     </div>
 
-    <div class="promo-section">
-      <span>Сертификат / промокод:</span>
-      <div class="promo-button">
-        <span>Jolla24</span>
-        <svg 
-          width="20" 
-          height="20" 
-          viewBox="0 0 20 20" 
-          fill="none"
-        >
-          <path 
-            d="M10 18.3334C14.6024 18.3334 18.3334 14.6024 18.3334 10C18.3334 5.39765 14.6024 1.66669 10 1.66669C5.39765 1.66669 1.66669 5.39765 1.66669 10C1.66669 14.6024 5.39765 18.3334 10 18.3334Z" 
-            stroke="#0084FF" 
-            stroke-width="1.5" 
-            stroke-linecap="round" 
-            stroke-linejoin="round"
-          />
-          <path 
-            d="M6.66669 10L8.33335 11.6667L13.3334 6.66669" 
-            stroke="#0084FF" 
-            stroke-width="1.5" 
-            stroke-linecap="round" 
-            stroke-linejoin="round"
-          />
-        </svg>
-      </div>
-    </div>
+    <CartPromocode v-if="props.currentStep === 0"/>
 
     <div class="total-section">
       <h3>Итого к оплате:</h3>
@@ -59,11 +34,27 @@
       </div>
     </div>
 
-    <button class="checkout-button">Перейти к оформлению</button>
+    <button v-if="props.currentStep === 0" class="checkout-button" @click="handleNextStep">Перейти к оформлению</button>
   </div>
 </template>
 
 <script setup lang="ts">
+import {useRouter} from "vue-router";
+import CartPromocode from "./cart/CartPromocode.vue";
+
+interface Props {
+  currentStep?: number;
+}
+
+const props = withDefaults(defineProps<Props>(), {
+  currentStep: 0
+});
+
+const router = useRouter();
+
+const handleNextStep = () => {
+  router.push("/cart/auth")
+}
 </script>
 
 <style scoped>
@@ -88,12 +79,15 @@ h3 {
 }
 
 .summary-section,
-.promo-section,
 .total-section {
   display: flex;
   flex-direction: column;
   gap: 10px;
   width: 228px;
+}
+
+h3 {
+  margin: 0;
 }
 
 .summary-row {
@@ -109,23 +103,6 @@ h3 {
   line-height: 1.21;
   letter-spacing: -0.02em;
   color: #000000;
-}
-
-.promo-section span {
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 1.21;
-  color: #000000;
-}
-
-.promo-button {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 14px 16px;
-  background: #FFFFFF;
-  border-radius: 6px;
-  cursor: pointer;
 }
 
 .price-block {
@@ -191,24 +168,34 @@ h3 {
   }
 }
 
-@media (max-width: 720px) {
-  .order-summary {
-    max-width: 720px;
-    width: 708px;
+@media (max-width: 768px) {
+  .hide-order {
+    display: none;
   }
 }
 
-@media (max-width: 320px) {
+@media (max-width: 720px) {
   .order-summary {
-    max-width: 320px;
-    width: 288px;
+    max-width: 720px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 468px) {
+  .checkout-button {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .summary-section, .order-summary, .summary-row, .total-section {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .order-summary {
     padding: 16px;
     gap: 16px;
     border-radius: 16px;
-  }
-
-  .checkout-button {
-    width: 100%;
   }
 }
 </style> 

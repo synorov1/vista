@@ -19,6 +19,8 @@ import Games from '@/views/games/index.vue';
 import About from '@/views/about/index.vue';
 import Otzivy from '@/views/otzivy/index.vue';
 import Cart from '@/views/cart/index.vue';
+import CartAuth from '@/views/cart/auth.vue';
+import CartPayment from '@/views/cart/payment.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -27,6 +29,7 @@ const router = createRouter({
       path: '/',
       name: 'home',
       component: HomeView,
+      meta: { showBreadcrumbs: false }
     },
     {
       path: '/components',
@@ -123,6 +126,19 @@ const router = createRouter({
       path: '/cart',
       name: 'cart',
       component: Cart,
+      meta: { showBreadcrumbs: false }
+    },
+    {
+      path: '/cart/auth',
+      name: 'CartAuth',
+      component: CartAuth,
+      meta: { showBreadcrumbs: false, showHeader: false}
+    },
+    {
+      path: '/cart/payment',
+      name: 'CartPayment',
+      component: CartPayment,
+      meta: { showBreadcrumbs: false, showHeader: false}
     },
     {
       component: () => import('@/components/layouts/ProfileLayout.vue'),

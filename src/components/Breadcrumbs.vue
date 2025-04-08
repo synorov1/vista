@@ -24,6 +24,14 @@
     blades: "Какой-то каталог",
     product: 'Какой-то продукты'
   }
+
+  const dropdownItems = [
+  'Основания',
+  'Мячи',
+  'Аксессуары',
+  'Ракетки готовые',
+];
+
 </script>
 
 <template>
@@ -34,6 +42,7 @@
       :path="breadcrumb"
       :text="index === 0 ? 'Главная' : translatedRoute[breadcrumb as keyof typeof translatedRoute]"
       :disabled="breadcrumbs.length - 1 !== index"
+      :dropdownItems="index === breadcrumbs.length - 1 ? dropdownItems : []"
       class="breadcrumbs__item"
     >
       {{ breadcrumb }}
@@ -45,5 +54,8 @@
   .breadcrumbs {
     display: flex;
     gap: 10px;
+  }
+  .breadcrumbs__item {
+    position: relative;
   }
 </style>

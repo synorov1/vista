@@ -2,20 +2,7 @@
   <BaseModal v-model:is-open="modelValue" @close="emit('update:isOpen', false)">
     <div class="delivery-modal">
       <div class="delivery-modal__icon">
-        <svg
-          width="48"
-          height="48"
-          viewBox="0 0 48 48"
-          fill="none"
-        >
-          <path
-            d="M40 18L34 6H14L8 18M40 18L24 42M40 18H8M8 18L24 42M24 42L30 30H18L24 42Z"
-            stroke="#0084FF"
-            stroke-width="3"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
-        </svg>
+        <img src="@/assets/images/delivery.svg"/>
       </div>
 
       <div class="delivery-modal__text">
@@ -72,9 +59,10 @@ const modelValue = computed({
   align-items: center;
   gap: 30px;
   width: 100%;
-  padding: 30px;
 }
-
+:deep(.modal__content) {
+  max-width: 530px;
+}
 .delivery-modal__icon {
   display: flex;
   align-items: center;
@@ -90,47 +78,53 @@ const modelValue = computed({
 }
 
 .delivery-modal__title {
+  font-family: 'Inter', sans-serif;
   font-weight: 700;
   font-size: 40px;
-  line-height: 48px;
-  letter-spacing: -0.02em;
-  text-align: center;
-  color: var(--black-color);
+  line-height: 100%;
+  letter-spacing: -2%;
+  color: #000000;
   margin: 0;
+  text-align: center;
 }
 
 .delivery-modal__description {
+  font-family: 'Inter', sans-serif;
   font-weight: 500;
   font-size: 16px;
   line-height: 24px;
-  text-align: center;
-  color: var(--gray-800-color);
+  letter-spacing: 0%;
+  color: #4D4D4D;
   margin: 0;
+  text-align: center;
 }
 
 .delivery-modal__info {
+  font-family: 'Inter', sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
-  color: var(--gray-800-color);
+  letter-spacing: 0%;
+  color: #4D4D4D;
   margin: 0;
+  text-align: left;
 }
 
 .delivery-modal__button {
   width: 100%;
-  height: 45px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--blue-color);
-  border: none;
+  padding: 0 16px;
+  background: #0084FF;
   border-radius: 6px;
+  border: none;
+  font-family: 'Inter', sans-serif;
   font-weight: 700;
   font-size: 14px;
-  line-height: 17px;
-  color: var(--white-color);
+  line-height: 100%;
+  color: #FFFFFF;
   cursor: pointer;
-  transition: opacity 0.2s;
+  transition: background-color 0.2s;
+  height: 45px;
+  position: relative;
 }
 
 .delivery-modal__button:hover {

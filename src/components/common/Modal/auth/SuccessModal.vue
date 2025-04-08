@@ -77,28 +77,28 @@ onMounted(() => {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: 20px;
-}
-
-.success-modal__icon {
-  margin-bottom: 10px;
+  gap: 10px;
 }
 
 .success-modal__title {
   font-family: 'Inter', sans-serif;
   font-weight: 700;
-  font-size: 32px;
-  line-height: 1.21;
+  font-size: 40px;
+  line-height: 100%;
+  letter-spacing: -2%;
   color: #000000;
-  margin: 0;
+  margin-top: 20px;
+  margin-bottom: 0;
 }
 
 .success-modal__text {
   font-family: 'Inter', sans-serif;
-  font-weight: 400;
+  font-weight: 500;
   font-size: 16px;
-  line-height: 1.5;
+  line-height: 24px;
+  letter-spacing: 0%;
   color: #4D4D4D;
-  margin: 0;
+  margin-top: 0;
+  margin-bottom: 30px;
 }
 </style> 

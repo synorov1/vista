@@ -32,7 +32,7 @@
         </div>
         <span v-if="hasError" class="sms-modal__error">Неверный код</span>
         <p class="sms-modal__timer">
-          Новый код можно получить через {{ timerText }}
+          Новый код можно получить через {{ timerText }} секунды
         </p>
       </div>
       
@@ -45,11 +45,7 @@
         <span v-else class="sms-modal__loader" />
       </button>
       
-      <p class="sms-modal__policy">
-        Оставляя ваши данные, вы соглашаетесь с <router-link to="/privacy" class="sms-modal__policy-link">
-          политикой конфиденциальности
-        </router-link> ИП Макарова Елена Валерьевна
-      </p>
+      <ModalPolicy/>
     </div>
   </BaseModal>
 </template>
@@ -57,6 +53,7 @@
 <script setup lang="ts">
 import { ref, computed, onMounted, onUnmounted } from 'vue'
 import BaseModal from '@/components/common/Modal/BaseModal.vue';
+import ModalPolicy from '@/components/ModalPolicy.vue';
 
 defineOptions({
   name: 'SmsCodeModal'
@@ -160,8 +157,8 @@ onUnmounted(() => {
   font-family: 'Inter', sans-serif;
   font-weight: 700;
   font-size: 40px;
-  line-height: 1.21;
-  letter-spacing: -0.02em;
+  line-height: 100%;
+  letter-spacing: -2%;
   color: #000000;
   margin: 0;
 }
@@ -170,7 +167,8 @@ onUnmounted(() => {
   font-family: 'Inter', sans-serif;
   font-weight: 500;
   font-size: 16px;
-  line-height: 1.5;
+  line-height: 24px;
+  letter-spacing: 0%;
   color: #4D4D4D;
   margin: 0;
 }
@@ -191,7 +189,8 @@ onUnmounted(() => {
   font-family: 'Inter', sans-serif;
   font-weight: 400;
   font-size: 14px;
-  line-height: 1.57;
+  line-height: 22px;
+  letter-spacing: 0;
   color: #000000;
   margin: 0;
 }
@@ -204,13 +203,14 @@ onUnmounted(() => {
   cursor: pointer;
   font-family: 'Inter', sans-serif;
   font-size: 14px;
-  line-height: 1.57;
+  line-height: 22px;
   transition: color 0.2s;
+  text-decoration: underline;
 }
 
 .sms-modal__change-btn:hover {
   color: #0066CC;
-  text-decoration: underline;
+
 }
 
 .sms-modal__input-wrapper {
@@ -219,15 +219,17 @@ onUnmounted(() => {
 
 .sms-modal__input {
   width: 100%;
-  padding: 14px 16px;
+  padding: 0 16px;
+  background: #fff;
   border: 1px solid #D9D9D9;
   border-radius: 6px;
   font-family: 'Inter', sans-serif;
   font-size: 14px;
-  line-height: 1.21;
+  line-height: 100%;
   color: #000000;
-  box-sizing: border-box;
-  transition: border-color 0.2s;
+  transition: all 0.2s;
+  padding-right: 48px;
+  height: 45px;
 }
 
 .sms-modal__input:focus {
@@ -241,8 +243,8 @@ onUnmounted(() => {
 
 .sms-modal__error {
   font-family: 'Inter', sans-serif;
-  font-size: 12px;
-  line-height: 1.21;
+  font-size: 14px;
+  line-height: 100%;
   color: #FF3B30;
 }
 
@@ -250,24 +252,26 @@ onUnmounted(() => {
   font-family: 'Inter', sans-serif;
   font-weight: 400;
   font-size: 14px;
-  line-height: 1.57;
+  line-height: 22px;
+  letter-spacing: 0;
   color: #000000;
   margin: 0;
 }
 
 .sms-modal__button {
   width: 100%;
-  padding: 14px;
+  padding: 0 16px;
   background: #0084FF;
   border-radius: 6px;
   border: none;
   font-family: 'Inter', sans-serif;
   font-weight: 700;
   font-size: 14px;
-  line-height: 1.21;
+  line-height: 100%;
   color: #FFFFFF;
   cursor: pointer;
   transition: background-color 0.2s;
+  height: 45px;
   position: relative;
 }
 
@@ -278,26 +282,6 @@ onUnmounted(() => {
 .sms-modal__button:disabled {
   background: #CCE4FF;
   cursor: not-allowed;
-}
-
-.sms-modal__policy {
-  font-family: 'Inter', sans-serif;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 1.21;
-  color: #000000;
-  margin: 0;
-}
-
-.sms-modal__policy-link {
-  color: #0084FF;
-  text-decoration: none;
-  transition: color 0.2s;
-}
-
-.sms-modal__policy-link:hover {
-  color: #0066CC;
-  text-decoration: underline;
 }
 
 .sms-modal__loader {

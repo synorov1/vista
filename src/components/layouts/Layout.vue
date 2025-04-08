@@ -1,8 +1,8 @@
 <template>
   <div class="layout">
-    <Header />
+    <Header v-if="showHeader"/>
     <div class="container">
-      <Breadcrumbs />
+      <Breadcrumbs v-if="showBreadcrumbs" />
       <slot />
     </div>
     <Footer />
@@ -13,6 +13,16 @@
 import Header from '~/components/layouts/Header/index.vue';
 import Footer from '~/components/layouts/Footer.vue';
 import Breadcrumbs from "@/components/Breadcrumbs.vue";
+
+interface Props {
+  showBreadcrumbs?: boolean;
+  showHeader?: boolean
+}
+
+withDefaults(defineProps<Props>(), {
+  showBreadcrumbs: true,
+  showHeader: true
+});
 </script>
 
 <style>
@@ -23,7 +33,7 @@ import Breadcrumbs from "@/components/Breadcrumbs.vue";
     flex-direction: column;
 
     @media (min-width: 1400px) {
-        max-width: 1224px; /* Устанавливаем максимальную ширину */
+        max-width: 1224px; 
     }
   }
 }

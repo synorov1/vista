@@ -8,7 +8,8 @@ import XSBlueButton from '@/components/common/Buttons/XSBlueButton.vue';
 const props = defineProps({
   title: {
     type: String,
-    required: true,
+    required: false,
+    default: '',
   },
   buttonText: {
     type: String,
@@ -49,7 +50,7 @@ const currentButton = computed(() => {
       {{ buttonText }}
     </button>
 
-    <p class="title-with-arrow__title">
+    <p v-if="title" class="title-with-arrow__title">
       {{ title }}
     </p>
 

@@ -58,11 +58,7 @@
           <span v-else class="question-modal__loader" />
         </button>
 
-        <p class="question-modal__policy">
-          Оставляя ваши данные, вы соглашаетесь с <router-link to="/privacy" class="question-modal__policy-link">
-            политикой конфиденциальности
-          </router-link> ИП Макарова Елена Валерьевна
-        </p>
+        <ModalPolicy/>
       </div>
     </div>
   </BaseModal>
@@ -71,6 +67,7 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
 import BaseModal from '@/components/common/Modal/BaseModal.vue';
+import ModalPolicy from '@/components/ModalPolicy.vue';
 
 defineOptions({
   name: 'QuestionModal'
@@ -194,12 +191,11 @@ const closeModal = () => {
 .question-modal {
   display: flex;
   flex-direction: column;
-  padding: 30px;
   width: 100%;
   max-width: 400px;
   background: #FFFFFF;
   border-radius: 20px;
-  gap: 30px;
+  gap: 16px;
 }
 
 .question-modal__header {
@@ -214,25 +210,29 @@ const closeModal = () => {
   font-family: 'Inter', sans-serif;
   font-weight: 700;
   font-size: 40px;
-  line-height: 1.21;
-  letter-spacing: -0.02em;
+  line-height: 100%;
+  letter-spacing: -2%;
   color: #000000;
   margin: 0;
+  text-align: center;
 }
 
 .question-modal__subtitle {
   font-family: 'Inter', sans-serif;
   font-weight: 500;
   font-size: 16px;
-  line-height: 1.5;
+  line-height: 24px;
+  letter-spacing: 0%;
   color: #4D4D4D;
   margin: 0;
+  text-align: center;
 }
 
 .question-modal__form {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  margin-top: 14px;
 }
 
 .question-modal__input-group {
@@ -245,11 +245,27 @@ const closeModal = () => {
   font-family: 'Inter', sans-serif;
   font-weight: 400;
   font-size: 14px;
-  line-height: 1.21;
+  line-height: 100%;
   color: #000000;
+  text-align: left;
+  letter-spacing: 0%;
 }
 
-.question-modal__input,
+.question-modal__input {
+  width: 100%;
+  padding: 0 16px;
+  background: #fff;
+  border: 1px solid #D9D9D9;
+  border-radius: 6px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  line-height: 100%;
+  color: #000000;
+  transition: all 0.2s;
+  padding-right: 48px;
+  height: 45px;
+}
+
 .question-modal__textarea {
   width: 100%;
   padding: 14px 16px;
@@ -257,7 +273,8 @@ const closeModal = () => {
   border-radius: 6px;
   font-family: 'Inter', sans-serif;
   font-size: 14px;
-  line-height: 1.21;
+  line-height: 100%;
+  font-weight: 400;
   color: #000000;
   background: #FFFFFF;
   box-sizing: border-box;
@@ -282,24 +299,25 @@ const closeModal = () => {
 
 .question-modal__error {
   font-family: 'Inter', sans-serif;
-  font-size: 12px;
-  line-height: 1.21;
+  font-size: 14px;
+  line-height: 100%;
   color: #FF3B30;
 }
 
 .question-modal__button {
   width: 100%;
-  padding: 14px;
+  padding: 0 16px;
   background: #0084FF;
   border-radius: 6px;
   border: none;
   font-family: 'Inter', sans-serif;
   font-weight: 700;
   font-size: 14px;
-  line-height: 1.21;
+  line-height: 100%;
   color: #FFFFFF;
   cursor: pointer;
   transition: background-color 0.2s;
+  height: 45px;
   position: relative;
 }
 
@@ -310,26 +328,6 @@ const closeModal = () => {
 .question-modal__button:disabled {
   background: #CCE4FF;
   cursor: not-allowed;
-}
-
-.question-modal__policy {
-  font-family: 'Inter', sans-serif;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 1.21;
-  color: #000000;
-  margin: 0;
-}
-
-.question-modal__policy-link {
-  color: #0084FF;
-  text-decoration: none;
-  transition: color 0.2s;
-}
-
-.question-modal__policy-link:hover {
-  color: #0066CC;
-  text-decoration: underline;
 }
 
 .question-modal__loader {

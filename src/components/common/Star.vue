@@ -1,15 +1,18 @@
 <template>
   <div class="star-container">
-    <img
-      src="/src/assets/icons/star.svg"
-      alt="Star Icon"
-      class="star"
-    >
+    <img 
+        :src="StarIcon" 
+        height="14" 
+        width="14" 
+        alt="Star"
+      />
     <span class="text">{{ text }}</span>
   </div>
 </template>
 
 <script setup lang="ts">
+import StarIcon from "@/assets/icons/reviews/star.svg";
+
 defineProps({
   text: {
     type: String,

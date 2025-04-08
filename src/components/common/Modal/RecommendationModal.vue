@@ -3,27 +3,7 @@
     <div class="recommendation-modal">
       <div class="recommendation-modal__icon">
         <img
-          src="@/assets/images/magic-stick-1.svg"
-          alt="magic"
-          class="recommendation-modal__icon-item"
-        >
-        <img
-          src="@/assets/images/magic-stick-2.svg"
-          alt="magic"
-          class="recommendation-modal__icon-item"
-        >
-        <img
-          src="@/assets/images/magic-stick-3.svg"
-          alt="magic"
-          class="recommendation-modal__icon-item"
-        >
-        <img
-          src="@/assets/images/magic-stick-4.svg"
-          alt="magic"
-          class="recommendation-modal__icon-item"
-        >
-        <img
-          src="@/assets/images/magic-stick-5.svg"
+          src="@/assets/images/magic.svg"
           alt="magic"
           class="recommendation-modal__icon-item"
         >
@@ -58,38 +38,12 @@
               <span>4.8</span>
             </div>
             <div class="recommendation-modal__card-price">
-              <svg
-                width="14"
-                height="14"
-                viewBox="0 0 14 14"
-                fill="none"
-              >
-                <path
-                  d="M11.6667 5.25L9.91667 1.75H4.08333L2.33333 5.25M11.6667 5.25L7 12.25M11.6667 5.25H2.33333M2.33333 5.25L7 12.25M7 12.25L8.75 8.75H5.25L7 12.25Z"
-                  stroke="white"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
+              <img src="@/assets/images/rec.svg"/>
               <span>3 180 ₽</span>
               <span class="recommendation-modal__card-price-old">5 600 ₽</span>
             </div>
             <button class="recommendation-modal__card-like">
-              <svg
-                width="16"
-                height="14"
-                viewBox="0 0 16 14"
-                fill="none"
-              >
-                <path
-                  d="M8.41337 12.8733C8.18671 12.9533 7.81337 12.9533 7.58671 12.8733C5.65337 12.2133 1.33337 9.45998 1.33337 4.79332C1.33337 2.73332 2.99337 1.06665 5.04004 1.06665C6.25337 1.06665 7.32671 1.65332 8.00004 2.55998C8.67337 1.65332 9.75337 1.06665 10.96 1.06665C13.0067 1.06665 14.6667 2.73332 14.6667 4.79332C14.6667 9.45998 10.3467 12.2133 8.41337 12.8733Z"
-                  stroke="black"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
+              <img src="@/assets/images/like.svg"/>
             </button>
           </div>
           <div class="recommendation-modal__card">
@@ -110,38 +64,12 @@
               <span>5</span>
             </div>
             <div class="recommendation-modal__card-price">
-              <svg
-                width="14"
-                height="14"
-                viewBox="0 0 14 14"
-                fill="none"
-              >
-                <path
-                  d="M11.6667 5.25L9.91667 1.75H4.08333L2.33333 5.25M11.6667 5.25L7 12.25M11.6667 5.25H2.33333M2.33333 5.25L7 12.25M7 12.25L8.75 8.75H5.25L7 12.25Z"
-                  stroke="white"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
+              <img src="@/assets/images/rec.svg"/>
               <span>700 ₽</span>
               <span class="recommendation-modal__card-price-old">1 000 ₽</span>
             </div>
             <button class="recommendation-modal__card-like">
-              <svg
-                width="16"
-                height="14"
-                viewBox="0 0 16 14"
-                fill="none"
-              >
-                <path
-                  d="M8.41337 12.8733C8.18671 12.9533 7.81337 12.9533 7.58671 12.8733C5.65337 12.2133 1.33337 9.45998 1.33337 4.79332C1.33337 2.73332 2.99337 1.06665 5.04004 1.06665C6.25337 1.06665 7.32671 1.65332 8.00004 2.55998C8.67337 1.65332 9.75337 1.06665 10.96 1.06665C13.0067 1.06665 14.6667 2.73332 14.6667 4.79332C14.6667 9.45998 10.3467 12.2133 8.41337 12.8733Z"
-                  stroke="black"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
+              <img src="@/assets/images/like.svg"/>
             </button>
           </div>
         </div>
@@ -164,38 +92,13 @@
               <span>5</span>
             </div>
             <div class="recommendation-modal__card-price">
-              <svg
-                width="14"
-                height="14"
-                viewBox="0 0 14 14"
-                fill="none"
-              >
-                <path
-                  d="M11.6667 5.25L9.91667 1.75H4.08333L2.33333 5.25M11.6667 5.25L7 12.25M11.6667 5.25H2.33333M2.33333 5.25L7 12.25M7 12.25L8.75 8.75H5.25L7 12.25Z"
-                  stroke="white"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
+              <img src="@/assets/images/rec.svg"/>
+
               <span>10 650 ₽</span>
               <span class="recommendation-modal__card-price-old">15 600 ₽</span>
             </div>
             <button class="recommendation-modal__card-like">
-              <svg
-                width="16"
-                height="14"
-                viewBox="0 0 16 14"
-                fill="none"
-              >
-                <path
-                  d="M8.41337 12.8733C8.18671 12.9533 7.81337 12.9533 7.58671 12.8733C5.65337 12.2133 1.33337 9.45998 1.33337 4.79332C1.33337 2.73332 2.99337 1.06665 5.04004 1.06665C6.25337 1.06665 7.32671 1.65332 8.00004 2.55998C8.67337 1.65332 9.75337 1.06665 10.96 1.06665C13.0067 1.06665 14.6667 2.73332 14.6667 4.79332C14.6667 9.45998 10.3467 12.2133 8.41337 12.8733Z"
-                  stroke="black"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
+              <img src="@/assets/images/like.svg"/>
             </button>
           </div>
           <div class="recommendation-modal__card">
@@ -216,38 +119,12 @@
               <span>5</span>
             </div>
             <div class="recommendation-modal__card-price">
-              <svg
-                width="14"
-                height="14"
-                viewBox="0 0 14 14"
-                fill="none"
-              >
-                <path
-                  d="M11.6667 5.25L9.91667 1.75H4.08333L2.33333 5.25M11.6667 5.25L7 12.25M11.6667 5.25H2.33333M2.33333 5.25L7 12.25M7 12.25L8.75 8.75H5.25L7 12.25Z"
-                  stroke="white"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
+              <img src="@/assets/images/rec.svg"/>
               <span>5 850 ₽</span>
               <span class="recommendation-modal__card-price-old">6 600 ₽</span>
             </div>
             <button class="recommendation-modal__card-like">
-              <svg
-                width="16"
-                height="14"
-                viewBox="0 0 16 14"
-                fill="none"
-              >
-                <path
-                  d="M8.41337 12.8733C8.18671 12.9533 7.81337 12.9533 7.58671 12.8733C5.65337 12.2133 1.33337 9.45998 1.33337 4.79332C1.33337 2.73332 2.99337 1.06665 5.04004 1.06665C6.25337 1.06665 7.32671 1.65332 8.00004 2.55998C8.67337 1.65332 9.75337 1.06665 10.96 1.06665C13.0067 1.06665 14.6667 2.73332 14.6667 4.79332C14.6667 9.45998 10.3467 12.2133 8.41337 12.8733Z"
-                  stroke="black"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
+              <img src="@/assets/images/like.svg"/>
             </button>
           </div>
         </div>
@@ -291,8 +168,12 @@ const modelValue = computed({
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 30px;
+  gap: 16px;
   width: 100%;
+}
+
+:deep(.modal__content) {
+  max-width: 530px;
 }
 
 .recommendation-modal__icon {
@@ -301,8 +182,8 @@ const modelValue = computed({
 }
 
 .recommendation-modal__icon-item {
-  width: 24px;
-  height: 24px;
+  width: 70px;
+  height: 70px;
 }
 
 .recommendation-modal__text {
@@ -314,22 +195,25 @@ const modelValue = computed({
 }
 
 .recommendation-modal__title {
+  font-family: 'Inter', sans-serif;
   font-weight: 700;
   font-size: 40px;
-  line-height: 48px;
-  letter-spacing: -0.02em;
-  text-align: center;
-  color: var(--black-color);
+  line-height: 100%;
+  letter-spacing: -2%;
+  color: #000000;
   margin: 0;
+  text-align: center;
 }
 
 .recommendation-modal__description {
+  font-family: 'Inter', sans-serif;
   font-weight: 500;
   font-size: 16px;
   line-height: 24px;
-  text-align: center;
-  color: var(--gray-800-color);
+  letter-spacing: 0%;
+  color: #4D4D4D;
   margin: 0;
+  text-align: center;
 }
 
 .recommendation-modal__cards {
@@ -337,6 +221,7 @@ const modelValue = computed({
   flex-direction: column;
   gap: 16px;
   width: 100%;
+  margin-top: 14px;
 }
 
 .recommendation-modal__cards-row {
@@ -348,9 +233,11 @@ const modelValue = computed({
 .recommendation-modal__card {
   position: relative;
   width: 100%;
-  border: 1px solid var(--gray-400-color);
+  border: 1px solid #D9D9D9;
   border-radius: 20px;
   overflow: hidden;
+  height: 240px;
+  padding: 16px;
 }
 
 .recommendation-modal__card-image {
@@ -420,19 +307,20 @@ const modelValue = computed({
 
 .recommendation-modal__button {
   width: 100%;
-  height: 45px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--blue-color);
-  border: none;
+  padding: 0 16px;
+  background: #0084FF;
   border-radius: 6px;
+  border: none;
+  font-family: 'Inter', sans-serif;
   font-weight: 700;
   font-size: 14px;
-  line-height: 17px;
-  color: var(--white-color);
+  line-height: 100%;
+  color: #FFFFFF;
   cursor: pointer;
-  transition: opacity 0.2s;
+  transition: background-color 0.2s;
+  height: 45px;
+  position: relative;
+  margin-top: 14px;
 }
 
 .recommendation-modal__button:hover {

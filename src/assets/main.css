@@ -35,6 +35,11 @@ a {
   height: 100%;
 }
 
+input, button {
+  padding: 0;
+  outline: unset;
+  border: none;
+}
 .justify-center {
   justify-content: center;
 }

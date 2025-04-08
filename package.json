@@ -17,7 +17,9 @@
     "@popperjs/core": "^2.11.8",
     "@vueuse/core": "^13.0.0",
     "bootstrap": "^5.3.3",
+    "dadata": "^0.0.3",
     "vue": "^3.4.29",
+    "vue-dadata": "^3.0.0-beta.13",
     "vue-drag-scroller": "^1.8.6",
     "vue-router": "^4.3.3",
     "vue3-carousel": "^0.15.0"

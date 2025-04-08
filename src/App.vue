@@ -1,6 +1,6 @@
 <template>
   <div class="app">
-    <Layout>
+    <Layout :show-breadcrumbs="shouldShowBreadcrumbs" :show-header="shouldShowHeader">
       <RouterView />
     </Layout>
     <div class="modals-wrapper" :class="{ 'modals-wrapper--active': isAnyModalOpen }">
@@ -17,8 +17,8 @@
 </template>
 
 <script setup lang="ts">
-import { computed, watch, onMounted, onUnmounted } from 'vue'
-import { RouterView } from 'vue-router';
+import { computed, watch, onMounted, onUnmounted, ref } from 'vue'
+import { RouterView, useRoute } from 'vue-router';
 import Layout from '~/components/layouts/Layout.vue';
 import QuestionModal from '@/components/common/Modal/QuestionModal.vue';
 import RecommendationModal from '@/components/common/Modal/RecommendationModal.vue';
@@ -31,6 +31,13 @@ import ReviewModal from '@/components/common/Modal/ReviewModal.vue'
 import { useQuestionModal, useRecommendationModal, useDiscountModal, useDiscountInfoModal, useDeliveryModal, useSubscribeModal, useSearchModal, useReviewModal } from '@/composables/useModal'
 import '@/assets/styles/variables.css';
 
+const route = useRoute();
+const shouldShowBreadcrumbs = computed(() => {
+  return route.meta.showBreadcrumbs !== false;
+});
+const shouldShowHeader = computed(() => {
+  return route.meta.showHeader !== false;
+});
 const { isQuestionModalOpen, closeQuestionModal } = useQuestionModal();
 const { isRecommendationModalOpen, closeRecommendationModal } = useRecommendationModal();
 const { isDiscountModalOpen, closeDiscountModal } = useDiscountModal();

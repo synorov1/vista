@@ -2,7 +2,7 @@
   <BaseModal v-model:is-open="modelValue" @close="emit('update:isOpen', false)">
     <div class="search-modal">
       <div class="search-modal__icon">
-        <img src="@/assets/icons/atom.svg" alt="Atom icon">
+        <img src="@/assets/icons/search.svg" alt="Atom icon">
       </div>
       <div class="search-modal__content">
         <h2 class="search-modal__title">
@@ -50,11 +50,13 @@ const modelValue = computed({
   flex-direction: column;
   align-items: center;
   gap: 30px;
-  padding: 30px;
   background: var(--white-color);
   border-radius: 20px;
 }
 
+:deep(.modal__content) {
+  max-width: 530px;
+}
 .search-modal__icon {
   width: 80px;
   height: 80px;
@@ -69,32 +71,41 @@ const modelValue = computed({
 }
 
 .search-modal__title {
+  font-family: 'Inter', sans-serif;
   font-weight: 700;
   font-size: 40px;
-  line-height: 1.21;
-  letter-spacing: -0.02em;
+  line-height: 100%;
+  letter-spacing: -2%;
+  color: #000000;
+  margin: 0;
   text-align: center;
-  color: var(--black-color);
 }
 
 .search-modal__description {
+  font-family: 'Inter', sans-serif;
   font-weight: 500;
   font-size: 16px;
-  line-height: 1.5;
-  text-align: center;
+  line-height: 24px;
+  letter-spacing: 0%;
   color: #4D4D4D;
+  margin: 0;
+  text-align: center;
 }
 
 .search-modal__button {
   width: 100%;
-  padding: 14px;
-  background: var(--blue-color);
+  padding: 0 16px;
+  background: #0084FF;
   border-radius: 6px;
   border: none;
+  font-family: 'Inter', sans-serif;
   font-weight: 700;
   font-size: 14px;
-  line-height: 1.21;
-  color: var(--white-color);
+  line-height: 100%;
+  color: #FFFFFF;
   cursor: pointer;
+  transition: background-color 0.2s;
+  height: 45px;
+  position: relative;
 }
 </style> 

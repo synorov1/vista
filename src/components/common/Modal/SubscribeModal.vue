@@ -6,49 +6,17 @@
           Подпишитесь<br>на наши новости
         </h2>
         <p class="subscribe-modal__description">
-          И получите промокод на скидку 10%
+          И получите промокод <span>на скидку 10%</span>
         </p>
       </div>
 
       <div class="subscribe-modal__image">
-        <div class="subscribe-modal__image-circle" />
-        <div class="subscribe-modal__image-circle" />
         <div class="subscribe-modal__image-frame">
           <img
-            src="@/assets/images/product-1.jpg"
+            src="@/assets/images/subscribe.png"
             alt="product"
             class="subscribe-modal__image-item"
           >
-        </div>
-        <div class="subscribe-modal__image-frame">
-          <img
-            src="@/assets/images/product-2.jpg"
-            alt="product"
-            class="subscribe-modal__image-item"
-          >
-        </div>
-        <div class="subscribe-modal__image-frame">
-          <img
-            src="@/assets/images/product-3.jpg"
-            alt="product"
-            class="subscribe-modal__image-item"
-          >
-        </div>
-        <div class="subscribe-modal__promo">
-          <svg
-            width="14"
-            height="14"
-            viewBox="0 0 14 14"
-            fill="none"
-          >
-            <path
-              d="M11.6667 5.25L9.91667 1.75H4.08333L2.33333 5.25M11.6667 5.25L7 12.25M11.6667 5.25H2.33333M2.33333 5.25L7 12.25M7 12.25L8.75 8.75H5.25L7 12.25Z"
-              stroke="white"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
         </div>
       </div>
 
@@ -66,9 +34,10 @@
         <button class="subscribe-modal__button">
           Подписаться
         </button>
-        <p class="subscribe-modal__policy">
-          Оставляя ваши данные, вы соглашается с политикой конфиденциальности ИП Макарова Елена Валерьевна
-        </p>
+        <div class="policy">
+          <ModalPolicy/>
+
+        </div>
       </div>
     </div>
   </BaseModal>
@@ -76,6 +45,7 @@
 
 <script setup lang="ts">
 import BaseModal from '@/components/common/Modal/BaseModal.vue'
+import ModalPolicy from '@/components/ModalPolicy.vue';
 import { computed } from 'vue'
 
 defineOptions({
@@ -105,11 +75,12 @@ const modelValue = computed({
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 30px;
+  gap: 16px;
   width: 100%;
-  padding: 30px;
 }
-
+:deep(.modal__content) {
+  max-width: 530px;
+}
 .subscribe-modal__text {
   display: flex;
   flex-direction: column;
@@ -119,30 +90,36 @@ const modelValue = computed({
 }
 
 .subscribe-modal__title {
+  font-family: 'Inter', sans-serif;
   font-weight: 700;
   font-size: 40px;
-  line-height: 48px;
-  letter-spacing: -0.02em;
-  text-align: center;
-  color: var(--black-color);
+  line-height: 100%;
+  letter-spacing: -2%;
+  color: #000000;
   margin: 0;
+  text-align: center;
 }
 
 .subscribe-modal__description {
+  font-family: 'Inter', sans-serif;
   font-weight: 500;
   font-size: 16px;
   line-height: 24px;
-  text-align: center;
-  color: var(--gray-800-color);
+  letter-spacing: 0%;
+  color: #4D4D4D;
   margin: 0;
+  text-align: center;
 }
-
+.subscribe-modal__description span {
+  color: #0084FF
+}
 .subscribe-modal__image {
   position: relative;
   width: 100%;
-  height: 200px;
+  height: 300px;
   border-radius: 16px;
   overflow: hidden;
+  margin-top: 14px;
 }
 
 .subscribe-modal__image-circle {
@@ -167,7 +144,7 @@ const modelValue = computed({
 .subscribe-modal__image-frame {
   position: absolute;
   width: 100%;
-  height: 100%;
+
   background: rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(30px);
   border: 1px solid;
@@ -211,10 +188,13 @@ const modelValue = computed({
 }
 
 .subscribe-modal__label {
+  font-family: 'Inter', sans-serif;
   font-weight: 400;
   font-size: 14px;
-  line-height: 17px;
-  color: var(--black-color);
+  line-height: 100%;
+  color: #000000;
+  text-align: left;
+  letter-spacing: 0%;
 }
 
 .subscribe-modal__input {
@@ -223,16 +203,22 @@ const modelValue = computed({
 
 .subscribe-modal__input-field {
   width: 100%;
-  height: 45px;
-  padding: 14px 16px;
-  border: 1px solid var(--gray-400-color);
+  padding: 0 16px;
+  background: #fff;
+  border: 1px solid #D9D9D9;
   border-radius: 6px;
-  font-weight: 400;
+  font-family: 'Inter', sans-serif;
   font-size: 14px;
-  line-height: 17px;
-  color: var(--black-color);
+  line-height: 100%;
+  color: #000000;
+  transition: all 0.2s;
+  padding-right: 48px;
+  height: 45px;
 }
-
+.subscribe-modal__input-field:focus {
+  outline: none;
+  border-color: #0084FF;
+}
 .subscribe-modal__button {
   width: 100%;
   height: 45px;
@@ -254,11 +240,7 @@ const modelValue = computed({
   opacity: 0.7;
 }
 
-.subscribe-modal__policy {
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 15px;
-  color: var(--black-color);
-  margin: 0;
+.policy {
+  max-width: 350px;
 }
 </style> 

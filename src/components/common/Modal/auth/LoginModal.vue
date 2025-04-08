@@ -35,11 +35,7 @@
         <span v-else class="login-modal__loader" />
       </button>
       
-      <p class="login-modal__policy">
-        Оставляя ваши данные, вы соглашаетесь с политикой конфиденциальности <router-link to="/privacy" class="login-modal__policy-link">
-          ИП Макарова Елена Валерьевна
-        </router-link>
-      </p>
+      <ModalPolicy/>
     </div>
   </BaseModal>
 </template>
@@ -47,6 +43,7 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
 import BaseModal from '@/components/common/Modal/BaseModal.vue';
+import ModalPolicy from '@/components/ModalPolicy.vue';
 
 defineOptions({
   name: 'LoginModal'
@@ -138,8 +135,8 @@ const sendCode = async () => {
   font-family: 'Inter', sans-serif;
   font-weight: 700;
   font-size: 40px;
-  line-height: 1.21;
-  letter-spacing: -0.02em;
+  line-height: 100%;
+  letter-spacing: -2%;
   color: #000000;
   margin: 0;
 }
@@ -148,7 +145,8 @@ const sendCode = async () => {
   font-family: 'Inter', sans-serif;
   font-weight: 500;
   font-size: 16px;
-  line-height: 1.5;
+  line-height: 24px;
+  letter-spacing: 0%;
   color: #4D4D4D;
   margin: 0;
 }
@@ -169,7 +167,7 @@ const sendCode = async () => {
   font-family: 'Inter', sans-serif;
   font-weight: 400;
   font-size: 14px;
-  line-height: 1.21;
+  line-height: 100%;
   color: #000000;
 }
 
@@ -179,15 +177,17 @@ const sendCode = async () => {
 
 .login-modal__input {
   width: 100%;
-  padding: 14px 16px;
+  padding: 0 16px;
+  background: #fff;
   border: 1px solid #D9D9D9;
   border-radius: 6px;
   font-family: 'Inter', sans-serif;
   font-size: 14px;
-  line-height: 1.21;
+  line-height: 100%;
   color: #000000;
-  box-sizing: border-box;
-  transition: border-color 0.2s;
+  transition: all 0.2s;
+  padding-right: 48px;
+  height: 45px;
 }
 
 .login-modal__input:focus {
@@ -201,24 +201,25 @@ const sendCode = async () => {
 
 .login-modal__error {
   font-family: 'Inter', sans-serif;
-  font-size: 12px;
-  line-height: 1.21;
+  font-size: 14px;
+  line-height: 100%;
   color: #FF3B30;
 }
 
 .login-modal__button {
   width: 100%;
-  padding: 14px;
+  padding: 0 16px;
   background: #0084FF;
   border-radius: 6px;
   border: none;
   font-family: 'Inter', sans-serif;
   font-weight: 700;
   font-size: 14px;
-  line-height: 1.21;
+  line-height: 100%;
   color: #FFFFFF;
   cursor: pointer;
   transition: background-color 0.2s;
+  height: 45px;
   position: relative;
 }
 
@@ -231,25 +232,7 @@ const sendCode = async () => {
   cursor: not-allowed;
 }
 
-.login-modal__policy {
-  font-family: 'Inter', sans-serif;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 1.21;
-  color: #000000;
-  margin: 0;
-}
 
-.login-modal__policy-link {
-  color: #0084FF;
-  text-decoration: none;
-  transition: color 0.2s;
-}
-
-.login-modal__policy-link:hover {
-  color: #0066CC;
-  text-decoration: underline;
-}
 
 .login-modal__loader {
   display: inline-block;

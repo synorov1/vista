@@ -3,7 +3,7 @@
     <div class="discount-modal">
       <div class="discount-modal__text">
         <h2 class="discount-modal__title">
-          Получите скидку<br>10% на товар
+          Получите скидку<br><span>10%</span> на товар
         </h2>
         <p class="discount-modal__description">
           Уникальное предложение для любимого клиента
@@ -12,14 +12,14 @@
 
       <div class="discount-modal__image">
         <img
-          src="@/assets/images/joola-1.jpg"
+          src="@/assets/images/discount-1.png"
           alt="joola"
-          class="discount-modal__image-item"
+          class="discount-modal__image-item img-left"
         >
         <img
-          src="@/assets/images/joola-2.jpg"
+          src="@/assets/images/discount-2.png"
           alt="joola"
-          class="discount-modal__image-item"
+          class="discount-modal__image-item img-right"
         >
         <div class="discount-modal__promo">
           <span>JOOLA</span>
@@ -64,11 +64,12 @@ const modelValue = computed({
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 30px;
+  gap: 16px;
   width: 100%;
-  padding: 30px;
 }
-
+:deep(.modal__content) {
+  max-width: 530px;
+}
 .discount-modal__text {
   display: flex;
   flex-direction: column;
@@ -78,77 +79,89 @@ const modelValue = computed({
 }
 
 .discount-modal__title {
+  font-family: 'Inter', sans-serif;
   font-weight: 700;
   font-size: 40px;
-  line-height: 48px;
-  letter-spacing: -0.02em;
-  text-align: center;
-  color: var(--black-color);
+  line-height: 100%;
+  letter-spacing: -2%;
+  color: #000000;
   margin: 0;
+  text-align: center;
 }
-
+.discount-modal__title span {
+  color: #0084FF
+}
 .discount-modal__description {
+  font-family: 'Inter', sans-serif;
   font-weight: 500;
   font-size: 16px;
   line-height: 24px;
-  text-align: center;
-  color: var(--gray-800-color);
+  letter-spacing: 0%;
+  color: #4D4D4D;
   margin: 0;
+  text-align: center;
 }
 
 .discount-modal__image {
   position: relative;
   width: 100%;
-  height: 200px;
+  height: 300px;
   border-radius: 16px;
   overflow: hidden;
+  margin-top: 14px;
+  background: #0084FF;
 }
 
 .discount-modal__image-item {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .discount-modal__image-item:nth-child(2) {
-  opacity: 0.5;
+  left: 0;
+}
+
+.discount-modal__image-item:nth-child(2) {
+  left: 137px;
+  bottom: 0;
 }
 
 .discount-modal__promo {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  padding: 17px 14px;
-  background: var(--red-color);
+  bottom: 20px;
+  left: 20px;
+  padding: 0 14px;
+  background: #FF4245;
   border-radius: 100px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .discount-modal__promo span {
   font-weight: 600;
   font-size: 34px;
-  line-height: 41px;
+  line-height: 100%;
   color: var(--white-color);
 }
 
 .discount-modal__button {
   width: 100%;
-  height: 45px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--blue-color);
-  border: none;
+  padding: 0 16px;
+  background: #0084FF;
   border-radius: 6px;
+  border: none;
+  font-family: 'Inter', sans-serif;
   font-weight: 700;
   font-size: 14px;
-  line-height: 17px;
-  color: var(--white-color);
+  line-height: 100%;
+  color: #FFFFFF;
   cursor: pointer;
-  transition: opacity 0.2s;
+  transition: background-color 0.2s;
+  height: 45px;
+  position: relative;
+  margin-top: 14px;
 }
 
 .discount-modal__button:hover {

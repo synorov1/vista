@@ -60,9 +60,10 @@
           :disabled="!isValid"
           @click="handleSubmit"
         >
-          Сохранить
+          Изменить пароль
         </button>
       </div>
+      <ModalPolicy/>
     </div>
   </BaseModal>
 </template>
@@ -70,6 +71,7 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
 import BaseModal from '@/components/common/Modal/BaseModal.vue'
+import ModalPolicy from '@/components/ModalPolicy.vue';
 
 interface Props {
   isOpen?: boolean
@@ -148,51 +150,57 @@ defineOptions({
 .recovery-password-modal {
   display: flex;
   flex-direction: column;
-  padding: 32px;
   width: 100%;
   max-width: 400px;
   background: #FFFFFF;
-  border-radius: 16px;
+  gap: 16px;
+  border-radius: 20px;
 }
 
 .recovery-password-modal__title {
   font-family: 'Inter', sans-serif;
   font-weight: 700;
-  font-size: 32px;
-  line-height: 39px;
+  font-size: 40px;
+  line-height: 100%;
+  letter-spacing: -2%;
   color: #000000;
-  margin: 0 0 16px;
+  margin: 0;
+  text-align: center;
 }
 
 .recovery-password-modal__text {
   font-family: 'Inter', sans-serif;
-  font-weight: 400;
+  font-weight: 500;
   font-size: 16px;
   line-height: 24px;
+  letter-spacing: 0%;
   color: #4D4D4D;
-  margin: 0 0 32px;
+  margin: 0;
+  text-align: center;
 }
 
 .recovery-password-modal__form {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 16px;
   width: 100%;
+  margin-top: 14px;
 }
 
 .recovery-password-modal__input-group {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
 }
 
 .recovery-password-modal__label {
   font-family: 'Inter', sans-serif;
-  font-weight: 500;
+  font-weight: 400;
   font-size: 14px;
-  line-height: 17px;
+  line-height: 100%;
   color: #000000;
   text-align: left;
+  letter-spacing: 0%;
 }
 
 .recovery-password-modal__input-wrapper {
@@ -202,16 +210,17 @@ defineOptions({
 
 .recovery-password-modal__input {
   width: 100%;
-  padding: 16px;
-  background: #F5F5F5;
-  border: 1px solid transparent;
-  border-radius: 8px;
+  padding: 0 16px;
+  background: #fff;
+  border: 1px solid #D9D9D9;
+  border-radius: 6px;
   font-family: 'Inter', sans-serif;
-  font-size: 16px;
-  line-height: 19px;
+  font-size: 14px;
+  line-height: 100%;
   color: #000000;
   transition: all 0.2s;
   padding-right: 48px;
+  height: 45px;
 }
 
 .recovery-password-modal__input:focus {
@@ -238,8 +247,8 @@ defineOptions({
 
 .recovery-password-modal__error {
   font-family: 'Inter', sans-serif;
-  font-size: 12px;
-  line-height: 15px;
+  font-size: 14px;
+  line-height: 100%;
   color: #FF3B30;
 }
 
@@ -279,17 +288,18 @@ defineOptions({
 
 .recovery-password-modal__button {
   width: 100%;
-  padding: 16px;
+  padding: 0 16px;
   background: #0084FF;
-  border-radius: 8px;
+  border-radius: 6px;
   border: none;
   font-family: 'Inter', sans-serif;
   font-weight: 700;
-  font-size: 16px;
-  line-height: 19px;
+  font-size: 14px;
+  line-height: 100%;
   color: #FFFFFF;
   cursor: pointer;
   transition: background-color 0.2s;
+  height: 45px;
 }
 
 .recovery-password-modal__button:hover {

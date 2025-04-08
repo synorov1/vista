@@ -20,8 +20,8 @@
             Накладка DONIC BlueStar A1
           </h3>
           <div class="review-modal__product-rating">
-            <img src="@/assets/icons/star.svg" alt="Star icon">
-            <span>3.8 - 3 214 оценки</span>
+            <img src="@/assets/icons/star-rating.svg" alt="Star icon">
+            3.8<span> - 3 214 оценки</span>
           </div>
         </div>
       </div>
@@ -30,7 +30,7 @@
         <img 
           v-for="i in 5" 
           :key="i" 
-          src="@/assets/icons/star.svg" 
+          src="@/assets/icons/star2.svg" 
           :class="{ 'review-modal__rating-star--active': i <= rating }" 
           alt="Star icon" 
           @click="rating = i"
@@ -69,7 +69,7 @@
               :key="i" 
               class="review-modal__upload-item"
             >
-              <img src="@/assets/icons/image.svg" alt="Upload image">
+              <img src="@/assets/icons/upload-image.svg" alt="Upload image">
             </div>
           </div>
           <button class="review-modal__upload-button">
@@ -81,9 +81,10 @@
           Отправить
         </button>
 
-        <p class="review-modal__policy">
-          Оставляя ваши данные, вы соглашается с политикой конфиденциальности ИП Макарова Елена Валерьевна
-        </p>
+<div class="policy">
+  <ModalPolicy/>
+
+</div>
       </div>
     </div>
   </BaseModal>
@@ -92,6 +93,7 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
 import BaseModal from '@/components/common/Modal/BaseModal.vue'
+import ModalPolicy from '@/components/ModalPolicy.vue';
 
 defineOptions({
   name: 'ReviewModal',
@@ -138,7 +140,6 @@ const handleSubmit = () => {
   flex-direction: column;
   align-items: center;
   gap: 30px;
-  padding: 30px;
   background: var(--white-color);
   border-radius: 20px;
   width: 100%;
@@ -154,20 +155,25 @@ const handleSubmit = () => {
 }
 
 .review-modal__title {
+  font-family: 'Inter', sans-serif;
   font-weight: 700;
   font-size: 40px;
-  line-height: 1.21;
-  letter-spacing: -0.02em;
+  line-height: 100%;
+  letter-spacing: -2%;
+  color: #000000;
+  margin: 0;
   text-align: center;
-  color: var(--black-color);
 }
 
 .review-modal__description {
+  font-family: 'Inter', sans-serif;
   font-weight: 500;
   font-size: 16px;
-  line-height: 1.5;
-  text-align: center;
+  line-height: 24px;
+  letter-spacing: 0%;
   color: #4D4D4D;
+  margin: 0;
+  text-align: center;
 }
 
 .review-modal__product {
@@ -177,17 +183,18 @@ const handleSubmit = () => {
 }
 
 .review-modal__product-image {
-  width: 80px;
-  height: 80px;
+  width: 100px;
+  height: 120px;
   border: 1px solid #D9D9D9;
   border-radius: 10px;
   overflow: hidden;
+  padding: 30px 20px;
 }
 
 .review-modal__product-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .review-modal__product-info {
@@ -199,15 +206,16 @@ const handleSubmit = () => {
 
 .review-modal__product-category {
   font-size: 14px;
-  line-height: 1.71;
+  line-height: 24px;
+  letter-spacing: 0;
   color: #4D4D4D;
 }
 
 .review-modal__product-name {
   font-weight: 700;
   font-size: 16px;
-  line-height: 1.21;
-  letter-spacing: -0.02em;
+  line-height: 100%;
+  letter-spacing: -2%;
   color: var(--black-color);
 }
 
@@ -215,6 +223,16 @@ const handleSubmit = () => {
   display: flex;
   align-items: center;
   gap: 4px;
+  color: #000;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 100%;
+  letter-spacing: 0%;
+}
+
+.review-modal__product-rating span {
+  color: #A0A0A0;
+  font-weight: 400;
 }
 
 .review-modal__rating {
@@ -223,13 +241,13 @@ const handleSubmit = () => {
 }
 
 .review-modal__rating img {
-  width: 24px;
-  height: 24px;
+  width: 36px;
+  height: 36px;
   cursor: pointer;
 }
 
 .review-modal__rating-star--active {
-  filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(190deg) brightness(118%) contrast(119%);
+  filter: invert(65%) sepia(100%) saturate(1000%) hue-rotate(190deg) brightness(100%) contrast(100%);
 }
 
 .review-modal__form {
@@ -246,25 +264,56 @@ const handleSubmit = () => {
 }
 
 .review-modal__form-group label {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
   font-size: 14px;
-  line-height: 1.21;
-  color: var(--black-color);
+  line-height: 100%;
+  color: #000000;
+  text-align: left;
+  letter-spacing: 0%;
 }
 
-.review-modal__form-group input,
+.review-modal__form-group input {
+  width: 100%;
+  padding: 0 16px;
+  background: #fff;
+  border: 1px solid #D9D9D9;
+  border-radius: 6px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  line-height: 100%;
+  color: #000000;
+  transition: all 0.2s;
+  padding-right: 48px;
+  height: 45px;
+}
+
 .review-modal__form-group textarea {
   width: 100%;
   padding: 14px 16px;
   border: 1px solid #D9D9D9;
   border-radius: 6px;
+  font-family: 'Inter', sans-serif;
   font-size: 14px;
-  line-height: 1.21;
-  color: var(--black-color);
+  line-height: 100%;
+  font-weight: 400;
+  color: #000000;
+  background: #FFFFFF;
+  box-sizing: border-box;
+  transition: border-color 0.2s;
+  min-height: 180px;
+  resize: vertical;
 }
 
 .review-modal__form-group textarea {
   height: 180px;
   resize: none;
+}
+
+textarea:focus,
+input:focus {
+  outline: none;
+  border-color: #0084FF;
 }
 
 .review-modal__upload {
@@ -273,8 +322,8 @@ const handleSubmit = () => {
 }
 
 .review-modal__upload-item {
-  width: 80px;
-  height: 80px;
+  width: 120px;
+  height: 150px;
   border: 1px solid #D9D9D9;
   border-radius: 14px;
   display: flex;
@@ -287,27 +336,27 @@ const handleSubmit = () => {
   background: none;
   border: none;
   font-size: 14px;
-  line-height: 1.21;
+  line-height: 100%;
+  font-weight: 400;
+  letter-spacing: 0;
   color: var(--blue-color);
   cursor: pointer;
 }
 
 .review-modal__submit {
   width: 100%;
-  padding: 14px;
-  background: var(--blue-color);
+  padding: 0 16px;
+  background: #0084FF;
   border-radius: 6px;
   border: none;
+  font-family: 'Inter', sans-serif;
   font-weight: 700;
   font-size: 14px;
-  line-height: 1.21;
-  color: var(--white-color);
+  line-height: 100%;
+  color: #FFFFFF;
   cursor: pointer;
-}
-
-.review-modal__policy {
-  font-size: 12px;
-  line-height: 1.21;
-  color: var(--black-color);
+  transition: background-color 0.2s;
+  height: 45px;
+  position: relative;
 }
 </style> 
