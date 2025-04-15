@@ -10,15 +10,15 @@ usePageTitle('Статья');
 </script>
 
 <template>
-  <div class="post">
-    <div class="post__left">
-      <router-link class="btn post__button" to="/blog">
+  <div :class="$style.post">
+    <div :class="$style.left">
+      <router-link :class="[$style.btn, $style.button]" to="/blog">
         На главную  блога
       </router-link>
     </div>
 
     <PostMain
-      class="post__main"
+      :class="$style.main"
       :image="data.mainImage"
       :title="data.title"
       :text="data.text"
@@ -27,7 +27,7 @@ usePageTitle('Статья');
       :date="data.date"
     />
 
-    <div class="post__right">
+    <div :class="$style.right">
       <PostNews :title="data.news.title" :list="data.news.list" />
 
       <PostBanner
@@ -37,21 +37,21 @@ usePageTitle('Статья');
       />
     </div>
     <!-- TODO по макету слайдер не в общем контейнер и футера нету, если исправлять то через lauoyt -->
-    <PostArticles class="post__articles" :list="data.articles" />
+    <PostArticles :class="$style.articles" :list="data.articles" />
   </div>
 </template>
 
-<style scoped>
+<style module>
 .post {
   padding-bottom: 68px;
   position: relative;
 }
 
-.post__left {
+.left {
   margin-bottom: 20px;
 }
 
-.post__button {
+.button {
   height: 45px;
   padding: 14px;
   background-color: var(--gray-300-color);
@@ -63,15 +63,15 @@ usePageTitle('Статья');
   font-size: 14px;
 }
 
-.post__main {
+.main {
   margin-bottom: 40px;
 }
 
-.post__banner {
+.banner {
   margin-bottom: 40px;
 }
 
-.post__right {
+.right {
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -83,20 +83,20 @@ usePageTitle('Статья');
     padding-bottom: 98px;
   }
   
-  .post__left,
-  .post__main,
-  .post__right {
+  .left,
+  .main,
+  .right {
     max-width: 568px;
     margin-left: auto;
     margin-right: auto;
   }
 
-  .post__main,
-  .post__right {
+  .main,
+  .right {
     margin-bottom: 60px;
   }
 
-  .post__right {
+  .right {
     gap: 30px;
   }
 }
@@ -106,7 +106,7 @@ usePageTitle('Статья');
     padding-bottom: 80px;
   }
 
-  .post__left {
+  .left {
     position: absolute;
     left: 0;
     top: 0;
@@ -123,23 +123,23 @@ usePageTitle('Статья');
     padding-bottom: 157px;
   }
 
-  .post__left {
+  .left {
     position: static;
     width: 155px;
     flex-shrink: 0;
     margin-right: auto;
   }
 
-  .post__main {
+  .main {
     margin: 0
   }
 
-  .post__right {
+  .right {
     width: 300px;
     margin: 0;
   }
 
-  .post__articles {
+  .articles {
     width: 100%;
     margin-top: 100px;
   }

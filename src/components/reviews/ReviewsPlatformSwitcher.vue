@@ -14,9 +14,9 @@
           :src="platform.icon" 
           alt="" 
           class="platform-icon" 
-        />
+        >
         <span class="platform-name">{{ platform.name }}</span>
-        <span class="platform-rating" v-if="platform.rating">{{ platform.rating }}</span>
+        <span v-if="platform.rating" class="platform-rating">{{ platform.rating }}</span>
       </button>
     </div>
     <div class="select-container">
@@ -26,47 +26,44 @@
         placeholder="Выберите платформу"
       >
         <template #default="{ option }">
-          <div class="select-item" v-if="option">
+          <div v-if="option" class="select-item">
             <img 
               :src="option.icon" 
               alt="" 
               class="platform-icon" 
-            />
+            >
             <span class="platform-name">{{ option.title }}</span>
-            <span class="platform-rating" v-if="option.rating">{{ option.rating }}</span>
+            <span v-if="option.rating" class="platform-rating">{{ option.rating }}</span>
           </div>
-          <div v-else>Выберите платформу</div>
+          <div v-else>
+            Выберите платформу
+          </div>
         </template>
         <template #option="{ option }">
-          <div class="select-item" v-if="option">
+          <div v-if="option" class="select-item">
             <img 
               :src="option.icon" 
               alt="" 
               class="platform-icon" 
-            />
+            >
             <span class="platform-name">{{ option.title }}</span>
-            <span class="platform-rating" v-if="option.rating">{{ option.rating }}</span>
+            <span v-if="option.rating" class="platform-rating">{{ option.rating }}</span>
           </div>
         </template>
       </Select>
     </div>
     <div class="reviews__rating">
-      <ReviewsAllRating/>
+      <ReviewsAllRating />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-// @ts-ignore
 import AllPlatformIcon from "@/assets/icons/reviews/all.svg"
-// @ts-ignore
 import GisPlatformIcon from "@/assets/icons/reviews/2gis.svg"
-// @ts-ignore
 import YandexPlatformIcon from "@/assets/icons/reviews/yandex.svg"
-// @ts-ignore
 import GooglePlatformIcon from "@/assets/icons/reviews/google.svg"
 
-// @ts-ignore
 import Select from "@/components/Select.vue";
 import type { Options } from "@/components/Select.vue";
 import { ref, computed, watch } from 'vue';
@@ -99,7 +96,6 @@ function selectPlatform(platform: Platform) {
   emit('change', platform);
 }
 
-// Преобразование данных платформ в формат для Select
 const selectOptions = computed<Options[]>(() => {
   return platforms.map(platform => ({
     id: platform.id,
@@ -109,12 +105,7 @@ const selectOptions = computed<Options[]>(() => {
   }));
 });
 
-// Отслеживаем изменение значения Select для emit события
-function updateValue() {
-  emit('change', activePlatform.value);
-}
 
-// Реагируем на изменения значения activePlatform
 watch(activePlatform, (newValue: Platform) => {
   emit('change', newValue);
 });

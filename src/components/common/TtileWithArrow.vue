@@ -73,6 +73,12 @@ const currentButton = computed(() => {
   </div>
 </template>
 
+<script lang="ts">
+export default {
+  name: 'TitleWithArrow'
+}
+</script>
+
 <style scoped>
 .title-with-arrow {
   display: flex;

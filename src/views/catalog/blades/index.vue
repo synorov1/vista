@@ -78,10 +78,6 @@ onMounted(async () => {
 });
 </script>
 
-<style scoped>
-.blades-page {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-}
+<style module>
+
 </style>

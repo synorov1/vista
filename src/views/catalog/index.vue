@@ -11,5 +11,5 @@ import { usePageTitle } from '@/composables/usePageTitle';
 usePageTitle('Каталог');
 </script>
 
-<style scoped>
+<style module>
 </style>

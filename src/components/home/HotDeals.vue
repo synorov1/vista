@@ -4,8 +4,17 @@ import Card from '@/components/cards/Card.vue';
 import BlackArrowButton from '~/components/common/buttons/BlackArrowButton.vue';
 import { Carousel, Slide, Pagination } from 'vue3-carousel';
 import type { CarouselConfig, CarouselExposed } from 'vue3-carousel';
-import {ref} from "vue";
+import { ref } from "vue";
 
+interface CardItem {
+  id: number;
+  title: string;
+  image: string;
+  price: number;
+  oldPrice: number;
+  rating: number;
+  liked: boolean;
+}
 
 interface HotDealsData {
   title: string;
@@ -18,15 +27,8 @@ interface HotDealsData {
     text: string;
     to: string;
   };
-  items: Array<{
-    id: number;
-    title: string;
-    image: string;
-    price: number;
-    oldPrice: number;
-    rating: number;
-    liked: boolean;
-  }>;
+  items: CardItem[];
+  items2: CardItem[][];
 }
 
 defineProps<{
@@ -82,7 +84,14 @@ const config: CarouselConfig = {
             :key="item.id"
             :class="$style.card"
           >
-            <Card v-bind="item" />
+            <Card 
+              :image="item.image"
+              :title="item.title"
+              :price="item.price"
+              :old-price="item.oldPrice"
+              :rating="item.rating"
+              :liked="item.liked"
+            />
           </Slide>
           
           <template #addons>
@@ -98,12 +107,21 @@ const config: CarouselConfig = {
           v-bind="config"
         >
           <Slide
-            v-for="item in data.items2"
-            :key="item.id"
+            v-for="(items, itemsIndex) in data.items2"
+            :key="itemsIndex"
             :class="$style.card"
           >
             <div class="flex flex-col" :class="$style.topCards">
-              <Card v-for="(card, index) in item" :key="index" v-bind="card" />
+              <Card 
+                v-for="card in items" 
+                :key="card.id"
+                :image="card.image"
+                :title="card.title"
+                :price="card.price"
+                :old-price="card.oldPrice"
+                :rating="card.rating"
+                :liked="card.liked"
+              />
             </div>
           </Slide>
           
@@ -117,20 +135,44 @@ const config: CarouselConfig = {
         <BlackArrowButton :text="data.button.text" :class="$style.button" />
         
         <div class="flex flex-col" :class="$style.info">
-          <div :class="$style.subtitle">{{ data.subtitle }}</div>
-          <div :class="$style.heading">{{ data.heading }}</div>
+          <div :class="$style.subtitle">
+            {{ data.subtitle }}
+          </div>
+          <div :class="$style.heading">
+            {{ data.heading }}
+          </div>
         </div>
   
         <div :class="$style.timer">
           <span :class="$style.timerIcon">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg 
+              width="20" 
+              height="20" 
+              viewBox="0 0 20 20" 
+              fill="none" 
+              xmlns="http://www.w3.org/2000/svg"
+            >
               <g clip-path="url(#clip0_44_7515)">
-                <path d="M10.0001 18.3333C14.6025 18.3333 18.3334 14.6023 18.3334 9.99996C18.3334 5.39759 14.6025 1.66663 10.0001 1.66663C5.39771 1.66663 1.66675 5.39759 1.66675 9.99996C1.66675 14.6023 5.39771 18.3333 10.0001 18.3333Z" stroke="#FF4245" stroke-width="1.5"/>
-                <path d="M10 6.66663V9.99996L12.0833 12.0833" stroke="#FF4245" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path 
+                  d="M10.0001 18.3333C14.6025 18.3333 18.3334 14.6023 18.3334 9.99996C18.3334 5.39759 14.6025 1.66663 10.0001 1.66663C5.39771 1.66663 1.66675 5.39759 1.66675 9.99996C1.66675 14.6023 5.39771 18.3333 10.0001 18.3333Z" 
+                  stroke="#FF4245" 
+                  stroke-width="1.5"
+                />
+                <path 
+                  d="M10 6.66663V9.99996L12.0833 12.0833" 
+                  stroke="#FF4245" 
+                  stroke-width="1.5" 
+                  stroke-linecap="round" 
+                  stroke-linejoin="round"
+                />
               </g>
               <defs>
                 <clipPath id="clip0_44_7515">
-                  <rect width="20" height="20" fill="white"/>
+                  <rect 
+                    width="20" 
+                    height="20" 
+                    fill="white"
+                  />
                 </clipPath>
               </defs>
             </svg>
@@ -145,7 +187,14 @@ const config: CarouselConfig = {
           v-bind="config"
         >
           <Slide v-for="item in data.items" :key="item.id">
-            <Card v-bind="item" />
+            <Card 
+              :image="item.image"
+              :title="item.title"
+              :price="item.price"
+              :old-price="item.oldPrice"
+              :rating="item.rating"
+              :liked="item.liked"
+            />
           </Slide>
           
           <template #addons>
@@ -158,7 +207,12 @@ const config: CarouselConfig = {
             v-for="item in data.items.slice(0, 2)"
             :key="item.id"
             :class="$style.card"
-            v-bind="item"
+            :image="item.image"
+            :title="item.title"
+            :price="item.price"
+            :old-price="item.oldPrice"
+            :rating="item.rating"
+            :liked="item.liked"
           />
         </div>
       </div>

@@ -35,7 +35,7 @@
         <span v-else class="login-modal__loader" />
       </button>
       
-      <ModalPolicy/>
+      <ModalPolicy />
     </div>
   </BaseModal>
 </template>

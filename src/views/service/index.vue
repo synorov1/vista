@@ -9,13 +9,13 @@ usePageTitle('Сервис');
 </script>
 
 <template>
-  <div class="service">
+  <div>
     <GradientBanner
       :title="currentService.title"
       :image-src="currentService.bannerImage"
       :subtitle="currentService.text"
       :price="currentService.price"
-      class="currentService-banner"
+      :class="$style.banner"
     />
 
     <ServiceInfo
@@ -30,24 +30,21 @@ usePageTitle('Сервис');
   </div>
 </template>
 
-<style scoped>
-  .currentService-banner {
-    margin-bottom: 40px;
+<style module>
+.banner {
+  margin-bottom: 40px;
 
-    @media (min-width: 321px) {
-      margin-bottom: 60px;
-    }
-
-    @media (min-width: 769px) {
-      margin-bottom: 80px;
-    }
-
-    @media (min-width: 1025px) {
-      margin-bottom: 100px;
-    }
+  @media (min-width: 321px) {
+    margin-bottom: 60px;
   }
 
- .service__banner > img {
-    height: unset !important;
+  @media (min-width: 769px) {
+    margin-bottom: 80px;
   }
+
+  @media (min-width: 1025px) {
+    margin-bottom: 100px;
+  }
+}
+
 </style>

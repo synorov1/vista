@@ -1,18 +1,18 @@
 <template>
-  <div class="banner-container">
-    <div class="text">
-      <p class="title">
+  <div :class="$style.bannerContainer">
+    <div :class="$style.text">
+      <p :class="$style.title">
         {{ title }}
       </p>
-      <p class="subtitle">
+      <p :class="$style.subtitle">
         {{ subtitle }}
       </p>
     </div>
-    <div class="image-wrap">
+    <div :class="$style.imageWrap">
       <img
         :src="imageSrc"
         alt="Banner Image"
-        class="image"
+        :class="$style.image"
       >
     </div>
   </div>
@@ -35,8 +35,8 @@ defineProps({
 });
 </script>
 
-<style scoped>
-.banner-container{
+<style module>
+.bannerContainer {
   display: flex;
   justify-content: space-between;
   color: var(--white-color);
@@ -72,7 +72,7 @@ defineProps({
   letter-spacing: -2%;
 }
 
-.image-wrap {
+.imageWrap {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -118,7 +118,7 @@ defineProps({
 }
 
 @media (max-width: 767px) {
-  .banner-container {
+  .bannerContainer {
     height: 404px;
     flex-direction: column;
   }
@@ -130,10 +130,9 @@ defineProps({
     flex-direction: column;
   }
 
-  .image-wrap {
+  .imageWrap {
     display: flex;
     order: 3;
   }
 }
-
 </style>

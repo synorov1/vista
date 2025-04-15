@@ -33,16 +33,16 @@ usePageTitle('Избранное');
 </script>
 
 <template>
-  <div class="favorite">
+  <div :class="$style.favorite">
     <Carousel
       ref="carouselRef"
-      class="carousel carousel-progress"
+      :class="['carousel', 'carousel-progress']"
       v-bind="config"
     >
       <Slide
         v-for="product in data"
         :key="product.href"
-        class="favorite__slide"
+        :class="$style.slide"
       >
         <ItemCard
           :content="product"
@@ -50,24 +50,24 @@ usePageTitle('Избранное');
       </Slide>
 
       <template #addons>
-        <CarouselPagination class="favorite__pagination carousel-progress__pagination" />
+        <CarouselPagination :class="$style.pagination" />
       </template>
     </Carousel>
   </div>
 </template>
 
-<style scoped>
+<style module>
 .favorite {
   margin-bottom: 40px;
   padding-bottom: 30px;
 }
 
-.favorite__slide {
+.slide {
   display: block;
   text-align: left;
 }
 
-.favorite__pagination {
+.pagination {
   bottom: -30px;
 }
 

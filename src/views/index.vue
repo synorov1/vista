@@ -3,7 +3,6 @@ import MainBanner from '@/components/home/MainBanner.vue';
 import PopularCategories from '@/components/home/PopularCategories.vue';
 import HotDeals from '@/components/home/HotDeals.vue';
 import ReklamaBanner from '@/components/home/ReklamaBanner.vue';
-import PromoSection from '@/components/home/PromoSection.vue';
 import BestOffers from '@/components/home/BestOffers.vue';
 import BrandList from '@/components/home/BrandList.vue';
 import ArticlesSection from '@/components/home/ArticlesSection.vue';
@@ -50,8 +49,6 @@ const routes = [
 
   <ReklamaBanner :data="data.reklamaTop" />
 
-  <PromoSection />
-
   <!--  Выгодные предложения-->
   <BestOffers :data="data.bestOffers" />
 
@@ -63,11 +60,11 @@ const routes = [
   <!--  Полезные статьи-->
   <ArticlesSection :data="data.articlesSection" />
 
-  <div class="routes-container">
+  <div :class="$style.routesContainer">
     <router-link
       v-for="route in routes"
       :key="route.path"
-      class="link"
+      :class="$style.link"
       :to="route.path"
     >
       {{ route.label }}
@@ -92,8 +89,8 @@ const routes = [
 }
 </style>
 
-<style scoped>
-.routes-container {
+<style module>
+.routesContainer {
   display: grid;
   grid-template-columns: 1fr;
   gap: 8px;
@@ -116,13 +113,13 @@ const routes = [
 }
 
 @media (min-width: 768px) {
-  .routes-container {
+  .routesContainer {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
 @media (min-width: 1024px) {
-  .routes-container {
+  .routesContainer {
     grid-template-columns: repeat(4, 1fr);
   }
 }

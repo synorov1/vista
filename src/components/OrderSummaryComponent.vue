@@ -1,8 +1,12 @@
 <template>
   <div class="order-summary" :class="{ 'hide-order': props.currentStep !== 0 }">
     <div class="summary-section">
-      <h3 v-if="props.currentStep === 0">Ваш заказ:</h3>
-      <h3 v-else>Итого:</h3>
+      <h3 v-if="props.currentStep === 0">
+        Ваш заказ:
+      </h3>
+      <h3 v-else>
+        Итого:
+      </h3>
       <div class="summary-row">
         <span>1 товар, 1 шт.</span>
         <span>6 750 ₽</span>
@@ -13,7 +17,7 @@
       </div>
     </div>
 
-    <CartPromocode v-if="props.currentStep === 0"/>
+    <CartPromocode v-if="props.currentStep === 0" />
 
     <div class="total-section">
       <h3>Итого к оплате:</h3>
@@ -34,7 +38,13 @@
       </div>
     </div>
 
-    <button v-if="props.currentStep === 0" class="checkout-button" @click="handleNextStep">Перейти к оформлению</button>
+    <button
+      v-if="props.currentStep === 0"
+      class="checkout-button"
+      @click="handleNextStep"
+    >
+      Перейти к оформлению
+    </button>
   </div>
 </template>
 

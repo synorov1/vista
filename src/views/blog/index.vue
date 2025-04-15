@@ -7,14 +7,14 @@ usePageTitle('Блог');
 </script>
 
 <template>
-  <div class="blog">
-    <BlogCarousel class="blog__carousel" />
-    <BlogNews class="blog__news" />
+  <div>
+    <BlogCarousel :class="$style.carousel" />
+    <BlogNews :class="$style.news" />
   </div>
 </template>
 
-<style scoped>
-.blog__carousel {
+<style module>
+.carousel {
   margin-bottom: 75px;
 
   @media (min-width: 768px) {
@@ -26,7 +26,7 @@ usePageTitle('Блог');
   }
 }
 
-.blog__news {
+.news {
   margin-bottom: 56px;
 
   @media (min-width: 768px) {

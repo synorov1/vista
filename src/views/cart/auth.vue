@@ -1,8 +1,8 @@
 <template>
-  <section class="section">
-    <CartAuthStepHeader/>
+  <section :class="$style.section">
+    <CartAuthStepHeader />
     <CartLayout :step="1">
-      <CartAuthForm/>
+      <CartAuthForm />
     </CartLayout>
   </section>
 </template>
@@ -13,11 +13,9 @@ import CartAuthStepHeader from '@/components/cart/CartAuthStepHeader.vue';
 import CartLayout from '@/components/layouts/CartLayout.vue';
 </script>
 
-<style scoped>
+<style module>
 .section {
-    margin-bottom: 60px;
+  margin-bottom: 60px;
 }
-
-
 </style>
     

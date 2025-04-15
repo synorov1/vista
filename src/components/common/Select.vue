@@ -3,21 +3,23 @@
     <span v-if="props.label">{{ props.label }} <b v-if="props.required">*</b></span>
     <div class="select">
       {{ modelValue }}
-      <div class="items-list"
-      :type="props.type"
-      :placeholder="props.placeholder"
-      :required="props.required"
-      @focus="isFocused = true"
-      @blur="handleBlur"
-    >
-      <div class="item"
-        v-for="(item, index) in props.items"
-        :key="index"
-        @click="selectItem(item)"
+      <div
+        class="items-list"
+        :type="props.type"
+        :placeholder="props.placeholder"
+        :required="props.required"
+        @focus="isFocused = true"
+        @blur="handleBlur"
       >
-        {{ item }}
+        <div
+          v-for="(item, index) in props.items"
+          :key="index"
+          class="item"
+          @click="selectItem(item)"
+        >
+          {{ item }}
+        </div>
       </div>
-    </div>
     </div>
   </label>
 </template>

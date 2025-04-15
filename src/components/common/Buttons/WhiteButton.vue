@@ -1,7 +1,7 @@
 <template>
   <div>
     <button
-      class="btn white-btn"
+      class="$style.whiteBtn"
       :style="{ height: height }"
       type="button"
     >
@@ -23,8 +23,8 @@ defineProps({
 });
 </script>
 
-<style scoped>
-.white-btn {
+<style module>
+.whiteBtn {
   box-sizing: border-box;
   display: flex;
   flex-direction: row;
@@ -44,13 +44,13 @@ defineProps({
   width: inherit;
 }
 
-.white-btn:hover {
+.whiteBtn:hover {
   border: 1px solid var(--gray-600-color);
   background-color: var(--gray-100-color);
   color: var(--gray-600-color);
 }
 
-.white-btn:focus {
+.whiteBtn:focus {
   outline: none;
   box-shadow: none;
 }

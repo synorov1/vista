@@ -10,7 +10,7 @@ usePageTitle('О компании');
 </script>
 
 <template>
-  <div class="about">
+  <div :class="$style.about">
     <AboutMain :image="data.image" :text="data.text" />
 
     <AboutInfo
@@ -35,7 +35,7 @@ usePageTitle('О компании');
   </div>
 </template>
 
-<style scoped>
+<style module>
 .about {
   display: flex;
   flex-direction: column;

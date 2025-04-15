@@ -1,18 +1,21 @@
 <template>
-  <div class="product-controls">
-    <div class="quantity-controls">
-      <button class="control-btn remove" @click="decreaseQuantity">
+  <div :class="$style.productControls">
+    <div :class="$style.quantityControls">
+      <button :class="[$style.controlBtn, $style.remove]" @click="decreaseQuantity">
         -
       </button>
-      <div class="quantity">
+      <div :class="$style.quantity">
         {{ quantity }}
       </div> 
-      <button class="control-btn add" @click="increaseQuantity">
+      <button :class="[$style.controlBtn, $style.add]" @click="increaseQuantity">
         +
       </button>
     </div>
-    <div class="action-buttons">
-      <button class="icon-btn" type="button">
+    <div :class="$style.actionButtons">
+      <button
+        :class="$style.iconBtn"
+        type="button"
+      >
         <img
           :src="LikeIcon"
           height="20"
@@ -20,7 +23,10 @@
           alt="Action"
         >
       </button>
-      <button class="icon-btn" type="button">
+      <button
+        :class="$style.iconBtn"
+        type="button"
+      >
         <img
           :src="TrashIcon"
           height="20"
@@ -47,17 +53,14 @@ const decreaseQuantity = () => {
 
 </script>
 
-
-
-<style scoped>
-
-.product-controls {
+<style module>
+.productControls {
   display: flex;
   justify-content: center;
   gap: 50px;
 }
 
-.quantity-controls {
+.quantityControls {
   display: flex;
   align-items: center;
 }
@@ -69,7 +72,7 @@ const decreaseQuantity = () => {
   align-items: center;
 }
 
-.control-btn {
+.controlBtn {
   width: 32px;
   height: 32px;
   background: #F0F0F0;
@@ -86,7 +89,8 @@ const decreaseQuantity = () => {
 .add {
   color: #000;
 }
-.quantity-controls span {
+
+.quantityControls span {
   font-weight: 500;
   font-size: 20px;
   line-height: 1.21;
@@ -95,13 +99,13 @@ const decreaseQuantity = () => {
   margin: 0 10px;
 }
 
-.action-buttons {
+.actionButtons {
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
-.icon-btn {
+.iconBtn {
   width: 32px;
   height: 32px;
   background: #F0F0F0;
@@ -113,21 +117,17 @@ const decreaseQuantity = () => {
   cursor: pointer;
 }
 
-
 @media (max-width: 720px) {
-
-
-.product-controls {
-  flex-direction: row;
-  justify-content: space-between;
-  gap: 20px;
-}
+  .productControls {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+  }
 }
 
 @media (max-width: 468px) {
-  .product-controls {
-  gap: 50px;
+  .productControls {
+    gap: 50px;
+  }
 }
-}
-
 </style>

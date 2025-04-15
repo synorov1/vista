@@ -41,18 +41,18 @@ const slots = useSlots();
 </script>
 
 <template>
-  <div class="product-reviews">
-    <div v-if="slots.head" class="head">
+  <div :class="$style.productReviews">
+    <div v-if="slots.head" :class="$style.head">
       <slot
         name="head"
         :prev="carouselRef?.prev"
         :next="carouselRef?.next"
       />
       <TtileWithArrow
+        v-if="props.hasArrows"
+        :has-arrows="props.hasArrows"
         @click-arrow-left="carouselRef?.prev"
         @click-arrow-right="carouselRef?.next"
-        :hasArrows="props.hasArrows"
-        v-if="props.hasArrows"
       />
     </div>
     <TtileWithArrow
@@ -66,26 +66,26 @@ const slots = useSlots();
 
     <Carousel
       ref="carouselRef"
-      class="carousel carousel-progress"
+      :class="[$style.carousel, $style.carouselProgress]"
       v-bind="config"
     >
       <Slide
         v-for="(review, index) in props.reviews"
         :key="index"
-        class="product-reviews__slide"
+        :class="$style.slide"
       >
         <ReviewsItem v-bind="review" />
       </Slide>
 
       <template #addons>
-        <CarouselPagination class="product-reviews__pagination carousel-progress__pagination" />
+        <CarouselPagination :class="[$style.pagination, $style.carouselProgressPagination]" />
       </template>
     </Carousel>
   </div>
 </template>
 
-<style scoped>
-.product-reviews {
+<style module>
+.productReviews {
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -100,27 +100,27 @@ const slots = useSlots();
   gap: 22px;
 }
 
-.product-reviews__slide {
+.slide {
   display: block;
   text-align: left;
 }
 
-.product-reviews__pagination {
+.pagination {
   bottom: -16px;
 }
 
 @media (min-width: 768px) {
-  .product-reviews {
+  .productReviews {
     padding-bottom: 30px;
   }
 
-  .product-reviews__pagination {
+  .pagination {
     bottom: -30px;
   }
 }
 
 @media (min-width: 1024px) {
-  .product-reviews {
+  .productReviews {
     margin-bottom: 80px;
   }
 }

@@ -1,6 +1,6 @@
 <template>
-  <div class="data-item">
-    <slot></slot>
+  <div :class="$style.dataItem">
+    <slot />
   </div>
 </template>
 
@@ -8,8 +8,8 @@
 
 </script>
 
-<style scoped>
-.data-item {
+<style module>
+.dataItem {
   border: 1px solid #D9D9D9;
   background: #fff;
   border-radius: 20px;
@@ -17,8 +17,8 @@
 }
 
 @media (max-width: 992px) {
-  .data-item {
+  .dataItem {
     padding: 16px;
   }
 }
-</style>base
+</style>

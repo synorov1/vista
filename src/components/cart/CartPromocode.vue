@@ -1,8 +1,12 @@
 <template>
-  <div class="promo-section">
+  <div :class="$style.promoSection">
     <span>Сертификат / промокод:</span>
-    <div class="promocode">
-      <input type="text" v-model="promocode" @input="checkPromocode">
+    <div :class="$style.promocode">
+      <input 
+        v-model="promocode" 
+        type="text" 
+        @input="checkPromocode"
+      >
       <img
         v-if="isValidPromocode"
         :src="PromocodeIcon"
@@ -27,8 +31,8 @@ const checkPromocode = () => {
 };
 </script>
 
-<style scoped>
-.promo-section {
+<style module>
+.promoSection {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -46,15 +50,14 @@ const checkPromocode = () => {
   top: 13px;
 }
 
-
-.promo-section span {
+.promoSection span {
   font-weight: 400;
   font-size: 14px;
   line-height: 1.21;
   color: #000000;
 }
 
-input {
+.promocode input {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -66,5 +69,4 @@ input {
   padding-right: 50px;
   width: 100%;
 }
-
 </style>

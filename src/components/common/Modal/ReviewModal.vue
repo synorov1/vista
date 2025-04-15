@@ -81,10 +81,9 @@
           Отправить
         </button>
 
-<div class="policy">
-  <ModalPolicy/>
-
-</div>
+        <div class="policy">
+          <ModalPolicy />
+        </div>
       </div>
     </div>
   </BaseModal>

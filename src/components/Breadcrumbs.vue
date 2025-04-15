@@ -42,7 +42,7 @@
       :path="breadcrumb"
       :text="index === 0 ? 'Главная' : translatedRoute[breadcrumb as keyof typeof translatedRoute]"
       :disabled="breadcrumbs.length - 1 !== index"
-      :dropdownItems="index === breadcrumbs.length - 1 ? dropdownItems : []"
+      :dropdown-items="index === breadcrumbs.length - 1 ? dropdownItems : []"
       class="breadcrumbs__item"
     >
       {{ breadcrumb }}

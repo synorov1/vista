@@ -37,57 +37,65 @@
           </div>
         </div>
         <div class="container__delivery">
-          
-            <SelectAutocomplete
-              v-model="street"
-              label="Улица, дом"
-              :items="['ул. Пушкина, д. 1', 'ул. Пушкина, д. 2']"
-              :required="true"
+          <SelectAutocomplete
+            v-if="activeDelivery !== 'pickup-point'"
+            v-model="street"
+            label="Улица, дом"
+            :items="['ул. Пушкина, д. 1', 'ул. Пушкина, д. 2']"
+            :required="true"
+          />
+          <div class="delivery-type">
+            <Select
               v-if="activeDelivery !== 'pickup-point'"
-            />
-            <div class="delivery-type">
-              <Select
               v-model="delivery"
               label="Выберите доставку"
               :options="deliveryType"
               :required="true"
-              v-if="activeDelivery !== 'pickup-point'"
               :accept="true"
             >
-            <template #default="{ option }">
-              <div class="selected-delivery">
-                <span>
-                  {{ option.title }} 
-                </span>
-                <div class="price">
-                  <b>от {{ option.price }} ₽</b>
-                  <button type="button">
-                    <img :src="InfoIcon" height="17" width="17"/>
-                  </button>
+              <template #default="{ option }">
+                <div class="selected-delivery">
+                  <span>
+                    {{ option.title }} 
+                  </span>
+                  <div class="price">
+                    <b>от {{ option.price }} ₽</b>
+                    <button type="button">
+                      <img
+                        :src="InfoIcon"
+                        height="17"
+                        width="17"
+                      >
+                    </button>
+                  </div>
                 </div>
-              </div>
-            </template>
+              </template>
 
-            <template #option="{ option }">
-              <div class="price-item">
-                <span>{{ option.title }}</span>
-                <div class="price-item-value">
-                  <b>от {{ option.price }} ₽</b>
-                <button type="button">
-                    <img :src="InfoIcon" height="17" width="17"/>
-                </button>
+              <template #option="{ option }">
+                <div class="price-item">
+                  <span>{{ option.title }}</span>
+                  <div class="price-item-value">
+                    <b>от {{ option.price }} ₽</b>
+                    <button type="button">
+                      <img
+                        :src="InfoIcon"
+                        height="17"
+                        width="17"
+                      >
+                    </button>
+                  </div>
                 </div>
+              </template>
 
-              </div>
-
-            </template>
-
-            <template #accept="{ onConfirm }">
-              <XSBlueButton text="Подтвердить выбор" height="45px" @click="onConfirm" />
-            </template>
+              <template #accept="{ onConfirm }">
+                <XSBlueButton
+                  text="Подтвердить выбор"
+                  height="45px"
+                  @click="onConfirm"
+                />
+              </template>
             </Select>
-    
-            </div>
+          </div>
 
           <div v-if="activeDelivery !== 'pickup-point'" class="apartment">
             <SelectAutocomplete
@@ -117,82 +125,92 @@
               :required="true"
             />
             <div class="map">
-              <img :src="MapIcon" height="54" width="54" alt="map"/>
+              <img
+                :src="MapIcon"
+                height="54"
+                width="54"
+                alt="map"
+              >
               Карта
             </div>
             <div class="point-set">
-              <XSBlueButton text="Подтвердить"/>
+              <XSBlueButton text="Подтвердить" />
             </div>
           </div>
         </div>
       </CartDataItem>
       <div class="group">
         <CartDataItem>
-        <div class="buyer">
-          <div class="title__container">
-            <div class="title">
-              Форма плательщика
+          <div class="buyer">
+            <div class="title__container">
+              <div class="title">
+                Форма плательщика
+              </div>
+              <span class="subtitle" style="max-width: 246px">
+                Принимают оплату от физических так и юридических лиц
+              </span>
             </div>
-            <span class="subtitle" style="max-width: 246px">
-              Принимают оплату от физических так и юридических лиц
-            </span>
-          </div>
-          <div class="select-city">
-            <Select
-              v-model="buyer"
-              label="Тип плательщика"
-              :options="buyerType"
-              :required="true"
-              :autocomplete="true"
-            />
-          </div>
-        </div>
-      </CartDataItem>
-      <CartDataItem>
-        <div class="buyer">
-          <div class="title__container">
-            <div class="title">
-              Оплата
+            <div class="select-city">
+              <Select
+                v-model="buyer"
+                label="Тип плательщика"
+                :options="buyerType"
+                :required="true"
+                :autocomplete="true"
+              />
             </div>
           </div>
-          <div class="select-city">
-            <Select
-              v-model="payment_method"
-              label="Как вы оплатите"
-              :options="paymentType"
-              :required="true"
-              v-if="activeDelivery !== 'pickup-point'"
-              :accept="true"
-            >
-            <template #default="{ option }">
-              <div class="selected-delivery">
-                <span>
-                  {{ option.title }} 
-                </span>
-       
+        </CartDataItem>
+        <CartDataItem>
+          <div class="buyer">
+            <div class="title__container">
+              <div class="title">
+                Оплата
               </div>
-            </template>
+            </div>
+            <div class="select-city">
+              <Select
+                v-if="activeDelivery !== 'pickup-point'"
+                v-model="payment_method"
+                label="Как вы оплатите"
+                :options="paymentType"
+                :required="true"
+                :accept="true"
+              >
+                <template #default="{ option }">
+                  <div class="selected-delivery">
+                    <span>
+                      {{ option.title }} 
+                    </span>
+                  </div>
+                </template>
 
-            <template #option="{ option }">
-              <div class="price-item">
-                <span>{{ option.title }}</span>
-                <div class="price-item-value">
-                <button type="button">
-                    <img :src="InfoIcon" height="17" width="17"/>
-                </button>
-                </div>
+                <template #option="{ option }">
+                  <div class="price-item">
+                    <span>{{ option.title }}</span>
+                    <div class="price-item-value">
+                      <button type="button">
+                        <img
+                          :src="InfoIcon"
+                          height="17"
+                          width="17"
+                        >
+                      </button>
+                    </div>
+                  </div>
+                </template>
 
-              </div>
-
-            </template>
-
-            <template #accept="{ onConfirm }">
-              <XSBlueButton text="Подтвердить выбор" height="45px" @click="onConfirm" />
-            </template>
-            </Select>
+                <template #accept="{ onConfirm }">
+                  <XSBlueButton
+                    text="Подтвердить выбор"
+                    height="45px"
+                    @click="onConfirm"
+                  />
+                </template>
+              </Select>
+            </div>
           </div>
-        </div>
-      </CartDataItem>
+        </CartDataItem>
       </div>
       <CartDataItem>
         <div class="buyer_info">
@@ -229,7 +247,11 @@
           </div>
         </div>
       </CartDataItem>
-      <XSBlueButton text="Оплатить" type="submit" class="submit"/>
+      <XSBlueButton
+        text="Оплатить"
+        type="submit"
+        class="submit"
+      />
     </form>
   </div>
 </template>

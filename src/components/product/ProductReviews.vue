@@ -49,10 +49,10 @@ const slots = useSlots();
         :next="carouselRef?.next"
       />
       <TtileWithArrow
+        v-if="props.hasArrows"
+        :has-arrows="props.hasArrows"
         @click-arrow-left="carouselRef?.prev"
         @click-arrow-right="carouselRef?.next"
-        :hasArrows="props.hasArrows"
-        v-if="props.hasArrows"
       />
     </div>
     <TtileWithArrow

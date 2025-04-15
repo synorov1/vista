@@ -1,22 +1,24 @@
 <template>
-  <section class="page-container">
+  <section :class="$style.pageContainer">
     <ReviewsBanner
       title="Отзывы"
       subtitle="Мы рады получать отзывы от наших клиентов. Ваши мнения помогают нам становиться лучше и совершенствовать нашу работу."
     />
 
-    <div class="page-container">
-      <div class="header">
-        <div class="reviews__rating">
-          <ReviewsAllRating/>
+    <div :class="$style.pageContainer">
+      <div :class="$style.header">
+        <div :class="$style.reviewsRating">
+          <ReviewsAllRating />
         </div>
         <h1>Отзывы клиентов</h1>
-        <button class="review__write" type="button">Написать отзыв</button>
+        <button :class="$style.reviewWrite" type="button">
+          Написать отзыв
+        </button>
       </div>
 
       <Reviews :reviews="allReviews" :has-arrows="isTabletScreen">
         <template #head>
-          <ReviewsPlatformSwitcher @change="handlePlatformChange"/>
+          <ReviewsPlatformSwitcher @change="handlePlatformChange" />
         </template>
       </Reviews>
     </div>
@@ -75,8 +77,8 @@ function handlePlatformChange(platform: string) {
 
 </script>
 
-<style scoped>
-.page-container {
+<style module>
+.pageContainer {
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -94,14 +96,14 @@ function handlePlatformChange(platform: string) {
   margin: 0;
 }
 
-.reviews__rating {
+.reviewsRating {
   display: none;
   @media (max-width: 767px) {
     display: flex;
   }
 }
 
-.review__write {
+.reviewWrite {
   background-color: #0084ff;
   color: #ffffff;
   padding: 10px 20px;
@@ -110,21 +112,25 @@ function handlePlatformChange(platform: string) {
   width: 100%;
   border: unset;
 }
+
 .content {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
+
 .card {
   border: 1px solid #d9d9d9;
   border-radius: 16px;
   padding: 20px;
 }
-.card-header {
+
+.cardHeader {
   display: flex;
   align-items: center;
   gap: 10px;
 }
+
 .photo {
   width: 50px;
   height: 50px;
@@ -135,21 +141,26 @@ function handlePlatformChange(platform: string) {
   align-items: center;
   font-weight: bold;
 }
+
 .name {
   font-weight: bold;
 }
+
 .date {
   color: #a0a0a0;
 }
-.card-body {
+
+.cardBody {
   margin-top: 10px;
 }
-.show-more {
+
+.showMore {
   background-color: #f0f0f0;
   color: #000000;
   padding: 5px 10px;
   border-radius: 6px;
 }
+
 @media (max-width: 767px) {
   .header {
     flex-direction: column;
@@ -157,7 +168,8 @@ function handlePlatformChange(platform: string) {
     margin-bottom: 20px;
     margin-top: 40px;
   }
-  .review__write {
+
+  .reviewWrite {
     display: none;
   }
 }

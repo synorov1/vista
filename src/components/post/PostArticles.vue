@@ -42,19 +42,19 @@ const config: CarouselConfig = {
 </script>
 
 <template>
-  <section class="post-articles">
-    <div class="post-articles__title-wrap">
-      <router-link class="post-articles__title-link" to="/">
+  <section :class="$style.postArticles">
+    <div :class="$style.titleWrap">
+      <router-link :class="$style.titleLink" to="/">
         Читать все
       </router-link>
 
-      <h3 class="post-articles__title">
+      <h3 :class="$style.title">
         Полезные статьи
       </h3>
 
-      <RoundButton class="post-articles__title-button" text="Читать все" />
+      <RoundButton :class="$style.titleButton" text="Читать все" />
 
-      <div class="post-articles__navigation">
+      <div :class="$style.navigation">
         <LeftArrowButton @click="carouselRef?.prev" />
         <RightArrowButton @click="carouselRef?.next" />
       </div>
@@ -62,13 +62,13 @@ const config: CarouselConfig = {
 
     <Carousel
       ref="carouselRef"
-      class="carousel post-articles__carousel carousel-progress"
+      :class="[$style.carousel, $style.carouselProgress]"
       v-bind="config"
     >
       <Slide
         v-for="(article, index) in props.list"
         :key="index"
-        class="post-articles__slide"
+        :class="$style.slide"
       >
         <PostArticlesCard
           :image="article.image"
@@ -79,28 +79,28 @@ const config: CarouselConfig = {
       </Slide>
 
       <template #addons>
-        <CarouselPagination class="post-articles__pagination carousel-progress__pagination" />
+        <CarouselPagination :class="[$style.pagination, $style.carouselProgressPagination]" />
       </template>
     </Carousel>
   </section>
 </template>
 
-<style scoped>
-.post-articles__title {
+<style module>
+.title {
   margin-bottom: 20px;
 }
 
-.post-articles__slide {
+.slide {
   display: block;
   text-align: left;
 }
 
-.post-articles__pagination {
+.pagination {
   bottom: -20px;
 }
 
 @media (min-width: 768px) {
-  .post-articles__title {
+  .title {
     margin-bottom: 30px;
   }
 }

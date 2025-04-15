@@ -9,16 +9,16 @@
   >
     <div class="selected">
       <template v-if="selectedOption">
-  <template v-if="$slots.default">
-    <slot :option="selectedOption"></slot>
-  </template>
-  <template v-else>
-    <span>{{ selectedOption.title }}</span>
-  </template>
-</template>
-<template v-else>
-  {{ props.placeholder || 'Выберите...' }}
-</template>
+        <template v-if="$slots.default">
+          <slot :option="selectedOption" />
+        </template>
+        <template v-else>
+          <span>{{ selectedOption.title }}</span>
+        </template>
+      </template>
+      <template v-else>
+        {{ props.placeholder || 'Выберите...' }}
+      </template>
 
       <img
         src="../assets/icons/arrow.svg"
@@ -27,17 +27,16 @@
     </div>
     <ul v-if="isOpen" class="dropdown">
       <li
-  v-for="option in options"
-  :key="option.id"
-  :class="{
-    active: props.accept && option.id === pendingSelection,
-    'selected-option': props.accept && !pendingSelection && option.id === props.modelValue
-  }"
-  @click.stop="handleOptionClick(option.id)"
->
-
+        v-for="option in options"
+        :key="option.id"
+        :class="{
+          active: props.accept && option.id === pendingSelection,
+          'selected-option': props.accept && !pendingSelection && option.id === props.modelValue
+        }"
+        @click.stop="handleOptionClick(option.id)"
+      >
         <template v-if="$slots.option">
-          <slot name="option" :option="option"></slot>
+          <slot name="option" :option="option" />
         </template>
         <template v-else>
           {{ option.title }}
@@ -46,7 +45,7 @@
 
       <template v-if="$slots.accept">
         <div class="accept">
-          <slot name="accept" :onConfirm="confirmSelection"></slot>
+          <slot name="accept" :on-confirm="confirmSelection" />
         </div>
       </template>
     </ul>

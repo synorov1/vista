@@ -1,6 +1,6 @@
 <template>
-  <div class="share">
-    <button class="share-btn">
+  <div :class="$style.share">
+    <button :class="$style.shareBtn">
       Поделиться корзиной
     </button>
   </div>
@@ -10,8 +10,8 @@
 
 </script>
 
-<style scoped>
-.share-btn {
+<style module>
+.shareBtn {
   width: 100%;
   padding: 14px;
   background: #F0F0F0;
@@ -22,7 +22,5 @@
   line-height: 1.21;
   color: #A0A0A0;
   cursor: pointer;
-
-
 }
 </style>

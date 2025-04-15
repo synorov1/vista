@@ -1,9 +1,9 @@
 <template>
-      <p class="login-modal__policy">
-        Оставляя ваши данные, вы соглашаетесь с политикой конфиденциальности <router-link to="/privacy" class="login-modal__policy-link">
-          ИП Макарова Елена Валерьевна
-        </router-link>
-      </p>
+  <p class="login-modal__policy">
+    Оставляя ваши данные, вы соглашаетесь с политикой конфиденциальности <router-link to="/privacy" class="login-modal__policy-link">
+      ИП Макарова Елена Валерьевна
+    </router-link>
+  </p>
 </template>
 
 <script setup lang="ts">

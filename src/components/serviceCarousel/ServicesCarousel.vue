@@ -1,9 +1,3 @@
-<script setup lang="ts">
-import {Carousel, Pagination as CarouselPagination, Slide} from 'vue3-carousel';
-import GradientBanner from "@/components/common/GradientBanner.vue";
-import serviceCarouselItems from "./serviceCarouselItems.json"
-</script>
-
 <template>
   <Carousel
     :gap="30"
@@ -33,6 +27,12 @@ import serviceCarouselItems from "./serviceCarouselItems.json"
     </template>
   </Carousel>
 </template>
+
+<script setup lang="ts">
+import { Carousel, Pagination as CarouselPagination, Slide } from 'vue3-carousel';
+import GradientBanner from "@/components/common/GradientBanner.vue";
+import serviceCarouselItems from "./serviceCarouselItems.json"
+</script>
 
 <style scoped>
 

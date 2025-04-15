@@ -1,11 +1,11 @@
 <template>
   <div class="star-container">
     <img 
-        :src="StarIcon" 
-        height="14" 
-        width="14" 
-        alt="Star"
-      />
+      :src="StarIcon" 
+      height="14" 
+      width="14" 
+      alt="Star"
+    >
     <span class="text">{{ text }}</span>
   </div>
 </template>

@@ -10,51 +10,51 @@ usePageTitle('История просмотров');
 </script>
 
 <template>
-  <div class="history">
+  <div :class="$style.history">
     <div
       v-for="(card, index) in data"
       :key="index"
-      class="history__item"
+      :class="$style.item"
     >
       <ProfileCard
         v-for="item in card.items"
         :key="item.id"
         v-bind="item"
-        class="history__card"
+        :class="$style.card"
       />
 
-      <div class="history__button-wrap">
+      <div :class="$style.buttonWrap">
         <BlackButton
           height="45px"
-          class="history__button history__button_review"
+          :class="[$style.button, $style.buttonReview]"
           text="Оставить отзыв"
         />
 
         <XSBlueButton
           text="Повторить заказ"
           height="45px"
-          class="history__button"
+          :class="$style.button"
         />
 
         <GreyButton
           height="45px"
           text="Подробнее о товаре"
           type="secondary"
-          class="history__button"
+          :class="$style.button"
         />
       </div>
     </div>
   </div>
 </template>
 
-<style scoped>
+<style module>
 .history {
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
 
-.history__item {
+.item {
   padding: 16px;
   border-radius: 16px;
   border: 1px solid var(--gray-400-color);
@@ -63,17 +63,17 @@ usePageTitle('История просмотров');
   gap: 20px;
 }
 
-.history__button-wrap {
+.buttonWrap {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-.history__button {
+.button {
   width: 100%;
 }
 
-.history__button_review {
+.buttonReview {
   margin-bottom: 10px;
 }
 
@@ -82,20 +82,20 @@ usePageTitle('История просмотров');
     margin-bottom: 60px;
   }
 
-  .history__item {
+  .item {
     padding: 30px;
     gap: 20px;
   }
 
-  .history__button-wrap {
+  .buttonWrap {
     flex-direction: row;
   }
 
-  .history__button {
+  .button {
     width: auto;
   }
 
-  .history__button_review {
+  .buttonReview {
     margin-bottom: 0;
     margin-right: auto;
     width: 228px;
@@ -114,7 +114,7 @@ usePageTitle('История просмотров');
     margin-bottom: 100px;
   }
 
-  .history__card {
+  .card {
     width: 822px;
   }
 }

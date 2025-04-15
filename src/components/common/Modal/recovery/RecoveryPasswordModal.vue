@@ -63,7 +63,7 @@
           Изменить пароль
         </button>
       </div>
-      <ModalPolicy/>
+      <ModalPolicy />
     </div>
   </BaseModal>
 </template>

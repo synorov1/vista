@@ -1,3 +1,42 @@
+<template>
+  <div :class="$style.orders">
+    <div
+      v-for="card in data"
+      :key="card.number"
+      :class="$style.item"
+    >
+      <div :class="$style.titleWrap">
+        <p :class="$style.title">
+          Заказ №{{ card.number }}
+        </p>
+
+        <span :class="$style.subtitle">
+          Мои покупки
+        </span>
+      </div>
+      <ProfileCard
+        v-for="item in card.items"
+        :key="item.id"
+        v-bind="item"
+        :class="$style.card"
+      />
+
+      <GreyButton
+        type="secondary"
+        size="small"
+        :class="$style.delivery"
+        text="Доставка в пункт выдачи"
+      >
+        <template #icon>
+          <span :class="$style.deliveryIcon">
+            <IconArrowRight />
+          </span>
+        </template>
+      </GreyButton>
+    </div>
+  </div>
+</template>
+
 <script lang="ts" setup>
 import GreyButton from '@/components/common/Buttons/GreyButton.vue';
 import IconArrowRight from '@/components/icons/IconArrowRight.vue';
@@ -8,46 +47,7 @@ import { usePageTitle } from '@/composables/usePageTitle';
 usePageTitle('Мои заказы');
 </script>
 
-<template>
-  <div class="orders">
-    <div
-      v-for="card in data"
-      :key="card.number"
-      class="orders__item"
-    >
-      <div class="orders__title-wrap">
-        <p class="orders__title">
-          Заказ №{{ card.number }}
-        </p>
-
-        <span class="orders__subtitle">
-          Мои покупки
-        </span>
-      </div>
-      <ProfileCard
-        v-for="item in card.items"
-        :key="item.id"
-        v-bind="item"
-        class="orders__card"
-      />
-
-      <GreyButton
-        type="secondary"
-        size="small"
-        class="orders__delivery"
-        text="Доставка в пункт выдачи"
-      >
-        <template #icon>
-          <span class="orders__delivery-icon">
-            <IconArrowRight />
-          </span>
-        </template>
-      </GreyButton>
-    </div>
-  </div>
-</template>
-
-<style scoped>
+<style module>
 .orders {
   margin-bottom: 40px;
   display: flex;
@@ -55,7 +55,7 @@ usePageTitle('Мои заказы');
   gap: 20px;
 }
 
-.orders__item {
+.item {
   padding: 16px;
   border-radius: 16px;
   border: 1px solid var(--gray-400-color);
@@ -64,27 +64,27 @@ usePageTitle('Мои заказы');
   gap: 16px;
 }
 
-.orders__title {
+.title {
   font-weight: 800;
   font-size: 24px;
   line-height: 29px;
-    letter-spacing: -0.02em;
+  letter-spacing: -0.02em;
   color: var(--black-color);
   margin-bottom: 0;
 }
 
-.orders__subtitle {
+.subtitle {
   font-weight: 600;
   font-size: 14px;
   line-height: 17px;
   color: var(--gray-600-color);
 }
 
-.orders__delivery {
+.delivery {
   align-self: flex-start;
 }
 
-.orders__delivery-icon {
+.deliveryIcon {
   font-size: 6px;
 }
 
@@ -93,7 +93,7 @@ usePageTitle('Мои заказы');
     margin-bottom: 60px;
   }
 
-  .orders__item {
+  .item {
     padding: 30px;
     gap: 20px;
   }
@@ -111,7 +111,7 @@ usePageTitle('Мои заказы');
     margin-bottom: 100px;
   }
 
-  .orders__card {
+  .card {
     width: 822px;
   }
 }

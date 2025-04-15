@@ -135,7 +135,9 @@
       </div>
     </section>
 
-    <router-link to="/cart">Перейти в корзину</router-link>
+    <router-link to="/cart">
+      Перейти в корзину
+    </router-link>
 
     <section class="section">
       <h3 class="section-title">

@@ -1,5 +1,5 @@
 <template>
-  <div class="page-container">
+  <div :class="$style.pageContainer">
     <GradientBanner
       :title="data.bannerTitle"
       :subtitle="data.bannerSubtitle"
@@ -9,14 +9,14 @@
       :button-text="data.buttonText"
       :on-button-click="onTitleButtonClick"
     />
-    <p class="text">
+    <p :class="$style.text">
       {{ data.paragraph_1 }}
     </p>
     <List
       :title="data.listTitle"
       :list="data.listItems"
     />
-    <div class="blocks-container">
+    <div :class="$style.blocksContainer">
       <GrayInfoBlock
         v-for="(item, index) in data.infoBlocks"
         :key="index"
@@ -24,11 +24,11 @@
         :subtitle="item.subtitle"
       >
         <template v-for="(slot, slotIndex) in item.slots" :key="slotIndex">
-          <p class="block-text" v-html="slot" />
+          <p :class="$style.blockText" v-html="slot" />
         </template>
       </GrayInfoBlock>
     </div>
-    <p class="text">
+    <p :class="$style.text">
       {{ data.paragraph_2 }}
     </p>
   </div>
@@ -53,8 +53,8 @@ const onTitleButtonClick = () => {
 
 </script>
 
-<style scoped>
-.page-container {
+<style module>
+.pageContainer {
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -74,21 +74,22 @@ const onTitleButtonClick = () => {
   color: var(--blue-400-color);
 }
 
-.blocks-container {
+.blocksContainer {
   display: flex;
   gap: 30px;
   flex-wrap: wrap;
 }
 
-.blocks-container > * {
+.blocksContainer > * {
   flex: 1;
   min-width: 300px;
 }
 
-.block-text {
+.blockText {
   margin-bottom: 25px;
 }
-.block-text:last-child {
+
+.blockText:last-child {
   margin-bottom: 0;
 }
 </style>

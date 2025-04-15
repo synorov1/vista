@@ -28,7 +28,7 @@
           Отправить код
         </button>
       </div>
-      <ModalPolicy/>
+      <ModalPolicy />
     </div>
   </BaseModal>
 </template>

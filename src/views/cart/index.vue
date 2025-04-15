@@ -2,7 +2,6 @@
   <CartLayout>
     <CartComponent />
   </CartLayout>
-
 </template>
   
   <script setup lang="ts">
@@ -11,7 +10,7 @@
  
   </script>
   
-  <style scoped>
+  <style module>
   
   </style>
       

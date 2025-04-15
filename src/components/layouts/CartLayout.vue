@@ -1,15 +1,15 @@
 <template>
-    <section class="section cart-layout" :class="{ 'payment-section': step === 2 }">
-      <div class="cart__container">
-        <div class="progress__container">
-          <OrderProgressComponent :current-step="step" />
-        </div>
-        <slot></slot>
+  <section class="section cart-layout" :class="{ 'payment-section': step === 2 }">
+    <div class="cart__container">
+      <div class="progress__container">
+        <OrderProgressComponent :current-step="step" />
       </div>
-      <aside>
-        <OrderSummaryComponent :current-step="step" />
-      </aside>
-    </section>
+      <slot />
+    </div>
+    <aside>
+      <OrderSummaryComponent :current-step="step" />
+    </aside>
+  </section>
 </template>
 
 <script setup lang="ts">

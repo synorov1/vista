@@ -58,7 +58,7 @@
           <span v-else class="question-modal__loader" />
         </button>
 
-        <ModalPolicy/>
+        <ModalPolicy />
       </div>
     </div>
   </BaseModal>

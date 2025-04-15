@@ -1,5 +1,5 @@
 <template>
-  <div class="sidebar-container">
+  <div :class="$style.sidebar">
     <Select
       :model-value="modelValue"
       :options="props.selectValues"
@@ -33,8 +33,8 @@ const updateValue = (value: string) => {
 
 </script>
 
-<style scoped>
-.sidebar-container {
+<style module>
+.sidebar {
   width: 100%;
   height: 620px;
   display: flex;

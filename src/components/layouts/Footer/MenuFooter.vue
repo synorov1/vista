@@ -22,7 +22,9 @@
             aria-expanded="false"
             :aria-controls="'collapse' + index"
           >
-            <router-link :to="item.link">{{ item.text }}</router-link>
+            <router-link :to="item.link">
+              {{ item.text }}
+            </router-link>
           </button>
         </h2>
         <div

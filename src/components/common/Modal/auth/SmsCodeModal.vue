@@ -45,7 +45,7 @@
         <span v-else class="sms-modal__loader" />
       </button>
       
-      <ModalPolicy/>
+      <ModalPolicy />
     </div>
   </BaseModal>
 </template>

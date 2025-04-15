@@ -35,8 +35,7 @@
           Подписаться
         </button>
         <div class="policy">
-          <ModalPolicy/>
-
+          <ModalPolicy />
         </div>
       </div>
     </div>

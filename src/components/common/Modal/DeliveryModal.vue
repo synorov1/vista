@@ -2,7 +2,7 @@
   <BaseModal v-model:is-open="modelValue" @close="emit('update:isOpen', false)">
     <div class="delivery-modal">
       <div class="delivery-modal__icon">
-        <img src="@/assets/images/delivery.svg"/>
+        <img src="@/assets/images/delivery.svg">
       </div>
 
       <div class="delivery-modal__text">

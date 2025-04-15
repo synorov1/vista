@@ -38,12 +38,12 @@
               <span>4.8</span>
             </div>
             <div class="recommendation-modal__card-price">
-              <img src="@/assets/images/rec.svg"/>
+              <img src="@/assets/images/rec.svg">
               <span>3 180 ₽</span>
               <span class="recommendation-modal__card-price-old">5 600 ₽</span>
             </div>
             <button class="recommendation-modal__card-like">
-              <img src="@/assets/images/like.svg"/>
+              <img src="@/assets/images/like.svg">
             </button>
           </div>
           <div class="recommendation-modal__card">
@@ -64,12 +64,12 @@
               <span>5</span>
             </div>
             <div class="recommendation-modal__card-price">
-              <img src="@/assets/images/rec.svg"/>
+              <img src="@/assets/images/rec.svg">
               <span>700 ₽</span>
               <span class="recommendation-modal__card-price-old">1 000 ₽</span>
             </div>
             <button class="recommendation-modal__card-like">
-              <img src="@/assets/images/like.svg"/>
+              <img src="@/assets/images/like.svg">
             </button>
           </div>
         </div>
@@ -92,13 +92,13 @@
               <span>5</span>
             </div>
             <div class="recommendation-modal__card-price">
-              <img src="@/assets/images/rec.svg"/>
+              <img src="@/assets/images/rec.svg">
 
               <span>10 650 ₽</span>
               <span class="recommendation-modal__card-price-old">15 600 ₽</span>
             </div>
             <button class="recommendation-modal__card-like">
-              <img src="@/assets/images/like.svg"/>
+              <img src="@/assets/images/like.svg">
             </button>
           </div>
           <div class="recommendation-modal__card">
@@ -119,12 +119,12 @@
               <span>5</span>
             </div>
             <div class="recommendation-modal__card-price">
-              <img src="@/assets/images/rec.svg"/>
+              <img src="@/assets/images/rec.svg">
               <span>5 850 ₽</span>
               <span class="recommendation-modal__card-price-old">6 600 ₽</span>
             </div>
             <button class="recommendation-modal__card-like">
-              <img src="@/assets/images/like.svg"/>
+              <img src="@/assets/images/like.svg">
             </button>
           </div>
         </div>

@@ -1,33 +1,35 @@
 <template>
-  <div class="switcher">
-    <div class="platforms">
+  <div :class="$style.switcher">
+    <div :class="$style.platforms">
       <button 
         v-for="type in types" 
         :key="type.id"
         :class="[
-          'platform-button',
-          { active: activeType === type.id }
+          $style.platformButton,
+          { [$style.active]: activeType === type.id }
         ]"
         @click="selectPlatform(type.id)"
       >
-        <span class="platform-name">{{ type.name }}</span>
+        <span :class="$style.platformName">{{ type.name }}</span>
       </button>
     </div>
-    <div class="select-container">
+    <div :class="$style.selectContainer">
       <Select
         v-model="activeType"
         :options="selectOptions"
         placeholder="Выберите платформу"
       >
         <template #default="{ option }">
-          <div class="select-item" v-if="option">
-            <span class="platform-name">{{ option.title }}</span>
+          <div v-if="option" :class="$style.selectItem">
+            <span :class="$style.platformName">{{ option.title }}</span>
           </div>
-          <div v-else>Выберите способ доставки</div>
+          <div v-else>
+            Выберите способ доставки
+          </div>
         </template>
         <template #option="{ option }">
-          <div class="select-item" v-if="option">
-            <span class="platform-name">{{ option.title }}</span>
+          <div v-if="option" :class="$style.selectItem">
+            <span :class="$style.platformName">{{ option.title }}</span>
           </div>
         </template>
       </Select>
@@ -55,10 +57,9 @@ const types: DeliveryOption[] = [
 ];
 
 const activeType = ref<DeliveryType>('courier');
-  const emit = defineEmits<{
+const emit = defineEmits<{
   (e: 'change', platform: DeliveryOption): void
 }>();
-
 
 function selectPlatform(platform: DeliveryType) {
   activeType.value = platform;
@@ -79,10 +80,9 @@ const selectOptions = computed<Options[]>(() =>
 watch(activeType, (newValue) => {
   emit('change', getDeliveryOption(newValue));
 });
-
 </script>
 
-<style scoped>
+<style module>
 .switcher {
   display: flex;
   width: 100%;
@@ -101,19 +101,18 @@ watch(activeType, (newValue) => {
   flex-shrink: 0;
 }
 
-.select-container {
+.selectContainer {
   display: none;
   width: 100%;
 }
 
-.reviews__rating {
+.reviewsRating {
   @media (max-width: 767px) {
     display: none;
   }
 }
 
-
-.platform-button {
+.platformButton {
   display: flex;
   align-items: center;
   background-color: #ffffff;
@@ -133,11 +132,11 @@ watch(activeType, (newValue) => {
   max-width: fit-content;
 }
 
-.platform-name, .platform-rating {
+.platformName, .platformRating {
   white-space: nowrap;
 }
 
-.platform-button:not(:last-child)::after {
+.platformButton:not(:last-child)::after {
   content: "";
   position: absolute;
   right: 0;
@@ -149,18 +148,18 @@ watch(activeType, (newValue) => {
   background-color: #D9D9D9;
 }
 
-.platform-button.active {
+.platformButton.active {
   background-color: #F5F5F5;
   color: #000;
 }
 
-.platform-icon {
+.platformIcon {
   width: 20px;
   height: 20px;
   flex-shrink: 0;
 }
 
-.select-item {
+.selectItem {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -182,26 +181,24 @@ watch(activeType, (newValue) => {
     flex-shrink: 0;
   }
 
-  .rating__text {
+  .ratingText {
     min-width: 131px;
     font-size: 12px;
   }
   
-  .platform-button {
+  .platformButton {
     gap: 6px;
   }
-
-
 }
 
 @media (max-width: 768px) {
-  .platform-button, .platforms {
+  .platformButton, .platforms {
     height: 34px;
   }
 }
 
 @media (max-width: 767px) {
-  .select-container {
+  .selectContainer {
     display: block;
   }
   .platforms {

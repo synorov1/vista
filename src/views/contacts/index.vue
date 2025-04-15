@@ -9,7 +9,7 @@ usePageTitle('Контакты');
 </script>
 
 <template>
-  <div class="contacts">
+  <div :class="$style.contacts">
     <ContactsMain
       :first-link-address="data.firstLinkAddress"
       :first-address="data.firstAddress"
@@ -18,16 +18,16 @@ usePageTitle('Контакты');
       :second-address="data.secondAddress"
       :second-phone="data.secondPhone"
       :attention="data.attention"
-      class="contacts__main"
+      :class="$style.main"
     />
 
     <ContactsScheme
       :text="data.scheme.text"
       :images="data.scheme.images"
-      class="contacts__scheme"
+      :class="$style.scheme"
     />
 
-    <div v-if="data.items.length > 0" class="contacts__scheme__cards">
+    <div v-if="data.items.length > 0" :class="$style.schemeCards">
       <ArrowCard
         v-for="(item, index) in data.items"
         :key="index"
@@ -40,33 +40,33 @@ usePageTitle('Контакты');
   </div>
 </template>
 
-<style scoped>
-.contacts__main,
-.contacts__scheme,
-.contacts__scheme__cards {
+<style module>
+.main,
+.scheme,
+.schemeCards {
   margin-bottom: 40px;
 }
 
-.contacts__scheme__cards {
+.schemeCards {
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
 
 @media (min-width: 768px) {
-  .contacts__main,
-  .contacts__scheme,
-  .contacts__scheme__cards {
+  .main,
+  .scheme,
+  .schemeCards {
     margin-bottom: 60px;
   }
 }
 
 @media (min-width: 1024px) {
-  .contacts__main {
+  .main {
     margin-bottom: 80px;
   }
 
-  .contacts__scheme__cards {
+  .schemeCards {
     display: grid;
     gap: 30px;
     grid-template-columns: 1fr 1fr 1fr;
@@ -74,8 +74,8 @@ usePageTitle('Контакты');
 }
 
 @media (min-width: 1440px) {
-  .contacts__scheme,
-  .contacts__scheme__cards {
+  .scheme,
+  .schemeCards {
     margin-bottom: 80px;
   }
 }

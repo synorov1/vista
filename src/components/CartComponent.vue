@@ -1,27 +1,26 @@
 <template>
-  <div class="cart">
-    <div class="cart-header">
-      <div class="cart-counter">
+  <div :class="$style.cart">
+    <div :class="$style.cartHeader">
+      <div :class="$style.cartCounter">
         <h1>Корзина</h1>
-        <span class="cart-count">1 товар</span>
+        <span :class="$style.cartCount">1 товар</span>
       </div>
     </div>
 
-    <div class="items">
+    <div :class="$style.items">
       <CartItem
         v-for="item in cartItems"
         :key="item.id"
         :item-data="item"
-        class="item"
-        :class="{ 'single-item': cartItems.length === 1 }"
+        :class="[$style.item, { [$style.singleItem]: cartItems.length === 1 }]"
       />
     </div>
 
-    <div class="discount">
+    <div :class="$style.discount">
       <CardDiscountMsg />
     </div>
 
-    <div class="share-cart">
+    <div :class="$style.shareCart">
       <CartShareButton />
     </div>
   </div>
@@ -73,7 +72,7 @@ const cartItems = [
 ]
 </script>
 
-<style scoped>
+<style module>
 .cart {
   padding: 30px;
   background: #FFFFFF;
@@ -84,7 +83,7 @@ const cartItems = [
   position: relative;
 }
 
-.cart-header {
+.cartHeader {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -92,7 +91,7 @@ const cartItems = [
   margin-bottom: 20px;
 }
 
-.share-cart {
+.shareCart {
   display: flex;
   position: absolute;
   top: 30px;
@@ -104,7 +103,8 @@ const cartItems = [
   flex-direction: column;
   gap: 20px;
 }
-.cart-header h1 {
+
+.cartHeader h1 {
   font-weight: 800;
   font-size: 24px;
   line-height: 1.21;
@@ -112,39 +112,35 @@ const cartItems = [
   color: #000000;
   margin: 0;
 }
-.cart-count {
+
+.cartCount {
   font-weight: 600;
   font-size: 14px;
   line-height: 1.21;
   color: #A0A0A0;
 }
 
-
 .discount {
   margin-top: 40px;
 }
-
-
 
 @media (max-width: 1024px) {
   .cart {
     max-width: 1024px;
   }
   .discount {
-  margin-top: 30px;
-}
+    margin-top: 30px;
+  }
 }
 
 @media (max-width: 720px) {
   .cart {
     max-width: 720px;
   }
-
 }
 
 @media (max-width: 468px) {
-
-  .cart-header {
+  .cartHeader {
     margin-bottom: 16px;
   }
   
@@ -152,7 +148,7 @@ const cartItems = [
     padding: 16px;
   }
 
-  .share-cart {
+  .shareCart {
     position: relative;
     top: auto;
     right: auto;
@@ -160,8 +156,8 @@ const cartItems = [
     width: 100%;
   }
 
-  .share-cart:deep(.share) {
-      width: 100%;
+  .shareCart :global(.share) {
+    width: 100%;
   }
 
   .discount {
@@ -173,32 +169,32 @@ const cartItems = [
   }
 
   .item {
-  position: relative;
+    position: relative;
   }
 
-.item::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 1px;
-  background: #D9D9D9;
-  top: calc(100% + 16px);
+  .item::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background: #D9D9D9;
+    top: calc(100% + 16px);
+  }
+
+  .item:last-child::after {
+    display: none;
+  }
+
+  .singleItem::after {
+    display: none;
+  }
 }
 
-.item:last-child::after {
-  display: none;
-}
-
-.single-item::after {
-  display: none;
-}
-}
 @media (max-width: 320px) {
   .cart {
     max-width: 320px;
     padding: 16px;
     border-radius: 16px;
   }
-
 }
 </style> 

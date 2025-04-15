@@ -1,16 +1,7 @@
-<script setup lang="ts">
-
-import GradientBanner from "@/components/common/GradientBanner.vue";
-import BrandsList from "@/components/brandsList/BrandsList.vue";
-import { usePageTitle } from '@/composables/usePageTitle';
-
-usePageTitle('Бренды');
-</script>
-
 <template>
-  <div class="brands">
+  <div :class="$style.brands">
     <GradientBanner
-      class="brands-banner"
+      :class="$style.banner"
       title="Бренды" 
       image-src="#"
       subtitle="В нашем интернет-магазине представлена только оригинальная продукция популярных брендов. Мы гарантируем 100% качество товара."
@@ -20,20 +11,28 @@ usePageTitle('Бренды');
   </div>
 </template>
 
-<style scoped>
-  .brands-banner {
-    margin-bottom: 40px;
+<script setup lang="ts">
+import GradientBanner from "@/components/common/GradientBanner.vue";
+import BrandsList from "@/components/brandsList/BrandsList.vue";
+import { usePageTitle } from '@/composables/usePageTitle';
 
-    @media (min-width: 321px) {
-      margin-bottom: 60px;
-    }
+usePageTitle('Бренды');
+</script>
 
-    @media (min-width: 769px) {
-      margin-bottom: 80px;
-    }
+<style module>
+.banner {
+  margin-bottom: 40px;
 
-    @media (min-width: 1025px) {
-      margin-bottom: 100px;
-    }
+  @media (min-width: 321px) {
+    margin-bottom: 60px;
   }
+
+  @media (min-width: 769px) {
+    margin-bottom: 80px;
+  }
+
+  @media (min-width: 1025px) {
+    margin-bottom: 100px;
+  }
+}
 </style>

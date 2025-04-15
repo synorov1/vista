@@ -1,21 +1,30 @@
 <template>
-    <div class="discount-banner">
-      <div class="discount-info">
-        <div class="discount-icon">
-          <img :src="DiscountIcon" height="20" width="20" alt="Discount"/>
-        </div>
-        <div class="discount">Получите скидку <span>5%</span> - просто добавьте товара еще на <span>12 442 ₽</span></div>
+  <div :class="$style.discountBanner">
+    <div :class="$style.discountInfo">
+      <div :class="$style.discountIcon">
+        <img
+          :src="DiscountIcon"
+          height="20"
+          width="20"
+          alt="Discount"
+        >
       </div>
-      <button class="add-btn">Добавить</button>
+      <div :class="$style.discount">
+        Получите скидку <span>5%</span> - просто добавьте товара еще на <span>12 442 ₽</span>
+      </div>
     </div>
+    <button :class="$style.addBtn">
+      Добавить
+    </button>
+  </div>
 </template>
 
 <script setup lang="ts">
 import DiscountIcon from "@/assets/icons/cart/discount.svg"
 </script>
 
-<style scoped>
-.discount-banner {
+<style module>
+.discountBanner {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -26,7 +35,7 @@ import DiscountIcon from "@/assets/icons/cart/discount.svg"
   min-height: 45px;
 }
 
-.discount-info {
+.discountInfo {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -36,18 +45,19 @@ import DiscountIcon from "@/assets/icons/cart/discount.svg"
   line-height: 100%;
 }
 
-.discount-info span {
+.discountInfo span {
   color: #000;
 }
 
-.discount-icon {
+.discountIcon {
   width: 24px;
   height: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.add-btn {
+
+.addBtn {
   font-weight: 600;
   font-size: 14px;
   line-height: 1.21;
@@ -58,14 +68,15 @@ import DiscountIcon from "@/assets/icons/cart/discount.svg"
 }
 
 @media (max-width: 468px) {
-  .discount-banner {
+  .discountBanner {
     flex-direction: column;
     align-items: flex-start;
     gap: 10px;
   }
-   .discount-info {
+  
+  .discountInfo {
     align-items: flex-start;
     justify-content: flex-start;
-   }
   }
+}
 </style>

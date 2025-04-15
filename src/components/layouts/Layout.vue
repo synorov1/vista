@@ -1,6 +1,6 @@
 <template>
   <div class="layout">
-    <Header v-if="showHeader"/>
+    <Header v-if="showHeader" />
     <div class="container">
       <Breadcrumbs v-if="showBreadcrumbs" />
       <slot />

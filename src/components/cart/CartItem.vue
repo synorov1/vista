@@ -1,28 +1,33 @@
 <template>
-  <div class="product-card">
-    <div class="product-image">
+  <div :class="$style.productCard">
+    <div :class="$style.productImage">
       <img src="@/assets/images/joola-1.jpg" alt="Product">
     </div>
-    <div class="product-info">
+    <div :class="$style.productInfo">
       <h2>{{ itemData.name }}</h2>
-      <div class="price-block">
-        <span class="current-price">{{ formatPrice(itemData.price.current) }} ₽</span>
-        <span v-if="itemData.price.old" class="old-price">{{ formatPrice(itemData.price.old) }} ₽</span>
+      <div :class="$style.priceBlock">
+        <span :class="$style.currentPrice">{{ formatPrice(itemData.price.current) }} ₽</span>
+        <span v-if="itemData.price.old" :class="$style.oldPrice">{{ formatPrice(itemData.price.old) }} ₽</span>
       </div>
-      <div v-if="itemData.options?.length" class="product-options">
+      <div v-if="itemData.options?.length" :class="$style.productOptions">
         <div
           v-for="option in itemData.options"
           :key="option.id"
-          class="option"
+          :class="$style.option"
         >
-          {{ option.name }}: <div class="value">
+          {{ option.name }}: <div :class="$style.value">
             {{ option.value }}
           </div>
         </div>
       </div>
-      <div v-if="itemData.additional?.length" class="additional-services">
+      <div v-if="itemData.additional?.length" :class="$style.additionalServices">
         <span>Дополнительные услуги:</span>
-        <button v-for="item in itemData.additional" :key="item.id" class="service-btn" type="button">
+        <button
+          v-for="item in itemData.additional"
+          :key="item.id"
+          :class="$style.serviceBtn"
+          type="button"
+        >
           <svg 
             width="12" 
             height="12" 
@@ -40,10 +45,9 @@
         </button>
       </div>
     </div>
-    <div class="actions">
+    <div :class="$style.actions">
       <CartItemActions v-model:quantity="quantity" :product-id="itemData.id" />
     </div>
-
   </div>
 </template>
 
@@ -51,7 +55,6 @@
 import { ref } from 'vue';
 import { formatPrice } from "@/utils/formatPrice";
 import CartItemActions from "./CartItemActions.vue";
-
 
 interface Price {
   old?: number;
@@ -83,14 +86,13 @@ const { itemData } = defineProps<{ itemData: ICartItem }>();
 const quantity = ref(1);
 </script>
 
-<style scoped>
-
-.product-card {
+<style module>
+.productCard {
   display: flex;
   gap: 20px;
 }
 
-.product-image {
+.productImage {
   width: 100px;
   height: 100px;
   border: 1px solid #D9D9D9;
@@ -99,20 +101,20 @@ const quantity = ref(1);
   padding: 21px;
 }
 
-.product-image img {
+.productImage img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.product-info {
+.productInfo {
   flex: 1;
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-.product-info h2 {
+.productInfo h2 {
   font-weight: 700;
   font-size: 16px;
   line-height: 1.21;
@@ -121,13 +123,13 @@ const quantity = ref(1);
   margin: 0;
 }
 
-.price-block {
+.priceBlock {
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
-.current-price {
+.currentPrice {
   font-weight: 800;
   font-size: 16px;
   line-height: 1.21;
@@ -135,7 +137,7 @@ const quantity = ref(1);
   color: #0084FF;
 }
 
-.old-price {
+.oldPrice {
   font-weight: 600;
   font-size: 12px;
   line-height: 1.21;
@@ -143,7 +145,7 @@ const quantity = ref(1);
   text-decoration: line-through;
 }
 
-.product-options {
+.productOptions {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -172,14 +174,14 @@ const quantity = ref(1);
   white-space: nowrap;
 }
 
-.additional-services {
+.additionalServices {
   display: flex;
   flex-direction: column;
   gap: 10px;
   margin-top: 10px;
 }
 
-.additional-services span {
+.additionalServices span {
   font-weight: 500;
   font-size: 14px;
   line-height: 1.21;
@@ -187,8 +189,7 @@ const quantity = ref(1);
   color: #A0A0A0;
 }
 
-
-.service-btn {
+.serviceBtn {
   display: flex;
   align-items: center;
   gap: 4px;
@@ -205,12 +206,8 @@ const quantity = ref(1);
   width: fit-content;
 }
 
-
-
-
 @media (max-width: 1024px) {
-
-  .product-card {
+  .productCard {
     max-width: 596px;
     flex-direction: column;
     justify-content: flex-start;
@@ -223,31 +220,25 @@ const quantity = ref(1);
 }
 
 @media (max-width: 720px) {
-
-  .product-card {
+  .productCard {
     flex-direction: column;
     max-width: 648px;
   }
-
 }
 
 @media (max-width: 468px) {
   .actions {
     margin-top: 0;
   }
-  
 }
 
 @media (max-width: 320px) {
-
-
-  .product-card {
+  .productCard {
     gap: 16px;
   }
 
-  .product-options {
+  .productOptions {
     flex-wrap: wrap;
   }
-
 }
 </style>

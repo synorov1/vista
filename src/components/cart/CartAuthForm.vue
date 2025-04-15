@@ -1,10 +1,11 @@
 <template>
-  <div class="cart-auth">
-
-    <div class="form">
-      <p class="title">{{ title }}</p>
-      <form @submit.prevent="handleSubmit" :class="currentStatus">
-        <div v-if="isCodeSent" class="respond">
+  <div :class="$style.cartAuth">
+    <div :class="$style.form">
+      <p :class="$style.title">
+        {{ title }}
+      </p>
+      <form :class="$style[currentStatus]" @submit.prevent="handleSubmit">
+        <div v-if="isCodeSent" :class="$style.respond">
           Мы отправили код подтверждения
           на {{ phone }} 
           <button type="button" @click="changePhone">
@@ -13,39 +14,37 @@
         </div>
         <Input
           v-if="!isCodeSent"
+          v-model="phone"
           placeholder="Телефон"
           type="tel"
           :required="true"
           label="Введите ваш номер телефона"
-          v-model="phone"
         />
         <Input
-        v-if="isCodeSent && (currentStatus === 'call' || currentStatus === 'repeat')" 
+          v-if="isCodeSent && (currentStatus === 'call' || currentStatus === 'repeat')" 
+          v-model="code"
           placeholder="Код из SMS"
           type="text"
           :required="true"
           label="Введите код"
-          v-model="code"
-          class="code"
-:class="{ error: currentStatus === 'repeat' }"
-  @input="clearError"
+          :class="[$style.code, { [$style.error]: currentStatus === 'repeat' }]"
+          @input="clearError"
         />
-        <p v-if="isCodeSent && currentStatus === 'call'" class="timer">
+        <p v-if="isCodeSent && currentStatus === 'call'" :class="$style.timer">
           Новый код можно получить через <span>{{ timer }}</span> секунд
         </p>
         <XSBlueButton
-          class="submit"
-          :class="{error: currentStatus === 'repeat'}"
+          :class="[$style.submit, { [$style.error]: currentStatus === 'repeat' }]"
           :text="statusList.find(status => status.status === currentStatus)?.submit || 'Ошибка'"
           height="45px"
         />
-        <router-link to="/info/policy" class="policy">
+        <router-link to="/info/policy" :class="$style.policy">
           Оставляя ваши данные, вы соглашается с политикой конфиденциальности <span>ИП Макарова Елена Валерьевна</span>
         </router-link>
       </form>
     </div>
 
-    <div class="status" :class="{ 'error_status': currentStatus === 'repeat' }">
+    <div :class="[$style.status, { [$style.errorStatus]: currentStatus === 'repeat' }]">
       <img
         :src="statusList.find(status => status.status === currentStatus)?.icon || ''"
         alt="Status"
@@ -64,9 +63,9 @@ import KeyboardIcon from "@/assets/icons/cart/keyboard.svg"
 import CallIcon from "@/assets/icons/cart/call.svg"
 import RepeatIcon from "@/assets/icons/cart/repeat.svg"
 import XSBlueButton from "../common/Buttons/XSBlueButton.vue";
-import { useRouter } from "vue-router"; // Импортируем useRouter
+import { useRouter } from "vue-router";
 
-const router = useRouter(); // Создаем экземпляр router
+const router = useRouter();
 
 const statusList = [
   {"status": "keyboard", icon: KeyboardIcon, "submit": "Отправить код"},
@@ -78,61 +77,62 @@ const currentStatus = ref("keyboard");
 const phone = ref("");
 const code = ref("");
 const isCodeSent = ref(false);
-const timer = ref(321); // Начальное значение таймера
-let interval: ReturnType<typeof setInterval>; // Переменная для хранения интервала
-  const handleSubmit = () => {
+const timer = ref(321);
+let interval: ReturnType<typeof setInterval>;
+
+const handleSubmit = () => {
   if (currentStatus.value === "keyboard") {
     isCodeSent.value = true;
     currentStatus.value = "call";
-    startTimer(); // Запускаем таймер при отправке кода
+    startTimer();
   } else if (currentStatus.value === "call") {
-    if (code.value === "1234") { // Проверка правильности кода
-      // Логика для успешного ввода кода
+    if (code.value === "1234") {
       router.push("/cart/payment");
     } else {
-      currentStatus.value = "repeat"; // Меняем статус на repeat
-      clearInterval(interval); // Убираем таймер
-      // Убираем установку неверного кода в Input
+      currentStatus.value = "repeat";
+      clearInterval(interval);
     }
-  } else if (currentStatus.value === "repeat") { // Обработка нажатия на "Отправить еще раз"
-    clearInterval(interval); // Останавливаем текущий таймер
-    timer.value = 321; // Сбрасываем таймер
-    currentStatus.value = "call"; // Меняем статус на call
-    startTimer(); // Запускаем таймер заново
-    code.value = ""; // Очищаем поле ввода
+  } else if (currentStatus.value === "repeat") {
+    clearInterval(interval);
+    timer.value = 321;
+    currentStatus.value = "call";
+    startTimer();
+    code.value = "";
   }
 };
+
 const startTimer = () => {
   interval = setInterval(() => {
     if (timer.value > 0) {
       timer.value--;
     } else {
-      clearInterval(interval); // Останавливаем таймер, когда время истекло
+      clearInterval(interval);
     }
-  }, 1000); // Обновляем каждую секунду
+  }, 1000);
 };
+
 const clearError = () => {
   if (currentStatus.value === "repeat") {
-    code.value = ""; // Очищаем поле ввода
-    currentStatus.value = "call"; // Меняем статус обратно на call
+    code.value = "";
+    currentStatus.value = "call";
   }
 };
+
 const changePhone = () => {
   isCodeSent.value = false;
-  code.value = ""; 
-  // phone.value = "";
-  currentStatus.value = "keyboard"; 
+  code.value = "";
+  currentStatus.value = "keyboard";
   clearInterval(interval);
-  timer.value = 321; 
+  timer.value = 321;
 };
 
 onUnmounted(() => {
-  clearInterval(interval); // Останавливаем таймер при размонтировании компонента
+  clearInterval(interval);
 });
 </script>
 
-<style scoped>
-.cart-auth {
+<style module>
+.cartAuth {
   border: 1px solid #d9d9d9;
   border-radius: 20px;
   height: 361px;
@@ -142,21 +142,23 @@ onUnmounted(() => {
   justify-content: space-between;
 }
 
-form, .form {
+form .form {
   max-width: 349px;
   width: 100%;
   display: flex;
   flex-direction: column;
-
+  justify-content: space-between;
+  height: 100%;
 }
 
 form {
-    gap: 16px;
-    }
+  gap: 16px;
+}
 
-    form.call {
-    gap: 10px;
-    }
+form.call {
+  gap: 10px;
+}
+
 .title {
   color: #000;
   font-size: 24px;
@@ -164,12 +166,6 @@ form {
   letter-spacing: -2%;
   line-height: 100%;
   margin-bottom: 0;
-}
-
-.form {
-  justify-content: space-between;
-  height: 100%;
-
 }
 
 .respond {
@@ -186,6 +182,7 @@ form {
   color: #0084FF;
   text-decoration: underline;
 }
+
 .timer {
   font-size: 14px;
   line-height: 22px;
@@ -195,7 +192,7 @@ form {
 }
 
 .timer span {
-  color: #0084FF
+  color: #0084FF;
 }
 
 .policy {
@@ -203,7 +200,6 @@ form {
   font-size: 12px;
   line-height: 100%;
   color: #000;
-
 }
 
 .policy span {
@@ -220,7 +216,7 @@ form {
   border-radius: 20px;
 }
 
-.error_status {
+.errorStatus {
   background: #FF4245;
 }
 
@@ -233,7 +229,7 @@ form {
   color: #0084FF;
 }
 
-.error:deep(input) {
+.error :global(input) {
   border-color: #FF4433;
   color: #FF4433;
 }
@@ -245,9 +241,8 @@ form {
 }
 
 @media (max-width: 320px) {
-  .cart-auth {
+  .cartAuth {
     padding: 16px;
   }
 }
-
 </style>

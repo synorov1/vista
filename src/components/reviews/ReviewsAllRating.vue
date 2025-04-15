@@ -1,21 +1,20 @@
 <template>
-    <div class="rating">
-      <img 
-        :src="StarIcon" 
-        height="21" 
-        width="21" 
-        alt="Star"
-      />
-      <span class="rating__text">5.0 из 5.0 на основе всех оценок</span>
-    </div>
+  <div :class="$style.rating">
+    <img 
+      :src="StarIcon" 
+      height="21" 
+      width="21" 
+      alt="Star"
+    >
+    <span :class="$style.ratingText">5.0 из 5.0 на основе всех оценок</span>
+  </div>
 </template>
 
 <script setup lang="ts">
-// @ts-ignore
 import StarIcon from "@/assets/icons/reviews/star.svg";
 </script>
 
-<style scoped>
+<style module>
 .rating {
   display: flex;
   align-items: center;
@@ -24,7 +23,7 @@ import StarIcon from "@/assets/icons/reviews/star.svg";
   min-width: 0;
 }
 
-.rating__text {
+.ratingText {
   font-size: 14px;
   color: #000;
   font-weight: 700;
@@ -34,7 +33,7 @@ import StarIcon from "@/assets/icons/reviews/star.svg";
 }
 
 @media (max-width: 768px) {
-  img {
+  .rating img {
     height: 14px;
     width: 14px;
   }

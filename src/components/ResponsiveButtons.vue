@@ -1,13 +1,21 @@
 <template>
   <div>
     <select v-if="isMobile" v-model="selectedOption">
-      <option v-for="option in options" :key="option.value" :value="option.value">
+      <option
+        v-for="option in options"
+        :key="option.value"
+        :value="option.value"
+      >
         {{ option.label }}
       </option>
     </select>
     <div v-else>
-      <button v-for="option in options" :key="option.value" @click="handleClick(option.value)">
-        <i :class="option.icon"></i> {{ option.label }}
+      <button
+        v-for="option in options"
+        :key="option.value"
+        @click="handleClick(option.value)"
+      >
+        <i :class="option.icon" /> {{ option.label }}
       </button>
     </div>
   </div>
@@ -26,16 +34,16 @@ export default {
       ],
     };
   },
+  mounted() {
+    window.addEventListener('resize', this.checkWindowSize);
+  },
+  beforeUnmount() {
+    window.removeEventListener('resize', this.checkWindowSize);
+  },
   methods: {
     handleClick(value) {
       this.selectedOption = value;
     },
-  },
-  mounted() {
-    window.addEventListener('resize', this.checkWindowSize);
-  },
-  beforeDestroy() {
-    window.removeEventListener('resize', this.checkWindowSize);
   },
   methods: {
     checkWindowSize() {

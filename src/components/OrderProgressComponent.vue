@@ -19,7 +19,6 @@
         />
       </div>
       <span>{{ step.name }}</span>
-
     </div>
     <div class="timeline">
       <div class="line first-line" :class="{ 'completed': isStepCompleted(0) }" />

@@ -8,14 +8,14 @@ usePageTitle('Мои отзывы');
 </script>
 
 <template>
-  <div class="reviews">
+  <div :class="$style.reviews">
     <ProfileNotReviews :products="data.products" />
 
     <ProfileReviews :reviews="data.reviews" />
   </div>
 </template>
 
-<style scoped>
+<style module>
 .reviews {
   margin-bottom: 40px;
   display: flex;
