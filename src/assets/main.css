@@ -1,0 +1,45 @@
+@import './bootstrap.css' layer(default);
+@import './variables.css';
+@import './helpers.css';
+
+* {
+  font-family: 'Inter', sans-serif;
+  letter-spacing: -0.02em;
+}
+
+a {
+  text-decoration: none;
+}
+
+.gap-16 {
+  gap: 16px !important;
+}
+
+.gap-30 {
+  gap: 30px !important;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.h-full {
+  height: 100%;
+}
+
+input, button {
+  padding: 0;
+  outline: unset;
+  border: none;
+}
+.justify-center {
+  justify-content: center;
+}

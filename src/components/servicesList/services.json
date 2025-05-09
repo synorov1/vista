@@ -1,0 +1,41 @@
+[
+  {
+    "title": "Доставка",
+    "text": "Доставка осуществляется различными способами по всей России. Сроки и стоимость указаны при оформлении покупки.",
+    "image-first": "src/assets/images/backpack.png",
+    "image-second": "src/assets/images/backpack.png",
+    "html": "",
+    "banner-image": "src/assets/images/backpack.png",
+    "price": "0"
+  },
+
+  {
+    "title": "Сборка ракетки",
+    "text": "Закажите сборку ракетки у наших профессиональных сотрудников",
+    "image-first": "src/assets/images/backpack.png",
+    "image-second": "src/assets/images/backpack.png",
+    "html": "",
+    "banner-image": "src/assets/images/backpack.png",
+    "price": "500"
+  },
+
+  {
+    "title": "Нанесение на форму",
+    "text": "Наносим на форму фамилии спортсменов, логотипы команд и спонсоров. (Цена указана за 1 строку. Обмену и возврату товар не подлежит).",
+    "image-first": "src/assets/images/backpack.png",
+    "image-second": "src/assets/images/backpack.png",
+    "html": "<p>Httml text</p> <br/> <p>More html</p>",
+    "banner-image": "src/assets/images/backpack.png",
+    "price": "1500"
+  },
+
+  {
+    "title": "Прокат",
+    "text": "Предоставляем в аренду столы и оборудование для спортивных и корпоративных мероприятий.",
+    "image-first": "src/assets/images/backpack.png",
+    "image-second": "src/assets/images/backpack.png",
+    "html": "",
+    "banner-image": "src/assets/images/backpack.png",
+    "price": "0"
+  }
+]

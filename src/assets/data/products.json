@@ -1,0 +1,171 @@
+[
+    {
+      "href": "/product/1",
+      "label": {
+        "color": "red",
+        "text": "Новинка"
+      },
+      "discount": 10,
+      "title": "Товар 1",
+      "price": 1000,
+      "oldPrice": 1200,
+      "rating": {
+        "stars": 4.5,
+        "count": 50
+      },
+      "button": {
+        "text": "Купить сейчас"
+      }
+    },
+    {
+      "href": "/product/2",
+      "label": {
+        "color": "green",
+        "text": "Распродажа"
+      },
+      "discount": 20,
+      "title": "Товар 2",
+      "price": 800,
+      "oldPrice": 1000,
+      "rating": {
+        "stars": 4.0,
+        "count": 30
+      },
+      "button": {
+        "text": "Добавить в корзину"
+      }
+    },
+    {
+      "href": "/product/3",
+      "label": null,
+      "discount": null,
+      "title": "Товар 3",
+      "price": 1500,
+      "oldPrice": null,
+      "rating": {
+        "stars": 4.8,
+        "count": 70
+      },
+      "button": {
+        "text": "Купить сейчас"
+      }
+    },
+    {
+      "href": "/product/4",
+      "label": {
+        "color": "blue",
+        "text": "Горячее"
+      },
+      "discount": 15,
+      "title": "Товар 4",
+      "price": 900,
+      "oldPrice": 1100,
+      "rating": {
+        "stars": 4.2,
+        "count": 40
+      },
+      "button": {
+        "text": "Добавить в корзину"
+      }
+    },
+    {
+      "href": "/product/5",
+      "label": null,
+      "discount": null,
+      "title": "Товар 5",
+      "price": 1200,
+      "oldPrice": null,
+      "rating": {
+        "stars": 4.6,
+        "count": 60
+      },
+      "button": {
+        "text": "Купить сейчас"
+      }
+    },
+    {
+      "href": "/product/6",
+      "label": {
+        "color": "yellow",
+        "text": "Ограниченный"
+      },
+      "discount": 5,
+      "title": "Товар 6",
+      "price": 1300,
+      "oldPrice": 1400,
+      "rating": {
+        "stars": 4.1,
+        "count": 20
+      },
+      "button": {
+        "text": "Добавить в корзину"
+      }
+    },
+    {
+      "href": "/product/7",
+      "label": null,
+      "discount": null,
+      "title": "Товар 7",
+      "price": 1100,
+      "oldPrice": null,
+      "rating": {
+        "stars": 4.7,
+        "count": 80
+      },
+      "button": {
+        "text": "Купить сейчас"
+      }
+    },
+    {
+      "href": "/product/8",
+      "label": {
+        "color": "purple",
+        "text": "Эксклюзив"
+      },
+      "discount": 25,
+      "title": "Товар 8",
+      "price": 700,
+      "oldPrice": 900,
+      "rating": {
+        "stars": 4.3,
+        "count": 35
+      },
+      "button": {
+        "text": "Добавить в корзину"
+      }
+    },
+    {
+      "href": "/product/9",
+      "label": null,
+      "discount": null,
+      "title": "Товар 9",
+      "price": 1400,
+      "oldPrice": null,
+      "rating": {
+        "stars": 4.9,
+        "count": 90
+      },
+      "button": {
+        "text": "Купить сейчас"
+      }
+    },
+    {
+      "href": "/product/10",
+      "label": {
+        "color": "orange",
+        "text": "Популярный"
+      },
+      "discount": 10,
+      "title": "Товар 10",
+      "price": 1000,
+      "oldPrice": 1100,
+      "rating": {
+        "stars": 4.4,
+        "count": 55
+      },
+      "button": {
+        "text": "Добавить в корзину"
+      }
+    }
+  ]
+  

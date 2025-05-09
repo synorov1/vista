@@ -1,0 +1,63 @@
+[
+  {
+    "items": [
+      {
+        "id": "123123",
+        "link": "#",
+        "image": "https://avatars.mds.yandex.net/i?id=872cac56431682bb67072fe074acab87_l-5876563-images-thumbs&n=13",
+        "name": "Накладка DONIC BlueStar A1",
+        "price": "6 750 ₽",
+        "oldPrice": "20 000 ₽",
+        "params": [
+          {
+            "title": "Цвет",
+            "text": "Черный"
+          },
+          {
+            "title": "Размер",
+            "text": "Max"
+          },
+          {
+            "title": "Что-то",
+            "text": "Какое-то"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "items": [
+      {
+        "id": "3214",
+        "link": "#",
+        "image": "https://avatars.mds.yandex.net/get-mpic/2017291/img_id3896668967851101906.jpeg/orig",
+        "name": "Накладка DONIC BlueStar",
+        "price": "6 750 ₽",
+        "params": [
+          {
+            "title": "Цвет",
+            "text": "Черный"
+          },
+          {
+            "title": "Размер",
+            "text": "Max"
+          }
+        ]
+      },
+      {
+        "id": "534123",
+        "link": "#",
+        "image": "https://sun1-16.userapi.com/s/v1/ig2/bmAqYEkpJTFqIh-s_CybCmfjmK2GSjB5uI_2cvkpm7K2fVF9A75CLi4QNuzUH2-D__jH0Js1WYRk4hgLAdAo9m9T.jpg?size=200x200&quality=96&crop=26,26,684,684&ava=1",
+        "name": "Накладка DONIC",
+        "price": "6 750 ₽",
+        "oldPrice": "20 000 ₽",
+        "params": [
+          {
+            "title": "Цвет",
+            "text": "Черный"
+          }
+        ]
+      }
+    ]
+  }
+]

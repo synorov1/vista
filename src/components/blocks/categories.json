@@ -1,0 +1,156 @@
+[
+    {
+        "title": "Накладки",
+        "desc": "Представлен широчайший ассортимент накладок для настольного тенниса, который может удовлетворить потребность самого взыскательного покупателя",
+        "image": {
+            "src": "/categories/grips.webp",
+            "src2": "/categories/grips@2x.webp"
+        },
+        "count": "362",
+        "href": "https://www.vistasport.ru/catalog/rubbers/",
+        "button": {
+            "text": "Перейти к товарам",
+            "action": ""
+        }
+    },
+    {
+        "title": "Основания",
+        "desc": "Представлен обширный ассортимент теннисных <a href=\"https://www.vistasport.ru/catalog/blades/\">оснований для настольного тенниса</a>, включая разнообразие производителей и типов, в том числе форму ручек",
+        "image": {
+            "src": "/categories/bases.webp",
+            "src2": "/categories/bases@2x.webp"
+        },
+        "count": "369",
+        "href": "https://www.vistasport.ru/catalog/blades/",
+        "button": {
+            "text": "Перейти к товарам",
+            "action": ""
+        }
+    },
+    {
+        "title": "Мячи",
+        "desc": "Обширный выбор <a href=\"https://www.vistasport.ru/catalog/myachi/\">мячей для настольного тенниса</a>. Наш ассортимент включает в себя <a href=\"https://www.vistasport.ru/catalog/myachi/filter/tip-is-3_zvezdy/\">профессиональные мячи \"Три звезды\", прошедшие одобрение ITTF, а также <a href=\"https://www.vistasport.ru/catalog/myachi/filter/tip-is-trenirovochnye/\">тренировочные мячи</a> \"Training\"",
+        "image": {
+            "src": "/categories/balls.webp",
+            "src2": "/categories/balls@2x.webp"
+        },
+        "count": "45",
+        "href": "https://www.vistasport.ru/catalog/myachi/",
+        "button": {
+            "text": "Перейти к товарам",
+            "action": ""
+        }
+    },
+    {
+        "title": "Аксессуары",
+        "desc": "Вы можете подобрать и <a href=\"https://www.vistasport.ru/catalog/accessories/\">купить аксессуары для настольного тенниса</a>. Обширный ассортимент удовлетворит потребности самого взыскательного покупателя в соответствии с потребностями",
+        "image": {
+            "src": "/categories/accessories.webp",
+            "src2": "/categories/accessories@2x.webp"
+        },
+        "count": "362",
+        "href": "https://www.vistasport.ru/catalog/accessories/",
+        "button": {
+            "text": "Перейти к товарам",
+            "action": ""
+        }
+    },
+    {
+        "title": "Ракетки готовые",
+        "desc": "Мы предлагаем нашим покупателям широкий ассортимент профессиональных товаров для тенниса от таких мировых брендов как: <a href=\"https://www.vistasport.ru/catalog/rackets/filter/brand-is-butterfly/\">Butterfly</a>, <a href=\"https://www.vistasport.ru/catalog/rackets/filter/brand-is-dhs/\">DHS</a>, <a href=\"https://www.vistasport.ru/catalog/rackets/filter/brand-is-donicminusschildkrot/\">Donic</a>, <a href=\"https://www.vistasport.ru/catalog/rackets/filter/brand-is-neottec/\">Neottec, <a href=\"https://www.vistasport.ru/catalog/rackets/filter/brand-is-xiom/\">Xiom</a>, <a href=\"https://www.vistasport.ru/catalog/rackets/filter/brand-is-friendship/\">Friendship</a>, <a href=\"https://www.vistasport.ru/catalog/rackets/filter/brand-is-joola/\">Joola</a> и др.",
+        "image": {
+            "src": "/categories/rockets.webp",
+            "src2": "/categories/rockets@2x.webp"
+        },
+        "count": "104",
+        "href": "https://www.vistasport.ru/catalog/rackets/",
+        "button": {
+            "text": "Перейти к товарам",
+            "action": ""
+        }
+    },
+    {
+        "title": "Одежда и обувь",
+        "desc": "<a href=\"https://www.vistasport.ru/catalog/clothing/\">Одежда для настольного тенниса</a> - это не просто комфортные спортивные шорты или удобные стильные теннисные рубашки. Это - ваш пропуск в мир профессионального спорта",
+        "image": {
+            "src": "/categories/wear.webp",
+            "src2": "/categories/wear@2x.webp"
+        },
+        "count": "98",
+        "href": "https://www.vistasport.ru/catalog/clothing/",
+        "button": {
+            "text": "Перейти к товарам",
+            "action": ""
+        }
+    },
+    {
+        "title": "Сумки и чехлы",
+        "desc": "Сумки и чехлы для настольного тенниса - важные атрибуты уважающего себя спортсмена, подчеркивающие, как его отношение к инвентарю и самому виду спорта в целом.",
+        "image": {
+            "src": "/categories/cases.webp",
+            "src2": "/categories/cases@2x.webp"
+        },
+        "count": "78",
+        "href": "https://www.vistasport.ru/catalog/bags/",
+        "button": {
+            "text": "Подробнее",
+            "action": ""
+        }
+    },
+    {
+        "title": "Столы и другое",
+        "desc": "<a href=\"https://www.vistasport.ru/catalog/tennis-tables/\">Теннисный стол</a> является основным элементом оборудования, без которого сама суть настольного тенниса и даже самого словосочетания “Настольный теннис” теряется.",
+        "image": {
+            "src": "/categories/tables.webp",
+            "src2": "/categories/tables@2x.webp"
+        },
+        "count": "106",
+        "href": "https://www.vistasport.ru/catalog/equipment/",
+        "button": {
+            "text": "Подробнее",
+            "action": ""
+        }
+    },
+    {
+        "title": "Сертификаты",
+        "desc": "Отличный способ приобрести <a href=\"https://www.vistasport.ru/catalog/\">инвентарь для настольного тенниса</a> в магазине Виста Спорт и порадовать друзей или близких! Теперь Вы можете отправить моментальный подарок, не выходя из дома!",
+        "image": {
+            "src": "/categories/sertificates.webp",
+            "src2": "/categories/sertificates@2x.webp"
+        },
+        "count": "6",
+        "href": "https://www.vistasport.ru/catalog/podarochnye_sertifikaty/",
+        "button": {
+            "text": "Подробнее",
+            "action": ""
+        }
+    },
+    {
+        "title": "Спорт и отдых",
+        "desc": "Не забывайте о разминке перед тренировкой и растяжке после неё. Также важно следить за своим самочувствием и не перегружать организм.",
+        "image": {
+            "src": "/categories/sport.webp",
+            "src2": "/categories/sport@2x.webp"
+        },
+        "count": "59",
+        "href": "https://www.vistasport.ru/catalog/sport_i_otdykh/",
+        "button": {
+            "text": "Подробнее",
+            "action": ""
+        }
+    },
+    {
+        "title": "Прочие товары",
+        "desc": "Все наши аксессуары изготовлены из качественных материалов и имеют стильный дизайн. Они идеально подойдут как для профессиональных спортсменов, так и для любителей.",
+        "image": {
+            "src": "/categories/another.webp",
+            "src2": "/categories/another@2x.webp"
+        },
+        "count": "49",
+        "href": "https://www.vistasport.ru/catalog/other/",
+        "button": {
+            "text": "Подробнее",
+            "action": ""
+        }
+    }
+]

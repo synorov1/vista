@@ -1,0 +1,990 @@
+{
+  "mainBanner": [
+    {
+      "id": 1,
+      "source": [
+        {
+          "type": "image/png",
+          "srcset": "src/assets/images/home/banner-320.png, src/assets/images/home/banner-320@2x.png 2x",
+          "media": "(max-width: 767px)"
+        },
+        {
+          "type": "image/png",
+          "srcset": "src/assets/images/home/banner-768.png, src/assets/images/home/banner-768@2x.png 2x",
+          "media": "(min-width: 768px) and (max-width: 1023px)"
+        },
+        {
+          "type": "image/png",
+          "srcset": "src/assets/images/home/banner-1024.png, src/assets/images/home/banner-1024@2x.png 2x",
+          "media": "(min-width: 1024px) and (max-width: 1439px)"
+        }
+      ],
+      "img": {
+        "alt": "Профессиональное основание Andro Novacell Off",
+        "src": "src/assets/images/home/banner-1440.png",
+        "srcset": "src/assets/images/home/banner-1440@2x.png 2x"
+      }
+    },
+    {
+      "id": 2,
+      "source": [
+        {
+          "type": "image/png",
+          "srcset": "src/assets/images/home/banner-320.png, src/assets/images/home/banner-320@2x.png 2x",
+          "media": "(max-width: 767px)"
+        },
+        {
+          "type": "image/png",
+          "srcset": "src/assets/images/home/banner-768.png, src/assets/images/home/banner-768@2x.png 2x",
+          "media": "(min-width: 768px) and (max-width: 1023px)"
+        },
+        {
+          "type": "image/png",
+          "srcset": "src/assets/images/home/banner-1024.png, src/assets/images/home/banner-1024@2x.png 2x",
+          "media": "(min-width: 1024px) and (max-width: 1439px)"
+        }
+      ],
+      "img": {
+        "alt": "Профессиональное основание Andro Novacell Off",
+        "src": "src/assets/images/home/banner-1440.png",
+        "srcset": "src/assets/images/home/banner-1440@2x.png 2x"
+      }
+    }
+  ],
+  "popularCategories": {
+    "title": "Популярные категории",
+    "button": {
+      "title": "Все категории",
+      "to": "#"
+    },
+    "items": [
+      {
+        "title": "Накладки",
+        "img": {
+          "alt": "",
+          "src": "src/assets/images/home/categories-1.png",
+          "srcset": "src/assets/images/home/categories-1@2x.png 2x"
+        }
+      },
+      {
+        "title": "Основания",
+        "img": {
+          "alt": "",
+          "src": "src/assets/images/home/categories-2.png",
+          "srcset": "src/assets/images/home/categories-2@2x.png 2x"
+        }
+      },
+      {
+        "title": "Мячики",
+        "img": {
+          "alt": "",
+          "src": "src/assets/images/home/categories-3.png",
+          "srcset": "src/assets/images/home/categories-3@2x.png 2x"
+        }
+      },
+      {
+        "title": "Готовые ракетки",
+        "img": {
+          "alt": "",
+          "src": "src/assets/images/home/categories-4.png",
+          "srcset": "src/assets/images/home/categories-4@2x.png 2x"
+        }
+      },
+      {
+        "title": "Одежда",
+        "img": {
+          "alt": "",
+          "src": "src/assets/images/home/categories-5.png",
+          "srcset": "src/assets/images/home/categories-5@2x.png 2x"
+        }
+      }
+    ]
+  },
+  "hotDeals": {
+    "title": "Горячие скидки",
+    "subtitle": "Рекомендуем вам",
+    "heading": "Последний шанс купить",
+    "timer": {
+      "text": "Осталось 2ч:12:11 минут"
+    },
+    "button": {
+      "text": "Все",
+      "to": "#"
+    },
+    "items": [
+      {
+        "id": 1,
+        "title": "Товар 1",
+        "image": "src/assets/images/backpack.png",
+        "price": 1250,
+        "oldPrice": 3100,
+        "rating": 3.2,
+        "liked": false
+      },
+      {
+        "id": 2,
+        "title": "Товар 2",
+        "image": "src/assets/images/backpack.png",
+        "price": 550,
+        "oldPrice": 2000,
+        "rating": 3.2,
+        "liked": false
+      },
+      {
+        "id": 3,
+        "title": "Товар 3",
+        "image": "src/assets/images/backpack.png",
+        "price": 5450,
+        "oldPrice": 2000,
+        "rating": 5,
+        "liked": false
+      }
+    ],
+    "items2": [
+      [
+        {
+          "id": 1,
+          "title": "Товар 1",
+          "image": "src/assets/images/backpack.png",
+          "price": 1250,
+          "oldPrice": 3100,
+          "rating": 3.2,
+          "liked": false
+        },
+        {
+          "id": 3,
+          "title": "Товар 3",
+          "image": "src/assets/images/backpack.png",
+          "price": 5450,
+          "oldPrice": 2000,
+          "rating": 5,
+          "liked": false
+        }
+      ],
+      [
+        {
+          "id": 2,
+          "title": "Товар 2",
+          "image": "src/assets/images/backpack.png",
+          "price": 550,
+          "oldPrice": 2000,
+          "rating": 3.2,
+          "liked": false
+        },
+        {
+          "id": 3,
+          "title": "Товар 3",
+          "image": "src/assets/images/backpack.png",
+          "price": 5450,
+          "oldPrice": 2000,
+          "rating": 5,
+          "liked": false
+        }
+      ],
+      [
+        {
+          "id": 2,
+          "title": "Товар 2",
+          "image": "src/assets/images/backpack.png",
+          "price": 550,
+          "oldPrice": 2000,
+          "rating": 3.2,
+          "liked": false
+        },
+        {
+          "id": 3,
+          "title": "Товар 3",
+          "image": "src/assets/images/backpack.png",
+          "price": 5450,
+          "oldPrice": 2000,
+          "rating": 5,
+          "liked": false
+        }
+      ]
+    ]
+  },
+  "reklamaTop": [
+    {
+      "id": 1,
+      "source": [
+        {
+          "type": "image/png",
+          "srcset": "src/assets/images/home/Reklama1-320.png, src/assets/images/home/Reklama1-320@2x.png 2x",
+          "media": "(max-width: 767px)"
+        },
+        {
+          "type": "image/png",
+          "srcset": "src/assets/images/home/Reklama1-768.png, src/assets/images/home/Reklama1-768@2x.png 2x",
+          "media": "(min-width: 768px) and (max-width: 1023px)"
+        },
+        {
+          "type": "image/png",
+          "srcset": "src/assets/images/home/Reklama1-1024.png, src/assets/images/home/Reklama1-1024@2x.png 2x",
+          "media": "(min-width: 1024px) and (max-width: 1439px)"
+        }
+      ],
+      "img": {
+        "alt": "",
+        "src": "src/assets/images/home/Reklama1-1440.png",
+        "srcset": "src/assets/images/home/Reklama1-1440@2x.png 2x"
+      }
+    },
+    {
+      "id": 2,
+      "source": [
+        {
+          "type": "image/png",
+          "srcset": "src/assets/images/home/Reklama2-320.png, src/assets/images/home/Reklama2-320@2x.png 2x",
+          "media": "(max-width: 767px)"
+        },
+        {
+          "type": "image/png",
+          "srcset": "src/assets/images/home/Reklama2-768.png, src/assets/images/home/Reklama2-768@2x.png 2x",
+          "media": "(min-width: 768px) and (max-width: 1023px)"
+        },
+        {
+          "type": "image/png",
+          "srcset": "src/assets/images/home/Reklama2-1024.png, src/assets/images/home/Reklama2-1024@2x.png 2x",
+          "media": "(min-width: 1024px) and (max-width: 1439px)"
+        }
+      ],
+      "img": {
+        "alt": "",
+        "src": "src/assets/images/home/Reklama2-1440.png",
+        "srcset": "src/assets/images/home/Reklama2-1440@2x.png 2x"
+      }
+    },
+    {
+      "id": 3,
+      "source": [
+        {
+          "type": "image/png",
+          "srcset": "src/assets/images/home/Reklama3-320.png, src/assets/images/home/Reklama3-320@2x.png 2x",
+          "media": "(max-width: 767px)"
+        },
+        {
+          "type": "image/png",
+          "srcset": "src/assets/images/home/Reklama3-768.png, src/assets/images/home/Reklama3-768@2x.png 2x",
+          "media": "(min-width: 768px) and (max-width: 1023px)"
+        },
+        {
+          "type": "image/png",
+          "srcset": "src/assets/images/home/Reklama3-1024.png, src/assets/images/home/Reklama3-1024@2x.png 2x",
+          "media": "(min-width: 1024px) and (max-width: 1439px)"
+        }
+      ],
+      "img": {
+        "alt": "",
+        "src": "src/assets/images/home/Reklama3-1440.png",
+        "srcset": "src/assets/images/home/Reklama3-1440@2x.png 2x"
+      }
+    }
+  ],
+  "bestOffers": {
+    "title": "Выгодные предложения",
+    "button": {
+      "title": "Перейти в каталог",
+      "to": "#"
+    },
+    "tabs": [
+      {
+        "id": "new",
+        "title": "Новинки"
+      },
+      {
+        "id": "recommended",
+        "title": "Мы рекомендуем"
+      },
+      {
+        "id": "bestsellers",
+        "title": "Хит продаж"
+      }
+    ],
+    "items": {
+      "new": [
+        {
+          "title": "Рюкзак DONIC Nova",
+          "image": {},
+          "href": "https://www.vistasport.ru/catalog/myachi/myachi_dlya_nastolnogo_tennisa_dhs_3_d40_dual_bel_10_sht.html",
+          "price": 4625,
+          "oldPrice": 5800,
+          "liked": false,
+          "label": {
+            "color": "blue",
+            "text": "Новинка"
+          },
+          "discount": 20,
+          "button": {
+            "text": "Купить сегодня",
+            "link": ""
+          },
+          "rating": {
+            "stars": 4.8,
+            "count": 34009,
+            "link": ""
+          }
+        },
+        {
+          "title": "Футболка DONIC Legacy",
+          "image": {},
+          "href": "#",
+          "price": 2800,
+          "oldPrice": 3500,
+          "liked": false,
+          "label": {
+            "color": "blue",
+            "text": "Новинка"
+          },
+          "discount": 20,
+          "button": {
+            "text": "Купить сегодня",
+            "link": ""
+          },
+          "rating": {
+            "stars": 4.5,
+            "count": 1205,
+            "link": ""
+          }
+        },
+        {
+          "title": "Накладка Butterfly Tenergy 05",
+          "image": {},
+          "href": "#",
+          "price": 7500,
+          "liked": false,
+          "label": {
+            "color": "blue",
+            "text": "Новинка"
+          },
+          "button": {
+            "text": "Купить сегодня",
+            "link": ""
+          },
+          "rating": {
+            "stars": 5.0,
+            "count": 3456,
+            "link": ""
+          }
+        },
+        {
+          "title": "Основание Stiga Carbonado 145",
+          "image": {},
+          "href": "#",
+          "price": 22000,
+          "oldPrice": 25000,
+          "liked": false,
+          "label": {
+            "color": "blue",
+            "text": "Новинка"
+          },
+          "discount": 12,
+          "button": {
+            "text": "Купить сегодня",
+            "link": ""
+          },
+          "rating": {
+            "stars": 4.9,
+            "count": 876,
+            "link": ""
+          }
+        },
+        {
+          "title": "Накладка Xiom Vega X",
+          "image": {},
+          "href": "#",
+          "price": 5900,
+          "oldPrice": 6500,
+          "liked": false,
+          "label": {
+            "color": "blue",
+            "text": "Новинка"
+          },
+          "discount": 9,
+          "button": {
+            "text": "Купить сегодня",
+            "link": ""
+          },
+          "rating": {
+            "stars": 4.7,
+            "count": 543,
+            "link": ""
+          }
+        },
+        {
+          "title": "Кроссовки Mizuno Wave Drive 9",
+          "image": {},
+          "href": "#",
+          "price": 9800,
+          "liked": false,
+          "label": {
+            "color": "blue",
+            "text": "Новинка"
+          },
+          "button": {
+            "text": "Купить сегодня",
+            "link": ""
+          },
+          "rating": {
+            "stars": 4.6,
+            "count": 123,
+            "link": ""
+          }
+        },
+        {
+          "title": "Полотенце Butterfly Logo 2024",
+          "image": {},
+          "href": "#",
+          "price": 1500,
+          "oldPrice": 2000,
+          "liked": false,
+          "label": {
+            "color": "blue",
+            "text": "Новинка"
+          },
+          "discount": 25,
+          "button": {
+            "text": "Купить сегодня",
+            "link": ""
+          },
+          "rating": {
+            "stars": 4.3,
+            "count": 89,
+            "link": ""
+          }
+        },
+        {
+          "title": "Основание Tibhar Stratus Power Wood",
+          "image": {},
+          "href": "#",
+          "price": 19900,
+          "oldPrice": 23000,
+          "liked": false,
+          "label": {
+            "color": "blue",
+            "text": "Новинка"
+          },
+          "discount": 13,
+          "button": {
+            "text": "Купить сегодня",
+            "link": ""
+          },
+          "rating": {
+            "stars": 4.8,
+            "count": 234,
+            "link": ""
+          }
+        },
+        {
+          "title": "Накладка DHS Goldarc 8",
+          "image": {},
+          "href": "#",
+          "price": 6200,
+          "liked": false,
+          "label": {
+            "color": "blue",
+            "text": "Новинка"
+          },
+          "button": {
+            "text": "Купить сегодня",
+            "link": ""
+          },
+          "rating": {
+            "stars": 4.9,
+            "count": 67,
+            "link": ""
+          }
+        },
+        {
+          "title": "Шорты Stiga Pro 2024",
+          "image": {},
+          "href": "#",
+          "price": 3200,
+          "oldPrice": 4000,
+          "liked": false,
+          "label": {
+            "color": "blue",
+            "text": "Новинка"
+          },
+          "discount": 20,
+          "button": {
+            "text": "Купить сегодня",
+            "link": ""
+          },
+          "rating": {
+            "stars": 4.4,
+            "count": 45,
+            "link": ""
+          }
+        },
+        {
+          "title": "Чехол Yasaka Vintage Pro",
+          "image": {},
+          "href": "#",
+          "price": 2900,
+          "liked": false,
+          "label": {
+            "color": "blue",
+            "text": "Новинка"
+          },
+          "button": {
+            "text": "Купить сегодня",
+            "link": ""
+          },
+          "rating": {
+            "stars": 4.6,
+            "count": 34,
+            "link": ""
+          }
+        },
+        {
+          "title": "Мячи Butterfly A40+ 3*** Pro (12 шт)",
+          "image": {},
+          "href": "#",
+          "price": 2400,
+          "oldPrice": 2800,
+          "liked": false,
+          "label": {
+            "color": "blue",
+            "text": "Новинка"
+          },
+          "discount": 14,
+          "button": {
+            "text": "Купить сегодня",
+            "link": ""
+          },
+          "rating": {
+            "stars": 5.0,
+            "count": 156,
+            "link": ""
+          }
+        }
+      ],
+      "recommended": [
+        {
+          "title": "Основание TIBHAR SK HYBRID ZC",
+          "image": {},
+          "href": "https://www.vistasport.ru/catalog/myachi/myachi_dlya_nastolnogo_tennisa_dhs_3_d40_dual_bel_10_sht.html",
+          "price": 16000,
+          "oldPrice": 20000,
+          "liked": false,
+          "label": {
+            "color": "black",
+            "text": "Премиум"
+          },
+          "discount": 10,
+          "button": {
+            "text": "Купить сегодня",
+            "link": ""
+          },
+          "rating": {
+            "stars": 4.3,
+            "count": 12009,
+            "link": ""
+          }
+        },
+        {
+          "title": "Мячи DHS 3*** 40+ (10 шт)",
+          "image": {},
+          "href": "#",
+          "price": 1200,
+          "oldPrice": 1500,
+          "liked": false,
+          "discount": 20,
+          "button": {
+            "text": "Купить сегодня",
+            "link": ""
+          },
+          "rating": {
+            "stars": 4.7,
+            "count": 5432,
+            "link": ""
+          }
+        },
+        {
+          "title": "Чехол Butterfly Tour",
+          "image": {},
+          "href": "#",
+          "price": 3500,
+          "liked": false,
+          "label": {
+            "color": "black",
+            "text": "Премиум"
+          },
+          "button": {
+            "text": "Купить сегодня",
+            "link": ""
+          },
+          "rating": {
+            "stars": 4.6,
+            "count": 789,
+            "link": ""
+          }
+        },
+        {
+          "title": "Кроссовки Butterfly Lezoline",
+          "image": {},
+          "href": "#",
+          "price": 8500,
+          "oldPrice": 10000,
+          "liked": false,
+          "discount": 15,
+          "button": {
+            "text": "Купить сегодня",
+            "link": ""
+          },
+          "rating": {
+            "stars": 4.4,
+            "count": 234,
+            "link": ""
+          }
+        },
+        {
+          "title": "Накладка Stiga DNA Pro H",
+          "image": {},
+          "href": "#",
+          "price": 5900,
+          "oldPrice": 7000,
+          "liked": false,
+          "label": {
+            "color": "black",
+            "text": "Премиум"
+          },
+          "discount": 16,
+          "button": {
+            "text": "Купить сегодня",
+            "link": ""
+          },
+          "rating": {
+            "stars": 4.8,
+            "count": 1567,
+            "link": ""
+          }
+        },
+        {
+          "title": "Основание Donic Ovtcharov True Carbon",
+          "image": {},
+          "href": "#",
+          "price": 23000,
+          "liked": false,
+          "label": {
+            "color": "black",
+            "text": "Премиум"
+          },
+          "button": {
+            "text": "Купить сегодня",
+            "link": ""
+          },
+          "rating": {
+            "stars": 4.9,
+            "count": 432,
+            "link": ""
+          }
+        },
+        {
+          "title": "Футболка Xiom Pro Tour",
+          "image": {},
+          "href": "#",
+          "price": 4200,
+          "oldPrice": 5000,
+          "liked": false,
+          "discount": 16,
+          "button": {
+            "text": "Купить сегодня",
+            "link": ""
+          },
+          "rating": {
+            "stars": 4.5,
+            "count": 234,
+            "link": ""
+          }
+        },
+        {
+          "title": "Робот Y&T S-27",
+          "image": {},
+          "href": "#",
+          "price": 89000,
+          "oldPrice": 95000,
+          "liked": false,
+          "label": {
+            "color": "black",
+            "text": "Премиум"
+          },
+          "discount": 6,
+          "button": {
+            "text": "Купить сегодня",
+            "link": ""
+          },
+          "rating": {
+            "stars": 5.0,
+            "count": 45,
+            "link": ""
+          }
+        }
+      ],
+      "bestsellers": [
+        {
+          "title": "Накладка YASAKA Rakza XX",
+          "image": {},
+          "href": "https://www.vistasport.ru/catalog/myachi/myachi_dlya_nastolnogo_tennisa_dhs_3_d40_dual_bel_10_sht.html",
+          "price": 6930,
+          "oldPrice": 8000,
+          "liked": false,
+          "button": {
+            "text": "Купить сегодня",
+            "link": ""
+          },
+          "rating": {
+            "stars": 3.8,
+            "count": 3214,
+            "link": ""
+          }
+        },
+        {
+          "title": "Накладка DHS Hurricane 3",
+          "image": {},
+          "href": "#",
+          "price": 4500,
+          "liked": false,
+          "label": {
+            "color": "red",
+            "text": "Хит"
+          },
+          "button": {
+            "text": "Купить сегодня",
+            "link": ""
+          },
+          "rating": {
+            "stars": 4.9,
+            "count": 15678,
+            "link": ""
+          }
+        },
+        {
+          "title": "Основание Stiga Infinity VPS V",
+          "image": {},
+          "href": "#",
+          "price": 18500,
+          "oldPrice": 21000,
+          "liked": false,
+          "label": {
+            "color": "red",
+            "text": "Хит"
+          },
+          "discount": 12,
+          "button": {
+            "text": "Купить сегодня",
+            "link": ""
+          },
+          "rating": {
+            "stars": 4.7,
+            "count": 8901,
+            "link": ""
+          }
+        },
+        {
+          "title": "Шорты DONIC Pulse",
+          "image": {},
+          "href": "#",
+          "price": 2500,
+          "oldPrice": 3000,
+          "liked": false,
+          "discount": 17,
+          "button": {
+            "text": "Купить сегодня",
+            "link": ""
+          },
+          "rating": {
+            "stars": 4.2,
+            "count": 567,
+            "link": ""
+          }
+        },
+        {
+          "title": "Накладка Butterfly Dignics 09c",
+          "image": {},
+          "href": "#",
+          "price": 8900,
+          "liked": false,
+          "label": {
+            "color": "red",
+            "text": "Хит"
+          },
+          "button": {
+            "text": "Купить сегодня",
+            "link": ""
+          },
+          "rating": {
+            "stars": 4.8,
+            "count": 6789,
+            "link": ""
+          }
+        },
+        {
+          "title": "Основание Butterfly Viscaria",
+          "image": {},
+          "href": "#",
+          "price": 23500,
+          "oldPrice": 25000,
+          "liked": false,
+          "label": {
+            "color": "red",
+            "text": "Хит"
+          },
+          "discount": 6,
+          "button": {
+            "text": "Купить сегодня",
+            "link": ""
+          },
+          "rating": {
+            "stars": 4.9,
+            "count": 12345,
+            "link": ""
+          }
+        }
+      ]
+    }
+  },
+  "reklamaBottom": [
+    {
+      "id": 1,
+      "source": [
+        {
+          "type": "image/png",
+          "srcset": "src/assets/images/home/Reklama4-320.png, src/assets/images/home/Reklama4-320@2x.png 2x",
+          "media": "(max-width: 767px)"
+        },
+        {
+          "type": "image/png",
+          "srcset": "src/assets/images/home/Reklama4-768.png, src/assets/images/home/Reklama4-768@2x.png 2x",
+          "media": "(min-width: 768px) and (max-width: 1023px)"
+        },
+        {
+          "type": "image/png",
+          "srcset": "src/assets/images/home/Reklama4-1024.png, src/assets/images/home/Reklama4-1024@2x.png 2x",
+          "media": "(min-width: 1024px) and (max-width: 1439px)"
+        }
+      ],
+      "img": {
+        "alt": "",
+        "src": "src/assets/images/home/Reklama4-1440.png",
+        "srcset": "src/assets/images/home/Reklama4-1440@2x.png 2x"
+      }
+    }
+  ],
+  "brandList": {
+    "title": "Бренды  в продаже",
+    "button": {
+      "title": "Все бренды",
+      "to": "#"
+    },
+    "items": [
+      {
+        "title": "2 421 товаров",
+        "img": {
+          "alt": "",
+          "src": "src/assets/images/home/brand-1.png",
+          "srcset": "src/assets/images/home/brand-1@2x.png 2x"
+        }
+      },
+      {
+        "title": "1 200 товаров",
+        "img": {
+          "alt": "",
+          "src": "src/assets/images/home/brand-2.png",
+          "srcset": "src/assets/images/home/brand-2@2x.png 2x"
+        }
+      },
+      {
+        "title": "200 товаров",
+        "img": {
+          "alt": "",
+          "src": "src/assets/images/home/brand-3.png",
+          "srcset": "src/assets/images/home/brand-3@2x.png 2x"
+        }
+      },
+      {
+        "title": "2 200 товаров",
+        "img": {
+          "alt": "",
+          "src": "src/assets/images/home/brand-4.png",
+          "srcset": "src/assets/images/home/brand-4@2x.png 2x"
+        }
+      },
+      {
+        "title": "3 410 товаров",
+        "img": {
+          "alt": "",
+          "src": "src/assets/images/home/brand-5.png",
+          "srcset": "src/assets/images/home/brand-5@2x.png 2x"
+        }
+      }
+    ]
+  },
+  "articlesSection": {
+    "title": "Полезные статьи",
+    "button": {
+      "title": "Читать все",
+      "to": "#"
+    },
+    "items": [
+      {
+        "title": "Как выбрать накладки для настольного тенниса",
+        "desc": "Данной статьей мы открываем целый цикл материалов статьей мы открываем целый цикл материалов",
+        "label": "Важно",
+        "button": {
+          "to": "#"
+        },
+        "source": [
+          {
+            "type": "image/png",
+            "srcset": "src/assets/images/home/articles1-320.png, src/assets/images/home/articles1-320@2x.png 2x",
+            "media": "(max-width: 767px)"
+          }
+        ],
+        "img": {
+          "alt": "",
+          "src": "src/assets/images/home/articles1.png",
+          "srcset": "src/assets/images/home/articles1@2x.png 2x"
+        }
+      },
+      {
+        "title": "Накладки для начинающих",
+        "desc": "Данной статьей мы продолжаем серию материалов, посвященную накладкам для настольного тенниса",
+        "button": {
+          "to": "#"
+        },
+        "source": [
+          {
+            "type": "image/png",
+            "srcset": "src/assets/images/home/articles1-320.png, src/assets/images/home/articles1-320@2x.png 2x",
+            "media": "(max-width: 767px)"
+          }
+        ],
+        "img": {
+          "alt": "",
+          "src": "src/assets/images/home/articles2.png",
+          "srcset": "src/assets/images/home/articles2@2x.png 2x"
+        }
+      },
+      {
+        "title": "Рассрочка ",
+        "desc": "Рассрочка — разновидность кредита, при котором не возникает переплаты. Магазин делает банку скидку на товар.",
+        "button": {
+          "to": "#"
+        },
+        "source": [
+          {
+            "type": "image/png",
+            "srcset": "src/assets/images/home/articles1-320.png, src/assets/images/home/articles1-320@2x.png 2x",
+            "media": "(max-width: 767px)"
+          }
+        ],
+        "img": {
+          "alt": "",
+          "src": "src/assets/images/home/articles3.png",
+          "srcset": "src/assets/images/home/articles3@2x.png 2x"
+        }
+      }
+    ]
+  }
+}

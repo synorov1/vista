@@ -1,0 +1,17 @@
+[
+  {
+    "href": "https://www.youtube.com",
+    "image": "/src/assets/icons/youtube.svg",
+    "alt": "YouTube"
+  },
+  {
+    "href": "https://www.telegram.com",
+    "image": "/src/assets/icons/telegram.svg",
+    "alt": "Telegram"
+  },
+  {
+    "href": "https://www.vk.com",
+    "image": "/src/assets/icons/vk.svg",
+    "alt": "VK"
+  }
+]

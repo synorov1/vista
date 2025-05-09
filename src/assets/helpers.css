@@ -1,0 +1,62 @@
+.carousel-button {
+  --vc-pgn-background-color: var(--gray-100-color);
+  --vc-pgn-width: 30px;
+  --vc-pgn-height: 5px;
+  --vc-pgn-active-color: var( --blue-400-color);
+  --vc-pgn-border-radius: 30px;
+  --vc-pgn-margin: 6px;
+}
+
+.carousel-progress {
+  --vc-pgn-background-color: var(--gray-100-color);
+  --vc-pgn-width: 100%;
+  --vc-pgn-height: 1px;
+  --vc-pgn-border-radius: 0;
+  --vc-pgn-active-color: #0E0E0E;
+}
+
+.carousel-progress .carousel-progress__pagination {
+  left: 0;
+  right: 0;
+  justify-content: flex-start;
+  transform: none;
+  background-color: var(--gray-400-color);
+}
+
+.carousel-progress .carousel__pagination-item {
+  flex: 1;
+}
+
+.carousel-progress .carousel__pagination-button:hover::after {
+  background-color: var(--gray-100-color);
+}
+
+.carousel-progress .carousel__pagination-button--active:hover::after{
+  background-color: var(--vc-pgn-active-color);
+}
+
+.carousel-progress .carousel__pagination-button::after {
+  transition: all 0.3s ease-in-out;
+}
+
+.carousel-progress .carousel__pagination-button {
+  width: 100%;
+  padding: 0;
+  cursor: unset;
+  pointer-events: none;
+}
+
+/* SCROLLBAR */
+.hide-scrollbar {
+  -webkit-overflow-scrolling: touch;
+  /*noinspection CssInvalidPropertyValue*/
+  overflow: -moz-scrollbars-none;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  width: 0;
+  display: none;
+  scrollbar-width: none;
+}
